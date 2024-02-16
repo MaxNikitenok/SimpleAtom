@@ -1,0 +1,49 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  flex: 1 1 auto;
+  align-items: center;
+}
+
+.main__logo svg {
+  width: 310px;
+  height: 296px;
+}
+
+.main__description {
+  max-width: 736px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  margin: 60px 0 40px;
+}
+
+.main__button {
+  border-radius: 10px;
+  padding: 7px 7px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 18px;
+  color: #000;
+  background: #14d6a1;
+  transition: all 0.3s;
+}
+
+.main__button:hover {
+  background: #a9f1de;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(20, 214, 161, 0.5);
+  -moz-box-shadow: 0px 0px 20px 5px rgba(20, 214, 161, 0.5);
+  box-shadow: 0px 0px 20px 5px rgba(20, 214, 161, 0.5);
+}
+
+.main__button:active {
+  background: #14d6a1;
+  -webkit-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.5) inset;
+  -moz-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.5) inset;
+}

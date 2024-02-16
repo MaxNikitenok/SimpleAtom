@@ -1,0 +1,16 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto:regular);
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  background: #000;
+  flex-direction: column;
+  --font-family: 'Inter', sans-serif;
+  --second-family: 'Roboto', sans-serif;
+}
