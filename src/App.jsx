@@ -2,11 +2,10 @@ import styles from './App.module.css';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import aboutUs from './assets/menu-about-us.png';
 import simpleatom from './assets/menu-simpleatom.svg';
-import whySimpleAtom from './assets/menu-why-simpleatom.svg';
 import letsTalk from './assets/menu-lets-talk.svg';
 import telegram from './assets/menu-telegram.svg';
 import linkedIn from './assets/menu-linkedin.svg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import cn from 'classnames';
 
 export const App = () => {
@@ -23,16 +22,22 @@ export const App = () => {
 
   const [activePage, setActivePage] = useState(locationPath);
 
+  useEffect(() => {
+    if (locationPath === '/') {
+      navigate('/main');
+    }
+  }, [locationPath]);
+
   const navHandler = (path) => {
     setActivePage(path);
-    navigate(path)
+    navigate(path);
   };
 
   return (
     <>
       <header className={styles.header}>
         <div className={styles.header__menuContainer}>
-          <div className={styles.header__logo}>
+          <div className={cn(styles.header__logo, styles.dropdown)}>
             <svg
               width="24"
               height="20"
@@ -114,15 +119,27 @@ export const App = () => {
                 </filter>
               </defs>
             </svg>
+            <ul className={styles.dropdown__content}>
+              <li className={styles.dropdown__item}>Main</li>
+              <li className={styles.dropdown__item}>Simpleatom</li>
+              <li className={styles.dropdown__item}>About us</li>
+              <li className={styles.dropdown__item}>Contact us</li>
+              <li className={styles.dropdown__item}>Join our Telegram</li>
+              <li className={styles.dropdown__item}>Join our Linkedin</li>
+              <li className={styles.dropdown__item}>Appearance</li>
+            </ul>
           </div>
           <nav>
             <ul className={styles.header__menu}>
               {headerMenuItems.map((item) => {
                 return (
                   <li
-                    className={cn(styles.header__menu_item, item.path === activePage ? styles.active : '')}
+                    className={cn(
+                      styles.header__menu_item,
+                      item.path === activePage ? styles.active : ''
+                    )}
                     key={item.id}
-                    onClick={()=>navHandler(item.path)}
+                    onClick={() => navHandler(item.path)}
                   >
                     <span>{item.tile}</span>
                   </li>
@@ -139,23 +156,25 @@ export const App = () => {
       <footer>
         <nav className={styles.footer__nav}>
           <ul className={styles.footer__menu}>
-            <li className={styles.footer__menu_item}>
+            <li className={styles.footer__menu_item} onClick={()=>navHandler('/simpleatom')}>
               <img src={simpleatom} alt="simpleatom" />
+             <span className={styles.footer__menu_item_title}>Simpleatom</span>
             </li>
-            <li className={styles.footer__menu_item}>
-              <img src={whySimpleAtom} alt="why simpleatom" />
+            <li className={styles.footer__menu_item} onClick={()=>navHandler('aboutUs')}>
+              <img src={aboutUs} alt="about us" />
+            <span className={styles.footer__menu_item_title}>About&#160;us</span>
             </li>
-            <li className={styles.footer__menu_item}>
-              <img src={aboutUs} alt="about us" />
+            <li className={styles.footer__menu_item} onClick={()=>navHandler('contactUs')}>
+              <img src={letsTalk} alt="let's talk" />
+            <span className={styles.footer__menu_item_title}>Contact&#160;us</span>
             </li>
-            <li className={styles.footer__menu_item}>
-              <img src={letsTalk} alt="let's talk" />
-            </li>
-            <li className={styles.footer__menu_item}>
+            <li className={cn(styles.footer__menu_item, styles.hide_menu_item)}>
               <img src={telegram} alt="telegram" />
+            <span className={styles.footer__menu_item_title}>Telegram</span>
             </li>
-            <li className={styles.footer__menu_item}>
+            <li className={cn(styles.footer__menu_item, styles.hide_menu_item)}>
               <img src={linkedIn} alt="linkedin" />
+            <span className={styles.footer__menu_item_title}>Linkedin</span>
             </li>
           </ul>
         </nav>

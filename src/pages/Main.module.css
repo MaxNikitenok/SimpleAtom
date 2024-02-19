@@ -2,14 +2,20 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 175px;
   color: #fff;
-  flex: 1 1 auto;
+  /* flex: 1 1 auto; */
   align-items: center;
 }
 
-.main__logo svg {
+.main__logo img {
   width: 310px;
   height: 296px;
+  animation-name: opacity-animation;
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier(0,0,0.5,1);
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
 }
 
 .main__description {
@@ -20,9 +26,15 @@
   text-align: center;
   color: #fff;
   margin: 60px 0 40px;
+  animation-name: opacity-animation;
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier(0,0,0.5,1);
+  animation-delay: 0.7s;
+  animation-fill-mode: backwards;
 }
 
 .main__button {
+  border: none;
   border-radius: 10px;
   padding: 7px 7px;
   font-family: var(--font-family);
@@ -31,19 +43,54 @@
   color: #000;
   background: #14d6a1;
   transition: all 0.3s;
+  animation-name: opacity-animation;
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier(0,0,0.5,1);
+  animation-delay: 0.9s;
+  animation-fill-mode: backwards;
 }
 
 .main__button:hover {
   background: #a9f1de;
   cursor: pointer;
-  -webkit-box-shadow: 0px 0px 20px 5px rgba(20, 214, 161, 0.5);
+  /* -webkit-box-shadow: 0px 0px 20px 5px rgba(20, 214, 161, 0.5);
   -moz-box-shadow: 0px 0px 20px 5px rgba(20, 214, 161, 0.5);
-  box-shadow: 0px 0px 20px 5px rgba(20, 214, 161, 0.5);
+  box-shadow: 0px 0px 20px 5px rgba(20, 214, 161, 0.5); */
 }
 
 .main__button:active {
   background: #14d6a1;
-  -webkit-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.5) inset;
+  /* -webkit-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.5) inset;
   -moz-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.5) inset;
-  box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.5) inset; */
+}
+
+@keyframes opacity-animation {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main__logo img {
+    width: 250px;
+    height: 238px;
+  }
+
+  .main__description {
+    max-width: 480px;
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .main__description {
+    text-align: center;
+    margin: 33px 0 13px;
+  }
 }
