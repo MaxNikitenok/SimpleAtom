@@ -1,10 +1,8 @@
 .main {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding-top: 175px;
-  color: #fff;
-  /* flex: 1 1 auto; */
   align-items: center;
 }
 
@@ -12,8 +10,8 @@
   width: 310px;
   height: 296px;
   animation-name: opacity-animation;
-  animation-duration: .5s;
-  animation-timing-function: cubic-bezier(0,0,0.5,1);
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0, 0, 0.5, 1);
   animation-delay: 0.5s;
   animation-fill-mode: backwards;
 }
@@ -24,11 +22,11 @@
   font-weight: 700;
   font-size: 20px;
   text-align: center;
-  color: #fff;
+  color: var(--Text-Text-accent);
   margin: 60px 0 40px;
   animation-name: opacity-animation;
-  animation-duration: .5s;
-  animation-timing-function: cubic-bezier(0,0,0.5,1);
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0, 0, 0.5, 1);
   animation-delay: 0.7s;
   animation-fill-mode: backwards;
 }
@@ -40,12 +38,12 @@
   font-family: var(--font-family);
   font-weight: 700;
   font-size: 18px;
-  color: #000;
+  color: var(--Clear-base-bg);
   background: #14d6a1;
   transition: all 0.3s;
   animation-name: opacity-animation;
-  animation-duration: .5s;
-  animation-timing-function: cubic-bezier(0,0,0.5,1);
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0, 0, 0.5, 1);
   animation-delay: 0.9s;
   animation-fill-mode: backwards;
 }
@@ -76,7 +74,23 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-height: 850px) {
+  .main {
+    padding-top: calc(100dvh / 5 - 70px);
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .main {
+    padding-top: calc(100dvh / 5 - 80px);
+  }
+}
+
+@media screen and (max-height: 746px) {
+  .main {
+    padding-top: calc(100dvh / 5 - 100px);
+  }
+
   .main__logo img {
     width: 250px;
     height: 238px;
@@ -88,9 +102,20 @@
   }
 }
 
-@media screen and (max-height: 700px) {
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 0;
+    margin-top: calc((100dvh - 550px) / 2);
+  }
+
+  .main__logo img {
+    width: 250px;
+    height: 238px;
+  }
+
   .main__description {
-    text-align: center;
-    margin: 33px 0 13px;
+    max-width: 480px;
+    padding-top: 20px;
+    margin: 40px 0;
   }
 }

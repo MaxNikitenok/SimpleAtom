@@ -1,16 +1,56 @@
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
-@import url(https://fonts.googleapis.com/css?family=Roboto:regular);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900);
+
+html {
+  overflow-x: hidden;
+}
+
+html[data-theme='dark'] {
+  --font-family: 'Inter', sans-serif;
+  --second-family: 'Roboto', sans-serif;
+  --link: #0366cc;
+  --Text-Main-text: #85868b;
+  --Text-Text-accent: #fff;
+  --Clear-base-bg: #000;
+  --Middle-blocks: #111010;
+  --Lines: #333335;
+  --Text-Menu: #F5F5F7;
+  --Buttom-Fill: #0179F2;
+  --Text-Gold-text: #FFD310;
+  --Text-Green-text: #14D6A1;
+}
+
+[data-theme='light'] {
+  --font-family: 'Inter', sans-serif;
+  --second-family: 'Roboto', sans-serif;
+  --link: #0366cc;
+  --Text-Main-text: #85868b;
+  --Text-Text-accent: #000;
+  --Clear-base-bg: #fff;
+  --Middle-blocks: #dcdada;
+  --Lines: #333335;
+  --Text-Menu: #F5F5F7;
+  --Buttom-Fill: #0179F2;
+  --Text-Gold-text: #14D6A1;
+  --Text-Green-text: #14D6A1;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--Text-Main-text) transparent;
+}
 
 body {
   width: 100vw;
-  height: 100dvh;
+  min-height: 100dvh;
+  background: var(--Clear-base-bg);
+  overflow-x: hidden;
 }
 
 #root {
+  max-width: 1800px;
   height: 100%;
   display: flex;
-  background: #000;
+  margin: 0 auto;
   flex-direction: column;
-  --font-family: 'Inter', sans-serif;
-  --second-family: 'Roboto', sans-serif;
 }

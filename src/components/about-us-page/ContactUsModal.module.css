@@ -1,0 +1,248 @@
+.wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100dvh;
+  background: var(--Clear-base-bg);
+}
+
+.container {
+  position: relative;
+  display: flex;
+  max-width: 1800px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.modal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 3px;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  height: 488px;
+  border: 2px solid var(--Edge, #333335);
+  background: var(--Clear-base-bg, #000);
+  justify-content: space-evenly;
+  padding: 0 12%;
+  box-sizing: border-box;
+}
+
+.modal img {
+  width: 250px;
+  height: 239px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.content p {
+  color: var(--Text-Main-text);
+  text-align: center;
+  font-family: Roboto;
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 135%;
+}
+
+.content span {
+  color: var(--Text-Text-accent);
+  text-align: center;
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+.form input {
+  padding: 16px 138px 17px 19px;
+  align-items: center;
+  border-radius: 70px;
+  border: none;
+  background: var(--Middle-blocks);
+  box-shadow: -1px 0px#85868B;
+
+  color: var(--Text-Main-text);
+  text-align: center;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 135%;
+  letter-spacing: -0.4px;
+}
+
+.form button {
+  padding: 14px 66px;
+  align-items: center;
+  border-radius: 70px;
+  background: var(--Buttom-Fill);
+  color: var(--Text-Buttom-text);
+  border: none;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 135%;
+  letter-spacing: -0.4px;
+  margin-left: 20px;
+}
+
+img.closeButton {
+  position: absolute;
+  top: 27px;
+  right: 27px;
+  width: 40px;
+  height: 40px;
+}
+
+@media screen and (max-width: 1200px) {
+  .modal {
+    height: 400px;
+    padding: 0;
+  }
+
+  .modal img {
+    width: 209px;
+    height: 200px;
+  }
+
+  .content {
+    gap: 26px;
+  }
+
+  .content p {
+    font-size: 80px;
+  }
+
+  .content span {
+    font-size: 18px;
+  }
+
+  img.closeButton {
+    right: 27px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .modal {
+  }
+
+  .modal img {
+    width: 209px;
+    height: 200px;
+  }
+
+  .content {
+    gap: 30px;
+    align-items: center;
+  }
+
+  .content p {
+    font-size: 50px;
+  }
+
+  .content span {
+    font-size: 18px;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .form button {
+    max-width: 176px;
+  }
+
+  img.closeButton {
+    right: 27px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+    width: 100%;
+    height: 100%;
+
+    /* padding: 30px; */
+    flex-direction: column;
+  }
+
+  .modal img {
+    width: 440px;
+    height: 392px;
+  }
+
+  .content {
+    gap: 40px;
+    align-items: flex-start;
+    padding: 0 16px;
+  }
+
+  .content p {
+    color: var(--Text-Main-text);
+    /* text-align: center; */
+    font-family: Roboto;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    margin-bottom: 10px;
+    /* text-align: left; */
+    /* transform: translate(-172px); */
+  }
+
+  .content span {
+    color: var(--Text-Text-accent);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    align-self: stretch;
+  }
+
+  .form {
+    gap: 60px;
+    margin: 0 auto;
+  }
+
+  img.closeButton {
+    right: 27px;
+    top: 47px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .modal img:first-child {
+    width: 336px;
+    height: 300px;
+  }
+
+  .form input {
+    padding: 16px 0 17px 19px;
+    width: 80vw;
+  }
+}

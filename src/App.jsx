@@ -5,32 +5,52 @@ import simpleatom from './assets/menu-simpleatom.svg';
 import letsTalk from './assets/menu-lets-talk.svg';
 import telegram from './assets/menu-telegram.svg';
 import linkedIn from './assets/menu-linkedin.svg';
+import Lock from './assets/Lock.png';
+import Red_circle from './assets/Red_circle.svg';
+import Red_circle_cross from './assets/Red_circle_cross.svg';
+import Yellow_circle from './assets/Yellow_circle.svg';
+import Yellow_circle_minus from './assets/Yellow_circle_minus.svg';
+import Gray_circle from './assets/Gray_circle.svg';
 import { useEffect, useState } from 'react';
 import cn from 'classnames';
+import { ContactUsModal } from './components/about-us-page/ContactUsModal';
+import { useTheme } from './hooks/use-theme';
+import themeLogo from './assets/light-theme-icon.png';
 
 export const App = () => {
   const navigate = useNavigate();
   const headerMenuItems = [
     { id: 1, tile: 'Main', path: '/main' },
     { id: 2, tile: 'Simpleatom', path: '/simpleatom' },
-    { id: 3, tile: 'Why Simpleatom', path: '/whySimpleatom' },
-    { id: 4, tile: 'About us', path: '/aboutUs' },
-    { id: 5, tile: 'Contact us', path: '/ContactUs' },
+    { id: 3, tile: 'About us', path: '/aboutUs' },
+    { id: 4, tile: 'Contact us', path: '/contactUs' },
   ];
 
   const locationPath = useLocation().pathname;
 
+  const { theme, setTheme } = useTheme();
   const [activePage, setActivePage] = useState(locationPath);
+  const [showContactModal, setShowContactModal] = useState(false);
 
   useEffect(() => {
     if (locationPath === '/') {
       navigate('/main');
+      window.scrollTo(0, 0);
     }
   }, [locationPath]);
 
+  const changeThemeHandler = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
   const navHandler = (path) => {
-    setActivePage(path);
-    navigate(path);
+    if (path === '/contactUs') {
+      setShowContactModal(true);
+    } else {
+      setActivePage(path);
+      navigate(path);
+      window.scrollTo(0, 0);
+    }
   };
 
   return (
@@ -120,13 +140,40 @@ export const App = () => {
               </defs>
             </svg>
             <ul className={styles.dropdown__content}>
-              <li className={styles.dropdown__item}>Main</li>
-              <li className={styles.dropdown__item}>Simpleatom</li>
-              <li className={styles.dropdown__item}>About us</li>
-              <li className={styles.dropdown__item}>Contact us</li>
-              <li className={styles.dropdown__item}>Join our Telegram</li>
-              <li className={styles.dropdown__item}>Join our Linkedin</li>
-              <li className={styles.dropdown__item}>Appearance</li>
+              <li
+                className={styles.dropdown__item}
+                onClick={() => navigate('/main')}
+              >
+                Main
+              </li>
+              <li
+                className={styles.dropdown__item}
+                onClick={() => navigate('/simpleatom')}
+              >
+                Simpleatom
+              </li>
+              <li
+                className={styles.dropdown__item}
+                onClick={() => setShowContactModal(true)}
+              >
+                About us
+              </li>
+              <li
+                className={styles.dropdown__item}
+                onClick={() => navigate('/aboutUs')}
+              >
+                Contact us
+              </li>
+              <a href="https://t.me/simpleatomfund" target="blanc">
+                <li className={styles.dropdown__item}>Join our Telegram</li>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/simpleatom/"
+                target="blanc"
+              >
+                <li className={styles.dropdown__item}>Join our Linkedin</li>
+              </a>
+              <li className={styles.dropdown__item} onClick={changeThemeHandler}>Appearance</li>
             </ul>
           </div>
           <nav>
@@ -148,37 +195,128 @@ export const App = () => {
             </ul>
           </nav>
         </div>
-        <div className={styles.header__clockContainer}>Wed Feb 14 4:29 PM</div>
+        <div className={styles.header__clockContainer}>
+          <div
+            className={styles.header__clockContainer_changeThemeButton}
+            onClick={changeThemeHandler}
+          >
+            <img src={themeLogo} alt="change theme icon" />
+          </div>
+          Wed Feb 14 4:29 PM
+        </div>
       </header>
+      {locationPath !== '/main' && (
+        <div className={styles.pageTitle}>
+          <div className={styles.pageTitle__controls}>
+            <img
+              src={Red_circle_cross}
+              alt="red circle"
+              onClick={() => {
+                navigate('/main');
+                window.scrollTo(0, 0);
+              }}
+            />
+            <img
+              src={Yellow_circle_minus}
+              alt="yellow circle"
+              onClick={() => {
+                navigate('/main');
+                window.scrollTo(0, 0);
+              }}
+            />
+            <img src={Gray_circle} alt="gray circle" />
 
-      <Outlet />
+          </div>
+          <div className={styles.pageTitle__controls_2}>
+            <img
+              src={Red_circle}
+              alt="red circle"
+              onClick={() => {
+                navigate('/main');
+                window.scrollTo(0, 0);
+              }}
+            />
+            <img
+              src={Yellow_circle}
+              alt="yellow circle"
+              onClick={() => {
+                navigate('/main');
+                window.scrollTo(0, 0);
+              }}
+            />
+            <img src={Gray_circle} alt="gray circle" />
+
+          </div>
+          <div className={styles.pageTitle__container}>
+            <img src={Lock} alt="lock" />
+            {locationPath === '/simpleatom' && <span>Simpleatom is</span>}
+            {locationPath === '/aboutUs' && <span>Our team</span>}
+          </div>
+        </div>
+      )}
+
+      <Outlet context={theme} />
 
       <footer>
         <nav className={styles.footer__nav}>
           <ul className={styles.footer__menu}>
-            <li className={styles.footer__menu_item} onClick={()=>navHandler('/simpleatom')}>
+            <li
+              className={cn(
+                styles.footer__menu_item,
+                locationPath === '/simpleatom' ? styles.active_menu_item : ''
+              )}
+              onClick={() => navHandler('/simpleatom')}
+            >
               <img src={simpleatom} alt="simpleatom" />
-             <span className={styles.footer__menu_item_title}>Simpleatom</span>
+              <span className={styles.footer__menu_item_title}>Simpleatom</span>
             </li>
-            <li className={styles.footer__menu_item} onClick={()=>navHandler('aboutUs')}>
+            <li
+              className={cn(
+                styles.footer__menu_item,
+                locationPath === '/aboutUs' ? styles.active_menu_item : ''
+              )}
+              onClick={() => navHandler('aboutUs')}
+            >
               <img src={aboutUs} alt="about us" />
-            <span className={styles.footer__menu_item_title}>About&#160;us</span>
+              <span className={styles.footer__menu_item_title}>
+                About&#160;us
+              </span>
             </li>
-            <li className={styles.footer__menu_item} onClick={()=>navHandler('contactUs')}>
+            <li
+              className={cn(
+                styles.footer__menu_item,
+                locationPath === '/contactUs' ? styles.active_menu_item : ''
+              )}
+              onClick={() => setShowContactModal(true)}
+            >
               <img src={letsTalk} alt="let's talk" />
-            <span className={styles.footer__menu_item_title}>Contact&#160;us</span>
+              <span className={styles.footer__menu_item_title}>
+                Contact&#160;us
+              </span>
+            </li>
+            {/* <div className={styles.menuLine}></div> */}
+            <li className={cn(styles.footer__menu_item, styles.hide_menu_item)}>
+              <a href="https://t.me/simpleatomfund" target="blanc">
+                <img src={telegram} alt="telegram" />
+                <span className={styles.footer__menu_item_title}>Telegram</span>
+              </a>
             </li>
             <li className={cn(styles.footer__menu_item, styles.hide_menu_item)}>
-              <img src={telegram} alt="telegram" />
-            <span className={styles.footer__menu_item_title}>Telegram</span>
-            </li>
-            <li className={cn(styles.footer__menu_item, styles.hide_menu_item)}>
-              <img src={linkedIn} alt="linkedin" />
-            <span className={styles.footer__menu_item_title}>Linkedin</span>
+              <a
+                href="https://www.linkedin.com/company/simpleatom/"
+                target="blanc"
+              >
+                <img src={linkedIn} alt="linkedin" />
+                <span className={styles.footer__menu_item_title}>Linkedin</span>
+              </a>
             </li>
           </ul>
         </nav>
       </footer>
+      <ContactUsModal
+        showContactModal={showContactModal}
+        setShowContactModal={setShowContactModal}
+      />
     </>
   );
 };
