@@ -13,7 +13,7 @@
 .simpleatom__logo {
   display: flex;
   justify-content: center;
-  margin: 92px 0 140px;
+  margin: 182px 0 140px;
 }
 
 .simpleatom__logo img {
@@ -94,7 +94,7 @@
 .section2__container {
   display: flex;
   width: 736px;
-  
+
   margin: 0 auto;
   border-radius: 20px;
   background-color: var(--Clear-base-bg);
@@ -196,6 +196,10 @@
   margin: 0 auto;
   border-radius: 20px;
   background-color: var(--Clear-base-bg);
+}
+
+.section4__container_first:hover {
+  cursor: pointer;
 }
 
 .section4__container_first p {
@@ -334,11 +338,14 @@
   flex-direction: column;
   width: 100%;
   padding-left: 50px;
+  transform: translateY(25px);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0, 0, 0.5, 1);
 }
 
 .graph1__graph_top {
   position: relative;
-  max-width: 1577px;
+  max-width: 1584px;
   height: 565px;
 }
 
@@ -353,7 +360,7 @@
 
 .graph1__graph_bottom .graph1__svg_graph svg {
   position: absolute;
-  width: 99.6%;
+  width: 100%;
   bottom: -1%;
   left: 0;
   right: 0;
@@ -391,25 +398,25 @@
 }
 
 .graph1__info_gold:nth-child(1) {
-  bottom: 18.9%;
-  left: 7.52%;
+  bottom: 18.6%;
+  left: 10.21%;
   transform: translate(-50%);
 }
 
 .graph1__info_gold:nth-child(2) {
-  bottom: 23.5%;
+  bottom: 23.1%;
   left: 23.5%;
   transform: translate(-50%);
 }
 
 .graph1__info_gold:nth-child(3) {
-  bottom: 28%;
+  bottom: 27.7%;
   left: 50.85%;
   transform: translate(-50%);
 }
 
 .graph1__info_gold:nth-child(4) {
-  bottom: 49.7%;
+  bottom: 49.5%;
   left: 78.1%;
   transform: translate(-50%);
 }
@@ -421,8 +428,8 @@
 }
 
 .graph1__info_gold:nth-child(6) {
-  bottom: 82%;
-  left: 97.2%;
+  bottom: 81.8%;
+  left: 97.22%;
   transform: translate(-50%);
 }
 
@@ -634,7 +641,7 @@
 }
 
 .graph1__text_left_side_row:nth-child(2) {
-margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 .graph1__text_left_side_row:nth-child(odd) {
@@ -680,6 +687,8 @@ margin-bottom: 25px;
   gap: 20px;
   align-items: start;
   padding-top: 5px;
+  line-height: 100%;
+  font-size: 20px;
 }
 
 .graph1__links_container img {
@@ -731,7 +740,7 @@ margin-bottom: 25px;
   display: none;
 }
 
-.link {
+.link a {
   color: var(--link);
   font-family: Roboto;
   font-size: 20px;
@@ -756,6 +765,10 @@ margin-bottom: 25px;
   margin: 0 auto;
   border-radius: 20px;
   background-color: var(--Clear-base-bg);
+}
+
+.section5__container_first:hover {
+  cursor: pointer;
 }
 
 .section5__container_first p {
@@ -880,6 +893,9 @@ margin-bottom: 25px;
   flex-direction: column;
   width: 100%;
   padding-left: 50px;
+  transform: translateY(25px);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0, 0, 0.5, 1);
 }
 
 .graph2__min,
@@ -889,7 +905,7 @@ margin-bottom: 25px;
 
 .graph2__graph_top {
   position: relative;
-  max-width: 1577px;
+  max-width: 1584px;
   height: 565px;
 }
 
@@ -904,7 +920,7 @@ margin-bottom: 25px;
 
 .graph2__graph_bottom .graph2__svg_graph svg {
   position: absolute;
-  width: 99.4%;
+  width: 100%;
   bottom: -1px;
   left: 0;
   right: 0;
@@ -942,13 +958,13 @@ margin-bottom: 25px;
 }
 
 .graph2__info_gold:nth-child(1) {
-  bottom: 28.3%;
-  left: 12.71%;
+  bottom: 28.4%;
+  left: 14.9%;
   transform: translate(-50%);
 }
 
 .graph2__info_gold:nth-child(2) {
-  bottom: 31%;
+  bottom: 30.8%;
   left: 23%;
   transform: translate(-50%);
 }
@@ -1208,7 +1224,7 @@ margin-bottom: 25px;
 
 .graph2__text_left_side_row:nth-child(2) {
   margin-bottom: 37px;
-  }
+}
 
 .graph2__text_left_side_row:nth-child(odd) {
   color: var(--Text-Main-text);
@@ -1236,7 +1252,7 @@ margin-bottom: 25px;
   align-items: center;
   align-self: stretch;
   gap: 10px;
-} 
+}
 
 .graph2__text_right_side p {
   color: var(--Text-Text-accent, #fff);
@@ -1300,10 +1316,18 @@ margin-bottom: 25px;
   letter-spacing: -0.176px;
 }
 
+.button_min {
+  display: none;
+}
+
 .section6 {
   width: 100%;
   background: var(--Middle-blocks);
   padding: 80px 0 80px;
+}
+
+.section6:hover {
+  cursor: pointer;
 }
 
 .section6__container_first {
@@ -1382,7 +1406,7 @@ margin-bottom: 25px;
 }
 
 .section8 {
-  padding: 20px 0 130px;
+  padding: 20px 0 50px;
 }
 
 .section8 h2 {
@@ -1431,6 +1455,9 @@ margin-bottom: 25px;
   color: var(--Text-Main-text);
   margin-bottom: 32px;
   text-align: left;
+  transform: translateY(25px);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0, 0, 0.5, 1);
 }
 
 .section8 span {
@@ -1451,6 +1478,9 @@ margin-bottom: 25px;
 .video_container {
   display: flex;
   justify-content: flex-start;
+  transform: translateY(25px);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0, 0, 0.5, 1);
 }
 
 .section8 h3 {
@@ -1460,6 +1490,42 @@ margin-bottom: 25px;
   line-height: 150%;
   color: var(--icons-colour);
   text-align: left;
+  transform: translateY(25px);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0, 0, 0.5, 1);
+}
+
+.section8 .video_container.view_anim,
+.section8 p.view_anim,
+.section8 h3.view_anim {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.connect__button {
+  padding-bottom: 70px;
+}
+.connect__button a {
+  color: var(--Text-Buttom-text);
+}
+
+.connect__button button {
+  display: flex;
+  width: 107px;
+  height: 44px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70px;
+  background: var(--Buttom-Fill);
+
+  color: var(--Text-Buttom-text);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 135%;
+  letter-spacing: -0.176px;
 }
 
 .page__footer {
@@ -1481,7 +1547,7 @@ margin-bottom: 25px;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 100%;
+  line-height: 150%;
   list-style: list-style-type;
 }
 
@@ -1494,6 +1560,10 @@ margin-bottom: 25px;
   line-height: 100%;
 }
 
+.page__footer span:first-child:hover {
+  cursor: pointer;
+}
+
 .page__footer .footer__link {
   color: var(--Text-Text-accent);
   font-family: Roboto;
@@ -1504,8 +1574,18 @@ margin-bottom: 25px;
   text-decoration-line: underline;
 }
 
+.page__footer .footer__link a {
+  color: var(--Text-Text-accent);
+}
+
 h1.view_anim,
 section.view_anim {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.graph1__graph.view_anim,
+.graph2__graph.view_anim {
   transform: translateY(0px);
   opacity: 1;
 }
@@ -1820,10 +1900,6 @@ section.view_anim {
   .link {
   }
 
-
-
-
-
   .graph2 {
     position: relative;
     display: flex;
@@ -1871,9 +1947,9 @@ section.view_anim {
 
   .graph2__graph_months {
     bottom: 20.5%;
-  
+
     font-size: 6px;
-   }
+  }
 
   .graph2__captions_left {
     width: 0px;
@@ -1981,7 +2057,7 @@ section.view_anim {
     top: 0px;
     left: 6px;
   }
-  
+
   .graph2__info_green:nth-child(9) p::after {
     display: block;
     top: 0px;
@@ -2106,17 +2182,6 @@ section.view_anim {
   .button_full {
     display: none;
   }
-
-  .link {
-  }
-
-
-
-
-
-
-
-
 }
 
 @media screen and (max-width: 764px) {
@@ -2271,13 +2336,13 @@ section.view_anim {
   .section8__container_one {
     order: 2;
   }
-  
+
   .section8__container_two {
     padding-left: 0px;
     order: 1;
     margin-bottom: 80px;
   }
-  
+
   .video_container {
     padding-left: 24px;
     order: 3;
