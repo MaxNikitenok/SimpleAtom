@@ -303,6 +303,7 @@
 .graph1__title {
   position: absolute;
   top: 82px;
+  left: 0;
   margin-left: 50%;
   transform: translate(-50%);
   color: var(--Text-Text-accent);
@@ -317,6 +318,7 @@
   width: 100%;
   position: absolute;
   top: 180px;
+  left: 0;
   margin-left: 50%;
   transform: translate(-50%);
   color: var(--Text-Main-text);
@@ -870,6 +872,7 @@
 .graph2__title {
   position: absolute;
   top: 82px;
+  left: 0;
   margin-left: 50%;
   transform: translate(-50%);
   color: var(--Text-Text-accent);
@@ -884,6 +887,7 @@
   width: 100%;
   position: absolute;
   top: 180px;
+  left: 0;
   margin-left: 50%;
   transform: translate(-50%);
   color: var(--Text-Main-text);
