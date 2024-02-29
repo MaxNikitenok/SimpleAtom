@@ -37,55 +37,55 @@ export const Simpleatom = () => {
 
   const { ref: ref1, inView: ref1InView } = useInView({
     threshold: 1,
-    rootMargin: '200px 0px 0px 0px',
+    rootMargin: '400px 0px 0px 0px',
   });
   const { ref: ref2, inView: ref2InView } = useInView({
     threshold: 1,
-    rootMargin: '200px 0px 0px 0px',
+    rootMargin: '400px 0px 0px 0px',
   });
   const { ref: ref3, inView: ref3InView } = useInView({
     threshold: 1,
-    rootMargin: '200px 0px 0px 0px',
+    rootMargin: '400px 0px 0px 0px',
   });
   const { ref: ref4, inView: ref4InView } = useInView({
     threshold: 1,
-    rootMargin: '200px 0px 0px 0px',
+    rootMargin: '400px 0px 0px 0px',
   });
   const { ref: ref5, inView: ref5InView } = useInView({
     threshold: 1,
-    rootMargin: '200px 0px 0px 0px',
+    rootMargin: '400px 0px 0px 0px',
   });
   const { ref: ref6, inView: ref6InView } = useInView({
     threshold: 1,
-    rootMargin: '200px 0px 0px 0px',
+    rootMargin: '400px 0px 0px 0px',
   });
   const { ref: ref7, inView: ref7InView } = useInView({
     threshold: 1,
-    rootMargin: '200px 0px 0px 0px',
+    rootMargin: '400px 0px 0px 0px',
   });
   const { ref: ref8, inView: ref8InView } = useInView({
     threshold: 1,
-    rootMargin: '200px 0px 0px 0px',
+    rootMargin: '400px 0px 0px 0px',
   });
   const { ref: ref9, inView: ref9InView } = useInView({
     threshold: 1,
-    rootMargin: '200px 0px 0px 0px',
+    rootMargin: '400px 0px 0px 0px',
   });
   const { ref: ref10, inView: ref10InView } = useInView({
     threshold: 1,
-    rootMargin: '200px 0px 0px 0px',
+    rootMargin: '400px 0px 0px 0px',
   });
   const { ref: ref11, inView: ref11InView } = useInView({
     threshold: 1,
-    rootMargin: '200px 0px 0px 0px',
+    rootMargin: '400px 0px 0px 0px',
   });
   const { ref: ref12, inView: ref12InView } = useInView({
     threshold: 1,
-    rootMargin: '200px 0px 0px 0px',
+    rootMargin: '400px 0px 0px 0px',
   });
   const { ref: ref13, inView: ref13InView } = useInView({
     threshold: 1,
-    rootMargin: '200px 0px 0px 0px',
+    rootMargin: '400px 0px 0px 0px',
   });
   const { ref: ref14, inView: ref14InView } = useInView({
     threshold: 0.7,
@@ -93,15 +93,15 @@ export const Simpleatom = () => {
   });
   const { ref: ref15, inView: ref15InView } = useInView({
     threshold: 1,
-    rootMargin: '200px 0px 0px 0px',
+    rootMargin: '400px 0px 0px 0px',
   });
   const { ref: ref16, inView: ref16InView } = useInView({
-    threshold: 1,
-    rootMargin: '200px 0px 0px 0px',
+    threshold: 0.9,
+    rootMargin: '400px 0px 0px 0px',
   });
   const { ref: ref17, inView: ref17InView } = useInView({
     threshold: 1,
-    rootMargin: '200px 0px 0px 0px',
+    rootMargin: '400px 0px 0px 0px',
   });
 
   const conservativeRef = createRef();

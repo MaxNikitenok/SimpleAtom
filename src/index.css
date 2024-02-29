@@ -15,7 +15,8 @@ html[data-theme='dark'] {
   --Middle-blocks: #111010;
   --Lines: #333335;
   --Text-Menu: #F5F5F7;
-  --Buttom-Fill: #0179F2;
+  --Button-Fill: #0179F2;
+  --Text-Button-text: #FFFFFF;
   --Text-Gold-text: #FFD310;
   --Text-Green-text: #14D6A1;
 }
@@ -30,7 +31,8 @@ html[data-theme='dark'] {
   --Middle-blocks: #dcdada;
   --Lines: #333335;
   --Text-Menu: #F5F5F7;
-  --Buttom-Fill: #0179F2;
+  --Button-Fill: #0179F2;
+  --Text-Button-text: #FFFFFF;
   --Text-Gold-text: #14D6A1;
   --Text-Green-text: #14D6A1;
 }

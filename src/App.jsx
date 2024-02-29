@@ -16,6 +16,7 @@ import cn from 'classnames';
 import { ContactUsModal } from './components/about-us-page/ContactUsModal';
 import { useTheme } from './hooks/use-theme';
 import themeLogo from './assets/light-theme-icon.png';
+import { Clock } from './components/Clock/Clock';
 
 export const App = () => {
   const navigate = useNavigate();
@@ -154,13 +155,13 @@ export const App = () => {
               </li>
               <li
                 className={styles.dropdown__item}
-                onClick={() => setShowContactModal(true)}
+                onClick={() => navigate('/aboutUs')}
               >
                 About us
               </li>
               <li
                 className={styles.dropdown__item}
-                onClick={() => navigate('/aboutUs')}
+                onClick={() => setShowContactModal(true)}
               >
                 Contact us
               </li>
@@ -173,7 +174,12 @@ export const App = () => {
               >
                 <li className={styles.dropdown__item}>Join our Linkedin</li>
               </a>
-              <li className={styles.dropdown__item} onClick={changeThemeHandler}>Appearance</li>
+              <li
+                className={styles.dropdown__item}
+                onClick={changeThemeHandler}
+              >
+                Appearance
+              </li>
             </ul>
           </div>
           <nav>
@@ -202,7 +208,7 @@ export const App = () => {
           >
             <img src={themeLogo} alt="change theme icon" />
           </div>
-          Wed Feb 14 4:29 PM
+          <Clock className={styles.clock} />
         </div>
       </header>
       {locationPath !== '/main' && (
@@ -225,7 +231,6 @@ export const App = () => {
               }}
             />
             <img src={Gray_circle} alt="gray circle" />
-
           </div>
           <div className={styles.pageTitle__controls_2}>
             <img
@@ -245,7 +250,6 @@ export const App = () => {
               }}
             />
             <img src={Gray_circle} alt="gray circle" />
-
           </div>
           <div className={styles.pageTitle__container}>
             <img src={Lock} alt="lock" />

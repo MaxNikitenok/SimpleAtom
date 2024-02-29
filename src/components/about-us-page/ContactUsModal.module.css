@@ -2,7 +2,7 @@
   position: fixed;
   left: 0;
   right: 0;
-  z-index: 999;
+  z-index: 9;
   width: 100vw;
   height: 100dvh;
   background: var(--Clear-base-bg);
@@ -87,8 +87,8 @@
   padding: 14px 66px;
   align-items: center;
   border-radius: 70px;
-  background: var(--Buttom-Fill);
-  color: var(--Text-Buttom-text);
+  background: var(--Button-Fill);
+  color: var(--Text-Button-text);
   border: none;
   text-align: center;
   font-family: Roboto;

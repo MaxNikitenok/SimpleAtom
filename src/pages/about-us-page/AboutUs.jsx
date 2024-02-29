@@ -29,35 +29,35 @@ const profiles = [
   {
     id: 1,
     image: Dmitry,
-    name: 'Dmitry Maltsev',
+    name: 'Dmitry',
     position: 'Co-founder & CBDO',
     desc: '6+ years of trading at financial markets. Deep knowledge of market analysis, venture investment, blockchain projects, financial accounting. Successful cooperation with clients and partners.',
   },
   {
     id: 2,
     image: Yulia,
-    name: 'Yulia Nefedova',
+    name: 'Yulia',
     position: 'Head of PR and influencer marketing',
     desc: '6+ years of trading at financial markets. Deep knowledge of market analysis, venture investment, blockchain projects, financial accounting. Successful cooperation with clients and partners.',
   },
   {
     id: 3,
     image: Viktar,
-    name: 'Viktar Khlebus',
+    name: 'Viktar',
     position: 'Co-founder & CSM',
     desc: '12+ years of experience in developing and optimizing trading algorithms and trading strategies. Expert in ensuring technical security of financial markets.',
   },
   {
     id: 4,
     image: Alexander_B,
-    name: 'Alexander Balodis',
+    name: 'Alexander',
     position: 'Managing Director',
     desc: '16 years of Management. Highly skilled in creative marketing, direct sales, project management, operational management. Specialization - creation and development of digital projects.',
   },
   {
     id: 5,
     image: Alexander_K,
-    name: 'Alexander Kononchuk',
+    name: 'Alexander',
     position: 'Head of Corporate department',
     desc: '7+ years of experience in working with investors at the international level. Deep knowledge of investment projects analysis, business development and communication.',
   },
@@ -108,18 +108,10 @@ export const AboutUs = () => {
   const isDarkTheme = theme !== 'light';
 
   const { ref: teamRef, inView: teamRefInView } = useInView({
-    threshold: 0.5,
-    // rootMargin: '100px 0px 100px 0px',
+    threshold: 1,
+    rootMargin: '500px 0px 0px 0px',
   });
-
-  useEffect(() => {
-    console.log(theme);
-  }, [theme]);
-
-  // useEffect(() => {
-  //   console.log(teamRefInView);
-  // }, [teamRefInView]);
-
+ 
   return (
     <section className={styles.aboutUs}>
       <article className={styles.aboutUs__main}>
