@@ -497,7 +497,7 @@ footer nav {
   }
 }
 
-@media screen and (max-height: 768px) {
+@media screen and (max-height: 500px) {
   .header__menu {
     display: none;
   }
