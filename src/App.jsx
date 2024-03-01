@@ -13,7 +13,7 @@ import Yellow_circle_minus from './assets/Yellow_circle_minus.svg';
 import Gray_circle from './assets/Gray_circle.svg';
 import { useEffect, useState } from 'react';
 import cn from 'classnames';
-import { ContactUsModal } from './components/about-us-page/ContactUsModal';
+import { ContactUsModal } from './components/Contact-us/ContactUsModal';
 import { useTheme } from './hooks/use-theme';
 import themeLogo from './assets/light-theme-icon.png';
 import { Clock } from './components/Clock/Clock';
@@ -25,6 +25,7 @@ export const App = () => {
     { id: 2, tile: 'Simpleatom', path: '/simpleatom' },
     { id: 3, tile: 'About us', path: '/aboutUs' },
     { id: 4, tile: 'Contact us', path: '/contactUs' },
+    { id: 5, tile: 'form', path: '/form' },
   ];
 
   const locationPath = useLocation().pathname;
@@ -298,7 +299,6 @@ export const App = () => {
                 Contact&#160;us
               </span>
             </li>
-            {/* <div className={styles.menuLine}></div> */}
             <li className={cn(styles.footer__menu_item, styles.hide_menu_item)}>
               <a href="https://t.me/simpleatomfund" target="blanc">
                 <img src={telegram} alt="telegram" />

@@ -120,7 +120,6 @@
   color: #fff;
   font-family: Inter;
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.56px;
@@ -183,7 +182,6 @@
   color: var(--Text-Menu);
   font-family: Inter;
   font-size: 14px;
-  font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
@@ -311,23 +309,6 @@ footer nav {
 }
 
 @media (hover: none) {
-  /* .footer__menu_item:hover img {
-    position: absolute;
-    width: 110px;
-    cursor: pointer;
-  }
-
-  .footer__menu_item:hover {
-    width: 110px;
-  } */
-
-  /* .footer__menu_item:has(+ .footer__menu_item:hover),
-  .footer__menu_item:has(+ .footer__menu_item:hover) img,
-  .footer__menu_item:hover + .footer__menu_item,
-  .footer__menu_item:hover + .footer__menu_item img {
-    width: 93px;
-  } */
-
   .footer__menu_item:active img {
     bottom: 30px;
   }
@@ -342,10 +323,6 @@ footer nav {
 .active_menu_item.footer__menu_item::before {
   visibility: visible;
 }
-
-/* ul:has(> :hover) li:not(:hover, :has(+ :hover), li:hover + *) {
-  width: 76px;
-} */
 
 .footer__menu_item_title {
   position: absolute;
@@ -369,10 +346,6 @@ footer nav {
   transition: all 0.3s;
   visibility: hidden;
 }
-
-/* .footer__menu_item:hover .footer__menu_item_title {
-  visibility: visible;
-} */
 
 @keyframes dock-animation {
   0% {

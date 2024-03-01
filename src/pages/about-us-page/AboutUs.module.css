@@ -31,7 +31,6 @@
   color: var(--Text-Text-accent);
   font-family: Roboto;
   font-size: 80px;
-  font-style: normal;
   font-weight: 600;
   line-height: 150%;
   letter-spacing: 8px;
@@ -42,7 +41,6 @@
   color: var(--Text-Text-accent);
   font-family: Roboto;
   font-size: 65px;
-  font-style: normal;
   font-weight: 600;
   line-height: 150%;
   letter-spacing: 6.5px;
@@ -60,7 +58,6 @@
   color: var(--Text-Main-text);
   font-family: Roboto;
   font-size: 80px;
-  font-style: normal;
   font-weight: 600;
   line-height: 150%;
 }
@@ -69,7 +66,6 @@
   color: var(--Text-Main-text);
   font-family: Inter;
   font-size: 24px;
-  font-style: normal;
   font-weight: 500;
   line-height: 90%;
   letter-spacing: -0.528px;
@@ -143,7 +139,6 @@
   color: var(--link);
   font-family: Roboto;
   font-size: 20px;
-  font-style: normal;
   font-weight: 300;
   line-height: 135%;
   letter-spacing: -0.4px;
@@ -190,7 +185,6 @@
   color: var(--Text-Main-text);
   font-family: Roboto;
   font-size: 22px;
-  font-style: normal;
   font-weight: 600;
   line-height: 130%;
   text-align: center;
@@ -200,7 +194,6 @@
   color: var(--Text-Text-accent);
   font-family: Roboto;
   font-size: 22px;
-  font-style: normal;
   font-weight: 600;
   line-height: 130%;
   text-align: center;
@@ -257,7 +250,6 @@
   color: #ffffff;
   font-family: Inter;
   font-size: 40px;
-  font-style: normal;
   font-weight: 500;
   line-height: 150%;
   letter-spacing: -0.88px;
@@ -278,7 +270,6 @@
   color: var(--Text-Text-accent);
   font-family: Roboto;
   font-size: 43px;
-  font-style: normal;
   font-weight: 800;
   line-height: 150%;
   margin-bottom: 50px;
@@ -329,7 +320,6 @@ height: 350px;
   text-align: center;
   font-family: Roboto;
   font-size: 22px;
-  font-style: normal;
   font-weight: 500;
   line-height: 150%;
 }
@@ -366,7 +356,6 @@ height: 350px;
   color: var(--Text-Main-text);
   font-family: Roboto;
   font-size: 22px;
-  font-style: normal;
   font-weight: 600;
   line-height: 130%;
   padding: 20px 20px;
@@ -415,7 +404,6 @@ height: 350px;
 
   .profiles__item {
     width: 250px;
-    /* height: 336px; */
     margin-bottom: 22px;
     margin: 20px auto;
   }
@@ -434,12 +422,10 @@ height: 350px;
 
   .profiles__item:nth-child(4) {
     order: 5;
-    /* margin: 0 auto; */
   }
 
   .profiles__item:nth-child(5) {
     order: 4;
-    /* margin: 0 auto; */
   }
 
   .profiles__item_imageContainer img {
@@ -572,7 +558,6 @@ height: 350px;
   .meetUs__image_title {
     left: 14px;
     font-size: 25px;
-    font-style: normal;
     letter-spacing: -0.554px;
   }
 
@@ -693,7 +678,6 @@ height: 350px;
 
   .meetUs__image_title {
     font-size: 20px;
-    font-style: normal;
     letter-spacing: -0.554px;
   }
 

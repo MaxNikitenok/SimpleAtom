@@ -7,7 +7,6 @@ import Alexander_B from '../../assets/Alexander_B.png';
 import Alexander_K from '../../assets/Alexander_K.png';
 import Dubai_night from '../../assets/Dubai_night.png';
 import Dubai from '../../assets/Dubai.png';
-
 import Pakistan from '../../assets/Pakistan.png';
 import Pakistan_night from '../../assets/Pakistan_night.png';
 import Norway from '../../assets/Norway.png';
@@ -19,7 +18,7 @@ import Singapore_night from '../../assets/Singapore_night.png';
 
 import styles from './AboutUs.module.css';
 import cn from 'classnames';
-import { createRef, useEffect, useState } from 'react';
+import { createRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useOutletContext } from 'react-router-dom';
 
@@ -111,7 +110,7 @@ export const AboutUs = () => {
     threshold: 1,
     rootMargin: '500px 0px 0px 0px',
   });
- 
+
   return (
     <section className={styles.aboutUs}>
       <article className={styles.aboutUs__main}>
@@ -153,7 +152,7 @@ export const AboutUs = () => {
                   setIsProfilesVisible(true);
                 }}
               >
-                Let's get acquainted &gt;
+                Let`s get acquainted &gt;
               </p>
             </div>
           )}

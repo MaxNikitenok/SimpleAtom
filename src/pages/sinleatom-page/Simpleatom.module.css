@@ -49,7 +49,6 @@
 .section1__text_wrapper {
   display: flex;
   justify-content: center;
-  /* width: 100%; */
   padding: 20px 0 16px;
   border-top: 1px solid var(--Lines);
   border-bottom: 1px solid var(--Lines);
@@ -94,7 +93,6 @@
 .section2__container {
   display: flex;
   width: 736px;
-
   margin: 0 auto;
   border-radius: 20px;
   background-color: var(--Clear-base-bg);
@@ -309,7 +307,6 @@
   color: var(--Text-Text-accent);
   font-family: Roboto;
   font-size: 100px;
-  font-style: normal;
   font-weight: 800;
   line-height: 135%;
 }
@@ -324,7 +321,7 @@
   color: var(--Text-Main-text);
   font-family: Roboto;
   font-size: 80px;
-  font-style: normal;
+
   font-weight: 600;
   line-height: 150%;
 }
@@ -386,7 +383,6 @@
   text-align: center;
   font-family: Inter;
   font-size: 24px;
-  font-style: normal;
   font-weight: 300;
   line-height: 150%;
 }
@@ -447,7 +443,6 @@
   text-align: center;
   font-family: Inter;
   font-size: 24px;
-  font-style: normal;
   font-weight: 300;
   line-height: 150%;
 }
@@ -508,12 +503,10 @@
   width: 99.6%;
   justify-content: space-between;
   gap: 20px;
-
   color: var(--Text-Main-text, #85868b);
   text-align: center;
   font-family: Inter;
   font-size: 24px;
-  font-style: normal;
   font-weight: 400;
   line-height: 150%;
 }
@@ -525,7 +518,6 @@
 .graph1__graph_bottom svg {
   position: absolute;
   top: 0;
-  /* left: 0; */
   right: 0;
 }
 
@@ -535,7 +527,6 @@
   text-align: center;
   font-family: Inter;
   font-size: 24px;
-  font-style: normal;
   font-weight: 300;
   line-height: 150%;
   text-align: left;
@@ -552,7 +543,6 @@
   text-align: center;
   font-family: Inter;
   font-size: 24px;
-  font-style: normal;
   font-weight: 300;
   line-height: 150%;
   padding-left: 17px;
@@ -608,7 +598,6 @@
   color: var(--Text-Main-text, #85868b);
   font-family: Roboto;
   font-size: 28.999px;
-  font-style: normal;
   font-weight: 300;
   line-height: 135%;
   letter-spacing: -0.58px;
@@ -618,7 +607,6 @@
   color: var(--Text-Main-text, #85868b);
   font-family: Roboto;
   font-size: 24.856px;
-  font-style: normal;
   font-weight: 300;
   line-height: 135%;
   letter-spacing: -0.497px;
@@ -663,7 +651,7 @@
   color: var(--Text-Main-text);
   font-family: Inter;
   font-size: 22px;
-  font-style: normal;
+
   font-weight: 500;
   line-height: 150%;
   letter-spacing: -0.242px;
@@ -672,7 +660,6 @@
   color: var(--Text-Text-accent);
   font-family: Roboto;
   font-size: 22px;
-  font-style: normal;
   font-weight: 700;
   line-height: 150%;
 }
@@ -692,7 +679,6 @@
   text-align: center;
   font-family: Roboto;
   font-size: 22px;
-  font-style: normal;
   font-weight: 500;
   line-height: 150%;
 }
@@ -726,7 +712,6 @@
   color: var(--Text-Main-text);
   font-family: Roboto;
   font-size: 13px;
-  font-style: normal;
   font-weight: 300;
   line-height: 135%;
   letter-spacing: -0.26px;
@@ -741,11 +726,9 @@
   align-items: center;
   border-radius: 70px;
   background: var(--Button-Fill);
-
   color: var(--Text-Button-text, #fff);
   font-family: Inter;
   font-size: 16px;
-  font-style: normal;
   font-weight: 300;
   line-height: 135%;
   letter-spacing: -0.176px;
@@ -759,7 +742,6 @@
   color: var(--link);
   font-family: Roboto;
   font-size: 20px;
-  font-style: normal;
   font-weight: 300;
   line-height: 135%;
   letter-spacing: -0.4px;
@@ -878,7 +860,6 @@
   color: var(--Text-Text-accent);
   font-family: Roboto;
   font-size: 100px;
-  font-style: normal;
   font-weight: 800;
   line-height: 135%;
 }
@@ -893,7 +874,6 @@
   color: var(--Text-Main-text);
   font-family: Roboto;
   font-size: 80px;
-  font-style: normal;
   font-weight: 600;
   line-height: 150%;
 }
@@ -960,7 +940,6 @@
   text-align: center;
   font-family: Inter;
   font-size: 24px;
-  font-style: normal;
   font-weight: 300;
   line-height: 150%;
 }
@@ -1027,7 +1006,6 @@
   text-align: center;
   font-family: Inter;
   font-size: 24px;
-  font-style: normal;
   font-weight: 300;
   line-height: 150%;
 }
@@ -1100,12 +1078,10 @@
   width: 99.6%;
   justify-content: space-between;
   gap: 20px;
-
   color: var(--Text-Main-text, #85868b);
   text-align: center;
   font-family: Inter;
   font-size: 24px;
-  font-style: normal;
   font-weight: 400;
   line-height: 150%;
 }
@@ -1117,7 +1093,6 @@
 .graph2__graph_bottom svg {
   position: absolute;
   top: 0;
-  /* left: 0; */
   right: 0;
 }
 
@@ -1127,7 +1102,6 @@
   text-align: center;
   font-family: Inter;
   font-size: 24px;
-  font-style: normal;
   font-weight: 300;
   line-height: 150%;
   text-align: left;
@@ -1144,7 +1118,6 @@
   text-align: center;
   font-family: Inter;
   font-size: 24px;
-  font-style: normal;
   font-weight: 300;
   line-height: 150%;
   padding-left: 17px;
@@ -1204,7 +1177,6 @@
   color: var(--Text-Main-text, #85868b);
   font-family: Roboto;
   font-size: 28.999px;
-  font-style: normal;
   font-weight: 300;
   line-height: 135%;
   letter-spacing: -0.58px;
@@ -1214,7 +1186,6 @@
   color: var(--Text-Main-text, #85868b);
   font-family: Roboto;
   font-size: 24.856px;
-  font-style: normal;
   font-weight: 300;
   line-height: 135%;
   letter-spacing: -0.497px;
@@ -1259,7 +1230,6 @@
   color: var(--Text-Main-text);
   font-family: Inter;
   font-size: 22px;
-  font-style: normal;
   font-weight: 500;
   line-height: 150%;
   letter-spacing: -0.242px;
@@ -1268,7 +1238,6 @@
   color: var(--Text-Text-accent);
   font-family: Roboto;
   font-size: 22px;
-  font-style: normal;
   font-weight: 700;
   line-height: 150%;
 }
@@ -1288,7 +1257,6 @@
   text-align: center;
   font-family: Roboto;
   font-size: 22px;
-  font-style: normal;
   font-weight: 500;
   line-height: 150%;
 }
@@ -1322,7 +1290,6 @@
   color: var(--Text-Main-text);
   font-family: Roboto;
   font-size: 13px;
-  font-style: normal;
   font-weight: 300;
   line-height: 135%;
   letter-spacing: -0.26px;
@@ -1337,11 +1304,9 @@
   align-items: center;
   border-radius: 70px;
   background: var(--Button-Fill);
-
   color: var(--Text-Button-text, #fff);
   font-family: Inter;
   font-size: 16px;
-  font-style: normal;
   font-weight: 300;
   line-height: 135%;
   letter-spacing: -0.176px;
@@ -1558,7 +1523,7 @@
   color: var(--Text-Button-text);
   font-family: Inter;
   font-size: 16px;
-  font-style: normal;
+
   font-weight: 300;
   line-height: 135%;
   letter-spacing: -0.176px;
@@ -1581,7 +1546,6 @@
   color: var(--Text-Main-text);
   font-family: Roboto;
   font-size: 16px;
-  font-style: normal;
   font-weight: 400;
   line-height: 150%;
   list-style: list-style-type;
@@ -1591,7 +1555,7 @@
   color: var(--Text-Text-accent);
   font-family: Roboto;
   font-size: 16px;
-  font-style: normal;
+
   font-weight: 400;
   line-height: 100%;
 }
@@ -1604,7 +1568,6 @@
   color: var(--Text-Text-accent);
   font-family: Roboto;
   font-size: 16px;
-  font-style: normal;
   font-weight: 400;
   line-height: 100%;
   text-decoration-line: underline;
@@ -1627,14 +1590,6 @@ section.view_anim {
 }
 
 @media screen and (max-width: 1400px) {
-  /* .graph1__months_top_row {
-    padding: 0 35px;
-  }
-
-  .graph2__months_top_row {
-    padding: 0 35px;
-  } */
-
   .graph1__info_green:nth-child(8) p::after {
     display: none;
   }
@@ -1832,8 +1787,6 @@ section.view_anim {
     display: flex;
     flex: auto;
     justify-content: space-around;
-    /* gap: 14.77px; */
-    /* padding: 0 25px; */
     flex-wrap: wrap;
     margin-top: 13px;
     min-width: 200px;
@@ -1843,8 +1796,6 @@ section.view_anim {
     display: flex;
     flex: auto;
     justify-content: space-around;
-    /* gap: 17px; */
-    /* padding: 0 10px; */
     flex-wrap: wrap;
     margin-top: 13px;
     min-width: 200px;
@@ -2060,8 +2011,6 @@ section.view_anim {
     display: flex;
     flex: auto;
     justify-content: space-around;
-    /* gap: 14.77px; */
-    /* padding: 0 25px; */
     flex-wrap: wrap;
     margin-top: 13px;
     min-width: 200px;
@@ -2071,8 +2020,6 @@ section.view_anim {
     display: flex;
     flex: auto;
     justify-content: space-around;
-    /* gap: 17px; */
-    /* padding: 0 10px; */
     flex-wrap: wrap;
     margin-top: 13px;
     min-width: 200px;
@@ -2095,8 +2042,6 @@ section.view_anim {
   .graph2__text {
     gap: 84px;
   }
-
-  
 }
 
 @media screen and (max-width: 764px) {
@@ -2283,7 +2228,6 @@ section.view_anim {
     line-height: 130%;
   }
 
-  
   .graph1__text_container {
     gap: 25px;
   }
@@ -2313,9 +2257,7 @@ section.view_anim {
     font-size: 18px;
     letter-spacing: -0.198px;
   }
-  .graph1__text_left_side_row:nth-child(even) {
-  }
-
+ 
   .graph1__text_right_side {
     gap: 25px;
   }
@@ -2367,9 +2309,7 @@ section.view_anim {
     font-size: 18px;
     letter-spacing: -0.198px;
   }
-  .graph2__text_left_side_row:nth-child(even) {
-  }
-
+ 
   .graph2__text_right_side {
     gap: 25px;
   }
@@ -2385,12 +2325,6 @@ section.view_anim {
   .graph2__link_container {
     gap: 0px;
     padding: 0;
-  }
-
-  .graph2__link_container span:last-child {
-  }
-
-  .graph2__button {
   }
 
   .button_min {
