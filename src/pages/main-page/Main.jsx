@@ -7,7 +7,7 @@ import styles from './Main.module.css';
 
 export const Main = () => {
   const navigate = useNavigate();
-  const theme = useOutletContext();
+  const {theme} = useOutletContext();
   const isDarkTheme = theme !== 'light';
 
   return (

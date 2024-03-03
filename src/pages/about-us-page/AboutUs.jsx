@@ -103,7 +103,7 @@ const ProfileItem = ({ item }) => {
 
 export const AboutUs = () => {
   const [isProfilesVisible, setIsProfilesVisible] = useState(false);
-  const theme = useOutletContext();
+  const {theme} = useOutletContext();
   const isDarkTheme = theme !== 'light';
 
   const { ref: teamRef, inView: teamRefInView } = useInView({

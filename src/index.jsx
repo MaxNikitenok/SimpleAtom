@@ -7,11 +7,11 @@ import { Main } from './pages/main-page/Main.jsx';
 import { App } from './App.jsx';
 import { Simpleatom } from './pages/sinleatom-page/Simpleatom.jsx';
 import { AboutUs } from './pages/about-us-page/AboutUs.jsx';
-import Form from './pages/form-page/Form.jsx';
+import { Form } from './pages/form-page/Form.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename='/SimpleAtom'>
+    <BrowserRouter basename="/SimpleAtom">
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="/main" element={<Main />} />

@@ -1,11 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { ConversationalForm } from 'conversational-form';
-import './Form.css';
+import './Form-modal.css';
 import Close from '../../assets/Close_gray.png';
-import { useNavigate } from 'react-router-dom';
 
-export const Form = () => {
-  const navigate = useNavigate();
+export const ConversationalFormModal = ({ setShowConversationalModal }) => {
   let cf = null;
   const ref = useRef(null);
 
@@ -72,11 +70,12 @@ export const Form = () => {
   ];
 
   return (
-    <div className="form-page">
-      <div ref={ref} />
-      <p className="closeButton" onClick={() => navigate('/main')}>
-        Close
-      </p>
+    <div className="form-modal" ref={ref}>
+      <img
+        src={Close}
+        className="closeButton"
+        onClick={() => setShowConversationalModal(false)}
+      />
     </div>
   );
 };

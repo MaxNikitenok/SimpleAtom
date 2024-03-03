@@ -8,11 +8,14 @@ import devices from '../../assets/devices.png';
 import screenshot from '../../assets/screenshot.png';
 import Video from '../../assets/video.mp4';
 import cn from 'classnames';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import { partnersRef } from '../about-us-page/AboutUs';
 import { createRef } from 'react';
 
 export function Simpleatom() {
+
+  const {setShowConversationalModal} = useOutletContext();
+ 
   const navigate = useNavigate(),
     { ref: sectionOneRef, inView: sectionOneInView } = useInView({
       threshold: 0.9,
@@ -1196,10 +1199,10 @@ export function Simpleatom() {
       </section>
 
       <section className={styles.connect__button}>
-        <button>
-          <a href="https://dev.fcm.by/form/home/" target="blanc">
-            Connect
-          </a>
+        <button onClick={() => setShowConversationalModal(true)}>
+          {/* <a href="https://dev.fcm.by/form/home/" target="blanc"> */}
+          Connect
+          {/* </a> */}
         </button>
       </section>
 

@@ -1,29 +1,29 @@
-.form-page .conversational-form {
-  font-family: Helvetica Neue, Helvetica;
+/* .form-modal {
+  position: relative;
+} */
+
+.form-modal .conversational-form {
+  position: fixed;
+  font-family: var(--second-family);
   font-style: normal;
-  /* width: 40%; */
-  /* height: 50%; */
-  z-index: 99;
-  /* left: 59%; */
-  /* top: 20%; */
-  /* border-radius: 20px; */
+  width: 30%;
+  height: 50%;
+  z-index: 1;
+  left: 66%;
+  top: 20%;
+  border-radius: 20px;
 }
 
-.form-page p.closeButton {
+.form-modal img.closeButton {
   position: fixed;
   z-index: 100000;
-  left: 50%;
-  top: 1%;
-  transform: translate(-50%);
-  font-family: var(--second-family);
-  font-size: 30px;
-  color: #dddddd;
-  border: 1px solid #dddddd;
-  border-radius: 20px;
-  padding: 2px 10px;
+  left: 69%;
+  top: 36%;
+  width: 40px;
+  height: 40px;
 }
 
-.form-page p.closeButton:hover {
+.form-modal img.closeButton:hover {
   cursor: pointer;
 }
 
@@ -202,7 +202,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .ty .conversational-form {
+  .form-modal .conversational-form {
     width: 98%;
     height: 60%;
     z-index: 1;
@@ -211,5 +211,13 @@
     top: 0;
     bottom: 0;
     border-radius: 20px;
+  }
+
+  .form-modal img.closeButton {
+    z-index: 100000;
+    left: 3%;
+    top: 21%;
+    width: 60px;
+    height: 60px;
   }
 }

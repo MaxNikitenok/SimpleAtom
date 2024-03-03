@@ -17,6 +17,7 @@ import { ContactUsModal } from './components/Contact-us/ContactUsModal';
 import { useTheme } from './hooks/use-theme';
 import themeLogo from './assets/light-theme-icon.png';
 import { Clock } from './components/Clock/Clock';
+import { ConversationalFormModal } from './components/form-modal/Form-modal';
 
 export const App = () => {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ export const App = () => {
     { id: 2, tile: 'Simpleatom', path: '/simpleatom' },
     { id: 3, tile: 'About us', path: '/aboutUs' },
     { id: 4, tile: 'Contact us', path: '/contactUs' },
-    { id: 5, tile: 'form', path: '/form' },
+    { id: 5, tile: 'Form', path: '/form' },
   ];
 
   const locationPath = useLocation().pathname;
@@ -33,12 +34,14 @@ export const App = () => {
   const { theme, setTheme } = useTheme();
   const [activePage, setActivePage] = useState(locationPath);
   const [showContactModal, setShowContactModal] = useState(false);
+  const [showConversationalModal, setShowConversationalModal] = useState(false);
 
   useEffect(() => {
     if (locationPath === '/') {
       navigate('/main');
       window.scrollTo(0, 0);
     }
+    setActivePage(locationPath);
   }, [locationPath]);
 
   const changeThemeHandler = () => {
@@ -260,7 +263,7 @@ export const App = () => {
         </div>
       )}
 
-      <Outlet context={theme} />
+      <Outlet context={{theme, setShowConversationalModal}} />
 
       <footer>
         <nav className={styles.footer__nav}>
@@ -321,6 +324,7 @@ export const App = () => {
         showContactModal={showContactModal}
         setShowContactModal={setShowContactModal}
       />
+      {showConversationalModal && <ConversationalFormModal setShowConversationalModal={setShowConversationalModal}/>}
     </>
   );
 };
