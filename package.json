@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.6.7",
     "classnames": "^2.5.1",
     "conversational-form": "^1.0.2",
     "gh-pages": "^6.1.1",

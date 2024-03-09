@@ -33,9 +33,8 @@
   box-sizing: border-box;
 }
 
-.modal img {
-  width: 250px;
-  height: 239px;
+.modal video {
+  width: 340px;
 }
 
 .content {
@@ -111,10 +110,10 @@ img.closeButton {
     padding: 0;
   }
 
-  .modal img {
+  /* .modal img {
     width: 209px;
     height: 200px;
-  }
+  } */
 
   .content {
     gap: 26px;
@@ -155,6 +154,7 @@ img.closeButton {
 
   .content span {
     font-size: 18px;
+    padding: 0 16px;
   }
 
   .form {
@@ -179,13 +179,14 @@ img.closeButton {
   .modal {
     width: 100%;
     height: 100%;
+    max-height: 100%;
     flex-direction: column;
   }
-
+/* 
   .modal img {
     width: 440px;
     height: 392px;
-  }
+  } */
 
   .content {
     gap: 40px;
@@ -226,9 +227,13 @@ img.closeButton {
 }
 
 @media screen and (max-width: 576px) {
-  .modal img:first-child {
+  /* .modal img:first-child {
     width: 336px;
     height: 300px;
+  } */
+
+  .content span {
+    padding: 0;
   }
 
   .form input {
@@ -238,6 +243,10 @@ img.closeButton {
 }
 
 @media screen and (max-height: 510px) {
+  .modal {
+    max-height: 100%;
+  }
+
   img.closeButton {
     right: 27px;
     top: 47px;

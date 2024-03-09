@@ -1,5 +1,8 @@
-import logo from '../../assets/Logo.png';
-
+// import logo from '../../assets/Logo.png';
+import logo_black from '../../assets/logo_black.jpg';
+import logo_white from '../../assets/logo_white.jpg';
+import video_logo_black from '../../assets/video_logo_black.mp4';
+import video_logo_white from '../../assets/video_logo_white.mp4';
 import Dmitry from '../../assets/Dmitry.png';
 import Yulia from '../../assets/Yulia.png';
 import Viktar from '../../assets/Viktar.png';
@@ -43,7 +46,7 @@ const profiles = [
     id: 3,
     image: Viktar,
     name: 'Viktar',
-    position: 'Co-founder & CSM',
+    position: 'CTO',
     desc: '12+ years of experience in developing and optimizing trading algorithms and trading strategies. Expert in ensuring technical security of financial markets.',
   },
   {
@@ -103,7 +106,7 @@ const ProfileItem = ({ item }) => {
 
 export const AboutUs = () => {
   const [isProfilesVisible, setIsProfilesVisible] = useState(false);
-  const {theme} = useOutletContext();
+  const { theme } = useOutletContext();
   const isDarkTheme = theme !== 'light';
 
   const { ref: teamRef, inView: teamRefInView } = useInView({
@@ -114,7 +117,31 @@ export const AboutUs = () => {
   return (
     <section className={styles.aboutUs}>
       <article className={styles.aboutUs__main}>
-        <img src={logo} alt="logo" className={styles.main__logo} />
+        <div className={styles.aboutUs__logo}>
+          {/* <img src={logo} alt="logo" /> */}
+          {isDarkTheme && (
+            <video
+              playsInline
+              autoPlay
+              poster={logo_black}
+              muted
+              type="video/mp4"
+              src={video_logo_black}
+              loop
+            />
+          )}
+          {!isDarkTheme && (
+            <video
+              playsInline
+              autoPlay
+              poster={logo_white}
+              muted
+              type="video/mp4"
+              src={video_logo_white}
+              loop
+            />
+          )}
+        </div>
         <p className={styles.main__title}>
           S<span>IMPLEATOM</span>
         </p>
@@ -182,9 +209,9 @@ export const AboutUs = () => {
             <img className={styles.meetUs__image} src={Dubai} alt="dubai" />
           )}
         </div>
-        <p className={cn(styles.meetUs__link, styles.link)}>
+        <a href='https://4dev.itcoty.ru/forms/home/' target='blanc' className={cn(styles.meetUs__link, styles.link)}>
           Make an appointment &gt;
-        </p>
+        </a>
       </article>
       <article ref={partnersRef} className={styles.AboutUs__partners}>
         <h3 className={styles.partners__title}>Or visit our partners</h3>

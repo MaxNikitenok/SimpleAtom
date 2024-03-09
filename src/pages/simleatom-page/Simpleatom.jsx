@@ -2,6 +2,10 @@ import { useInView } from 'react-intersection-observer';
 
 import styles from './Simpleatom.module.css';
 import logo from '../../assets/Logo-2.png';
+import logo_black from '../../assets/logo_black.jpg';
+import logo_white from '../../assets/logo_white.jpg';
+import video_logo_black from '../../assets/video_logo_black.mp4';
+import video_logo_white from '../../assets/video_logo_white.mp4';
 import QR1 from '../../assets/QR_Atom_1.png';
 import QR2 from '../../assets/QR_Atom_2.png';
 import devices from '../../assets/devices.png';
@@ -13,9 +17,11 @@ import { partnersRef } from '../about-us-page/AboutUs';
 import { createRef } from 'react';
 
 export function Simpleatom() {
+  const { theme } = useOutletContext();
+  const isDarkTheme = theme !== 'light';
 
-  const {setShowConversationalModal} = useOutletContext();
- 
+  const { setShowConversationalModal } = useOutletContext();
+
   const navigate = useNavigate(),
     { ref: sectionOneRef, inView: sectionOneInView } = useInView({
       threshold: 0.9,
@@ -113,7 +119,29 @@ export function Simpleatom() {
   return (
     <main className={styles.simpleatom}>
       <div className={styles.simpleatom__logo}>
-        <img alt="logo" src={logo} />
+        {/* <img alt="logo" src={logo} /> */}
+        {isDarkTheme && (
+          <video
+            playsInline
+            autoPlay
+            poster={logo_black}
+            muted
+            type="video/mp4"
+            src={video_logo_black}
+            loop
+          />
+        )}
+        {!isDarkTheme && (
+          <video
+            playsInline
+            autoPlay
+            poster={logo_white}
+            muted
+            type="video/mp4"
+            src={video_logo_white}
+            loop
+          />
+        )}
       </div>
 
       <h1 className={styles.simpleatom__description}>
@@ -143,7 +171,7 @@ export function Simpleatom() {
 
         <div className={styles.section2__container}>
           <div className={styles.container__left}>
-            <div className={styles.container__left_1}>7</div>
+            <div className={styles.container__left_1}>9</div>
 
             <div className={styles.container__left_2}>
               <span>M</span>
@@ -601,7 +629,7 @@ export function Simpleatom() {
 
                   <a
                     className={cn(styles.graph1__button, styles.button_min)}
-                    href="https://www.myfxbook.com/members/Milkivays/atom-pull-el/9908947"
+                    href="https://4dev.itcoty.ru/forms/home/"
                     target="blanc"
                   >
                     Try it
@@ -612,7 +640,7 @@ export function Simpleatom() {
 
             <a
               className={cn(styles.graph1__button, styles.button_full)}
-              href="https://www.myfxbook.com/members/Milkivays/atom-pull-el/9908947"
+              href="https://4dev.itcoty.ru/forms/home/"
               target="blanc"
             >
               Try it
@@ -1047,7 +1075,7 @@ export function Simpleatom() {
 
                   <a
                     className={cn(styles.graph2__button, styles.button_min)}
-                    href="https://www.myfxbook.com/members/Milkivays/conserve-a/9947281"
+                    href="https://4dev.itcoty.ru/forms/home/"
                     target="blanc"
                   >
                     Try it
@@ -1058,7 +1086,7 @@ export function Simpleatom() {
 
             <a
               className={cn(styles.graph2__button, styles.button_full)}
-              href="https://www.myfxbook.com/members/Milkivays/conserve-a/9947281"
+              href="https://4dev.itcoty.ru/forms/home/"
               target="blanc"
             >
               Try it

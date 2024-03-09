@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.main__logo img {
+/* .main__logo img {
   width: 310px;
   height: 296px;
   animation-name: opacity-animation;
@@ -14,7 +14,7 @@
   animation-timing-function: cubic-bezier(0, 0, 0.5, 1);
   animation-delay: 0.5s;
   animation-fill-mode: backwards;
-}
+} */
 
 .main__logo video {
   width: 400px;

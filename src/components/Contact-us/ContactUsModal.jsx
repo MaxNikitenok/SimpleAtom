@@ -1,8 +1,13 @@
 import styles from './ContactUsModal.module.css';
 import logo from '../../assets/Logo.png';
+import logo_black from '../../assets/logo_black.jpg';
+import logo_white from '../../assets/logo_white.jpg';
+import video_logo_black from '../../assets/video_logo_black.mp4';
+import video_logo_white from '../../assets/video_logo_white.mp4';
 import Close from '../../assets/Close_gray.png';
 
-export const ContactUsModal = ({ showContactModal, setShowContactModal }) => {
+export const ContactUsModal = ({ showContactModal, setShowContactModal, theme }) => {
+  
   if (showContactModal) {
     document.body.style.position = 'fixed';
     document.body.style.top = `-${window.scrollY}px`;
@@ -16,14 +21,36 @@ export const ContactUsModal = ({ showContactModal, setShowContactModal }) => {
     <div className={styles.wrapper} onClick={() => setShowContactModal(false)}>
       <div className={styles.container}>
         <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-          <img src={logo} alt="logo" />
+          {/* <img src={logo} alt="logo" /> */}
+          {theme === 'dark' && (
+            <video
+              playsInline
+              autoPlay
+              poster={logo_black}
+              muted
+              type="video/mp4"
+              src={video_logo_black}
+              loop
+            />
+          )}
+          {theme !== 'dark' && (
+            <video
+              playsInline
+              autoPlay
+              poster={logo_white}
+              muted
+              type="video/mp4"
+              src={video_logo_white}
+              loop
+            />
+          )}
           <div className={styles.content}>
             <p>Contact us</p>
             <span>
               Leave your Telegram username, and we reply to you shortly
             </span>
             <form className={styles.form}>
-              <input type="email" placeholder="Enter your @telegram" />
+              <input type="text" placeholder="Enter your @telegram" pattern='.*\B@(?=\w{5,32}\b)[a-zA-Z0-9]+(?:_[a-zA-Z0-9]+)*.*' />
               <button type="button">Send</button>
             </form>
             <img

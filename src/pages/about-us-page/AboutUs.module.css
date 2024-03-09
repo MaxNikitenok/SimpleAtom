@@ -10,12 +10,14 @@
   align-items: center;
 }
 
-.main__logo {
-  width: 400px;
-  height: 360px;
-  margin: 90px 0 10px;
+.aboutUs__logo {
+  margin: 38px 0 0px;
   opacity: 0;
   animation: ani 2.5s forwards 1s;
+}
+
+.aboutUs__logo video {
+  width: 480px;
 }
 
 @keyframes ani {
@@ -613,12 +615,16 @@ height: 350px;
 }
 
 @media screen and (max-width: 768px) {
-  .main__logo {
-    width: 250px;
-    height: 239px;
-    margin: 90px 0 10px;
+  .aboutUs__logo {
+    /* width: 250px;
+    height: 239px; */
+    margin: 0px;
     opacity: 0;
     animation: ani 2.5s forwards 1s;
+  }
+
+  .aboutUs__logo video {
+    width: 380px;
   }
 
   .main__title {

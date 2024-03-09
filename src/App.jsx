@@ -323,6 +323,7 @@ export const App = () => {
       <ContactUsModal
         showContactModal={showContactModal}
         setShowContactModal={setShowContactModal}
+        theme={theme}
       />
       {showConversationalModal && <ConversationalFormModal setShowConversationalModal={setShowConversationalModal}/>}
     </>

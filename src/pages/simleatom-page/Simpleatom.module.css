@@ -13,12 +13,16 @@
 .simpleatom__logo {
   display: flex;
   justify-content: center;
-  margin: 182px 0 140px;
+  margin: 120px 0 80px;
 }
 
-.simpleatom__logo img {
+/* .simpleatom__logo img {
   width: 400px;
   height: 356px;
+} */
+
+.simpleatom__logo video {
+  width: 480px;
 }
 
 .simpleatom__description {
@@ -2359,6 +2363,10 @@ section.view_anim {
 }
 
 @media screen and (max-width: 420px) {
+  .simpleatom__logo video {
+    width: 380px;
+  }
+
   .section2 h1 {
     font-size: 60px;
   }
