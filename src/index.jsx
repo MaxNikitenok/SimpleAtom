@@ -17,8 +17,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/main" element={<Main />} />
           <Route path="/simpleatom" element={<Simpleatom />} />
           <Route path="/aboutUs" element={<AboutUs />} />
-          {/* <Route path="/contactUs" element={<Main />} /> */}
-          <Route path="/form" element={<Form />} />
+          <Route path="/form">
+            <Route path=":form_name" element={<Form />}></Route>
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

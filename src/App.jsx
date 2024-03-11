@@ -26,7 +26,7 @@ export const App = () => {
     { id: 2, tile: 'Simpleatom', path: '/simpleatom' },
     { id: 3, tile: 'About us', path: '/aboutUs' },
     { id: 4, tile: 'Contact us', path: '/contactUs' },
-    { id: 5, tile: 'Form', path: '/form' },
+    // { id: 5, tile: 'Form', path: '/form' },
   ];
 
   const locationPath = useLocation().pathname;
@@ -34,7 +34,7 @@ export const App = () => {
   const { theme, setTheme } = useTheme();
   const [activePage, setActivePage] = useState(locationPath);
   const [showContactModal, setShowContactModal] = useState(false);
-  const [showConversationalModal, setShowConversationalModal] = useState(false);
+  // const [showConversationalModal, setShowConversationalModal] = useState(false);
 
   useEffect(() => {
     if (locationPath === '/') {
@@ -263,7 +263,7 @@ export const App = () => {
         </div>
       )}
 
-      <Outlet context={{theme, setShowConversationalModal}} />
+      <Outlet context={{ theme }} />
 
       <footer>
         <nav className={styles.footer__nav}>
@@ -325,7 +325,11 @@ export const App = () => {
         setShowContactModal={setShowContactModal}
         theme={theme}
       />
-      {showConversationalModal && <ConversationalFormModal setShowConversationalModal={setShowConversationalModal}/>}
+      {/* {showConversationalModal && (
+        <ConversationalFormModal
+          setShowConversationalModal={setShowConversationalModal}
+        />
+      )} */}
     </>
   );
 };

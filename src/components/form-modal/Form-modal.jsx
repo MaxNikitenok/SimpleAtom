@@ -9,7 +9,7 @@ export const ConversationalFormModal = ({ setShowConversationalModal }) => {
   useEffect(() => {
     const fetchData = async () => {
       await axios
-        .get(`https://4dev.itcoty.ru/forms/questions/?form_name=simpleatom`)
+        .get(`https://4dev.itcoty.ru/forms/questions/?form_name=simpleatom-from-site`)
         .then((e) => {
           setData(e.data[0].questions);
           console.log('data======>', e.data[0].questions);
@@ -26,6 +26,7 @@ export const ConversationalFormModal = ({ setShowConversationalModal }) => {
   const ref = useRef(null);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     cf = ConversationalForm.startTheConversation({
       options: {
         theme: 'dark',

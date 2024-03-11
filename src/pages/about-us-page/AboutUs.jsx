@@ -23,7 +23,7 @@ import styles from './AboutUs.module.css';
 import cn from 'classnames';
 import { createRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { useOutletContext } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 
 export const partnersRef = createRef();
 
@@ -40,13 +40,13 @@ const profiles = [
     image: Yulia,
     name: 'Yulia',
     position: 'Head of PR and influencer marketing',
-    desc: '6+ years of trading at financial markets. Deep knowledge of market analysis, venture investment, blockchain projects, financial accounting. Successful cooperation with clients and partners.',
+    desc: 'Expert in PR and influencer marketing, reputation management, audience growth, and effective communication. Well-known crypto-blogger.',
   },
   {
     id: 3,
     image: Viktar,
     name: 'Viktar',
-    position: 'CTO',
+    position: 'Co-founder & CTO',
     desc: '12+ years of experience in developing and optimizing trading algorithms and trading strategies. Expert in ensuring technical security of financial markets.',
   },
   {
@@ -108,10 +108,11 @@ export const AboutUs = () => {
   const [isProfilesVisible, setIsProfilesVisible] = useState(false);
   const { theme } = useOutletContext();
   const isDarkTheme = theme !== 'light';
+  const navigate = useNavigate();
 
   const { ref: teamRef, inView: teamRefInView } = useInView({
     threshold: 1,
-    rootMargin: '500px 0px 0px 0px',
+    rootMargin: '1500px 0px 0px 0px',
   });
 
   return (
@@ -209,9 +210,14 @@ export const AboutUs = () => {
             <img className={styles.meetUs__image} src={Dubai} alt="dubai" />
           )}
         </div>
-        <a href='https://4dev.itcoty.ru/forms/home/' target='blanc' className={cn(styles.meetUs__link, styles.link)}>
+        <p
+          // href="https://4dev.itcoty.ru/forms/home/"
+          onClick={() => navigate('/form/simpleatom-from-site')}
+          target="blanc"
+          className={cn(styles.meetUs__link, styles.link)}
+        >
           Make an appointment &gt;
-        </a>
+        </p>
       </article>
       <article ref={partnersRef} className={styles.AboutUs__partners}>
         <h3 className={styles.partners__title}>Or visit our partners</h3>
@@ -219,6 +225,7 @@ export const AboutUs = () => {
           {partners.map((item) => {
             return (
               <div
+                onClick={() => navigate('/form/simpleatom-from-site')}
                 className={cn(styles.partners__item, styles.hide_item)}
                 key={item.id}
               >

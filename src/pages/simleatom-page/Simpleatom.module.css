@@ -736,6 +736,7 @@
   font-weight: 300;
   line-height: 135%;
   letter-spacing: -0.176px;
+  cursor: pointer;
 }
 
 .button_min {
@@ -1314,6 +1315,7 @@
   font-weight: 300;
   line-height: 135%;
   letter-spacing: -0.176px;
+  cursor: pointer;
 }
 
 .button_min {
@@ -1456,7 +1458,7 @@
   margin-bottom: 32px;
   text-align: left;
   transform: translateY(25px);
-  opacity: 0;
+  /* opacity: 0; */
   transition: all 0.5s cubic-bezier(0, 0, 0.5, 1);
 }
 
@@ -1479,7 +1481,7 @@
   display: flex;
   justify-content: flex-start;
   transform: translateY(25px);
-  opacity: 0;
+  /* opacity: 0; */
   transition: all 0.5s cubic-bezier(0, 0, 0.5, 1);
 }
 
@@ -1495,7 +1497,7 @@
   color: var(--icons-colour);
   text-align: left;
   transform: translateY(25px);
-  opacity: 0;
+  /* opacity: 0; */
   transition: all 0.5s cubic-bezier(0, 0, 0.5, 1);
 }
 
@@ -1508,6 +1510,7 @@
 
 .connect__button {
   padding-bottom: 70px;
+  cursor: pointer;
 }
 .connect__button a {
   color: var(--Text-Button-text);
@@ -2281,6 +2284,7 @@ section.view_anim {
 
   .button_min {
     display: flex;
+    cursor: pointer;
   }
 
   .button_full {
@@ -2333,6 +2337,7 @@ section.view_anim {
 
   .button_min {
     display: flex;
+    cursor: pointer;
   }
 
   .button_full {
