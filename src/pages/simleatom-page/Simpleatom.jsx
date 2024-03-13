@@ -24,12 +24,12 @@ export function Simpleatom() {
 
   const navigate = useNavigate(),
     { ref: sectionOneRef, inView: sectionOneInView } = useInView({
-      threshold: 0.9,
+      threshold: 0.4,
       rootMargin: '1110px 0px 0px 0px',
     }),
     { ref: sectionTwoRef, inView: sectionTwoInView } = useInView({
-      threshold: 0.9,
-      rootMargin: '1110px 0px 0px 0px',
+      threshold: 1,
+      rootMargin: '1110px 0px -100px 0px',
     }),
     { ref: graphOneRef, inView: graphOneInView } = useInView({
       threshold: 0.9,
@@ -41,71 +41,71 @@ export function Simpleatom() {
     }),
     { ref: ref1, inView: ref1InView } = useInView({
       threshold: 1,
-      rootMargin: '1200.5px 0px 0px 0px',
+      rootMargin: '1200px 0px -100px 0px',
     }),
     { ref: ref2, inView: ref2InView } = useInView({
       threshold: 1,
-      rootMargin: '1200.5px 0px 0px 0px',
+      rootMargin: '1200px 0px -100px 0px',
     }),
     { ref: ref3, inView: ref3InView } = useInView({
       threshold: 1,
-      rootMargin: '1200.5px 0px 0px 0px',
+      rootMargin: '1200px 0px -100px 0px',
     }),
     { ref: ref4, inView: ref4InView } = useInView({
       threshold: 1,
-      rootMargin: '1200.5px 0px 0px 0px',
+      rootMargin: '1200px 0px -100px 0px',
     }),
     { ref: ref5, inView: ref5InView } = useInView({
       threshold: 1,
-      rootMargin: '1200.5px 0px 0px 0px',
+      rootMargin: '1200px 0px -100px 0px',
     }),
     { ref: ref6, inView: ref6InView } = useInView({
       threshold: 1,
-      rootMargin: '1200.5px 0px 0px 0px',
+      rootMargin: '1200px 0px -100px 0px',
     }),
     { ref: ref7, inView: ref7InView } = useInView({
       threshold: 1,
-      rootMargin: '1200.5px 0px 0px 0px',
+      rootMargin: '1200px 0px -100px 0px',
     }),
     { ref: ref8, inView: ref8InView } = useInView({
       threshold: 1,
-      rootMargin: '1200.5px 0px 0px 0px',
+      rootMargin: '1200px 0px -100px 0px',
     }),
     { ref: ref9, inView: ref9InView } = useInView({
       threshold: 1,
-      rootMargin: '1200.5px 0px 0px',
+      rootMargin: '1200px 0px -100px 0px',
     }),
     { ref: ref10, inView: ref10InView } = useInView({
       threshold: 1,
-      rootMargin: '1200.5px 0px 0px',
+      rootMargin: '1200px 0px -100px 0px',
     }),
     { ref: ref11, inView: ref11InView } = useInView({
       threshold: 1,
-      rootMargin: '1200.5px 0px 0px 0px',
+      rootMargin: '1200px 0px -100px 0px',
     }),
     { ref: ref12, inView: ref12InView } = useInView({
       threshold: 1,
-      rootMargin: '1200.5px 0px 0px 0px',
+      rootMargin: '1200px 0px -100px 0px',
     }),
     { ref: ref13, inView: ref13InView } = useInView({
       threshold: 1,
-      rootMargin: '1200.5px 0px 0px 0px',
+      rootMargin: '1200px 0px -100px 0px',
     }),
     { ref: ref14, inView: ref14InView } = useInView({
-      threshold: 0.7,
-      rootMargin: '1200.5px 0px 450px 0px',
+      threshold: 1,
+      rootMargin: '1200px 0px 350px 0px',
     }),
     { ref: ref15, inView: ref15InView } = useInView({
       threshold: 1,
-      rootMargin: '1200.5px 0px 0px 0px',
+      rootMargin: '1200px 0px -100px 0px',
     }),
     { ref: ref16, inView: ref16InView } = useInView({
       threshold: 0.9,
-      rootMargin: '1200.5px 0px 0px 0px',
+      rootMargin: '1200px 0px -100px 0px',
     }),
     { ref: ref17, inView: ref17InView } = useInView({
       threshold: 1,
-      rootMargin: '1200.5px 0px 0px 0px',
+      rootMargin: '1200px 0px -100px 0px',
     }),
     conservativeRef = createRef(),
     scrollToPartnersRef = () => {
@@ -161,11 +161,8 @@ export function Simpleatom() {
         </div>
       </section>
 
-      <section className={styles.section2}>
-        <h1
-          className={sectionOneInView ? styles.view_anim : ''}
-          ref={sectionOneRef}
-        >
+      <section ref={sectionOneRef} className={styles.section2}>
+        <h1 className={sectionOneInView ? styles.view_anim : ''}>
           Get the highlights.
         </h1>
 
@@ -190,28 +187,28 @@ export function Simpleatom() {
         </div>
       </section>
 
-      <section
-        className={cn(
-          styles.section3,
-          sectionTwoInView ? styles.view_anim : ''
-        )}
-        ref={sectionTwoRef}
-      >
-        <p>
-          Simpleatom incorporates the knowledge and experience of market
-          leaders. It eliminates emotions, fears, weaknesses, and human error
-          from trading - all situations where a person may make mistakes.
-        </p>
+      <div ref={sectionTwoRef}>
+        <section
+          className={cn(
+            styles.section3,
+            sectionTwoInView ? styles.view_anim : ''
+          )}
+        >
+          <p>
+            Simpleatom incorporates the knowledge and experience of market
+            leaders. It eliminates emotions, fears, weaknesses, and human error
+            from trading - all situations where a person may make mistakes.
+          </p>
 
-        <p>
-          Simpleatom is the result of 4 years of data analysis and
-          systematization, development of a unique trading strategy, including
-          work with 4 assets: BTC, SOL, XAU, JPY, as well as 16 algorithms for
-          rising and falling asset prices (without averaging), long and short
-          strategies.
-        </p>
-      </section>
-
+          <p>
+            Simpleatom is the result of 4 years of data analysis and
+            systematization, development of a unique trading strategy, including
+            work with 4 assets: BTC, SOL, XAU, JPY, as well as 16 algorithms for
+            rising and falling asset prices (without averaging), long and short
+            strategies.
+          </p>
+        </section>
+      </div>
       <section className={styles.section4}>
         <div
           className={styles.section4__container_first}
@@ -250,7 +247,7 @@ export function Simpleatom() {
 
           <p className={styles.graph1__sub_title}>Trading strategy</p>
 
-          <div className={styles.graph1__top_container}>
+          <div ref={graphOneRef} className={styles.graph1__top_container}>
             <div className={styles.graph1__captions_left}>
               <p>Growth&#160;%</p>
 
@@ -262,7 +259,6 @@ export function Simpleatom() {
                 styles.graph1__graph,
                 graphOneInView ? styles.view_anim : ''
               )}
-              ref={graphOneRef}
             >
               <div className={styles.graph1__graph_top}>
                 <div className={styles.graph1__svg_graph}>
@@ -682,7 +678,7 @@ export function Simpleatom() {
 
           <p className={styles.graph2__sub_title}>Trading strategy</p>
 
-          <div className={styles.graph2__top_container}>
+          <div ref={graphTwoRef} className={styles.graph2__top_container}>
             <div className={styles.graph2__captions_left}>
               <p>Growth&#160;%</p>
 
@@ -694,7 +690,6 @@ export function Simpleatom() {
                 styles.graph2__graph,
                 graphTwoInView ? styles.view_anim : ''
               )}
-              ref={graphTwoRef}
             >
               <div className={styles.graph2__graph_top}>
                 <div className={styles.graph2__svg_graph}>
@@ -1131,85 +1126,84 @@ export function Simpleatom() {
 
         <div className={styles.section8__container}>
           <div className={styles.section8__container_one}>
-            <p 
-            // className={ref1InView ? styles.view_anim : ''}
-             ref={ref1}>
-              Trading on <span>BYBIT</span> - one of top-3 exchanges.
-            </p>
+            <div ref={ref1}>
+              <p className={ref1InView ? styles.view_anim : ''}>
+                Trading on <span>BYBIT</span> - one of top-3 exchanges.
+              </p>
+            </div>
 
-            <p 
-            // className={ref2InView ? styles.view_anim : ''} 
-            ref={ref2}>
-              <span>Your money is always on your personal account</span>, you do
-              not need to transfer it anywhere. You have instant access to your
-              funds.
-            </p>
+            <div ref={ref2}>
+              <p className={ref2InView ? styles.view_anim : ''}>
+                <span>Your money is always on your personal account</span>, you
+                do not need to transfer it anywhere. You have instant access to
+                your funds.
+              </p>
+            </div>
 
-            <p
-            //  className={ref3InView ? styles.view_anim : ''} 
-             ref={ref3}>
-              <span>You transfer </span>
-              us the reward only
-              <span> after you make a profit.</span>
-            </p>
+            <div ref={ref3}>
+              <p className={ref3InView ? styles.view_anim : ''}>
+                <span>You transfer </span>
+                us the reward only
+                <span> after you make a profit.</span>
+              </p>
+            </div>
 
-            <p
-            //  className={ref4InView ? styles.view_anim : ''}
-              ref={ref4}>
-              Our software will <span>only</span> be accessed for{' '}
-              <span>trading</span> transactions on your behalf.
-            </p>
+            <div ref={ref4}>
+              <p className={ref4InView ? styles.view_anim : ''}>
+                Our software will <span>only</span> be accessed for{' '}
+                <span>trading</span> transactions on your behalf.
+              </p>
+            </div>
 
-            <p
-            //  className={ref5InView ? styles.view_anim : ''}
-             ref={ref5}>
-              Simpleatom developed by the team of professionals with{' '}
-              <span>12 years trading experience.</span>
-            </p>
+            <div ref={ref5}>
+              <p className={ref5InView ? styles.view_anim : ''}>
+                Simpleatom developed by the team of professionals with{' '}
+                <span>12 years trading experience.</span>
+              </p>
+            </div>
 
-            <p 
-            // className={ref6InView ? styles.view_anim : ''}
-             ref={ref6}>
-              Controlled risks and <span>solid profit on the distance</span> -
-              confirmed by statistics.
-            </p>
+            <div ref={ref6}>
+              <p className={ref6InView ? styles.view_anim : ''}>
+                Controlled risks and <span>solid profit on the distance</span> -
+                confirmed by statistics.
+              </p>
+            </div>
 
-            <p 
-            // className={ref7InView ? styles.view_anim : ''}
-             ref={ref7}>
-              We have a very <span>strict risk management.</span> On a
-              conservative account the risk per trade does not exceed 0.3%
-            </p>
+            <div ref={ref7}>
+              <p className={ref7InView ? styles.view_anim : ''}>
+                We have a very <span>strict risk management.</span> On a
+                conservative account the risk per trade does not exceed 0.3%
+              </p>
+            </div>
           </div>
 
           <div className={styles.section8__container_two}>
-            <p 
-            // className={ref11InView ? styles.view_anim : ''}
-             ref={ref11}>
-              Highest level of
-            </p>
+            <div ref={ref11}>
+              <p className={ref11InView ? styles.view_anim : ''}>
+                Highest level of
+              </p>
+            </div>
 
-            <h3 
-            // className={ref12InView ? styles.view_anim : ''} 
-            ref={ref12}>
-              Security
-            </h3>
+            <div ref={ref12}>
+              <h3 className={ref12InView ? styles.view_anim : ''}>Security</h3>
+            </div>
 
-            <p
-            //  className={ref13InView ? styles.view_anim : ''}
-              ref={ref13}>
-              With Metatrader (MT4)
-            </p>
+            <div ref={ref13}>
+              <p className={ref13InView ? styles.view_anim : ''}>
+                With Metatrader (MT4)
+              </p>
+            </div>
           </div>
 
-          <div
-            className={cn(
-              // ref14InView ? styles.view_anim : '',
-              styles.video_container
-            )}
-            ref={ref14}
-          >
-            <video autoPlay height="600" muted poster={screenshot} width="270">
+          <div ref={ref14} className={styles.video_container}>
+            <video
+              className={ref14InView ? styles.view_anim : ''}
+              autoPlay
+              height="600"
+              muted
+              poster={screenshot}
+              width="270"
+            >
               <source src={Video} type="video/mp4" />
             </video>
           </div>
@@ -1217,57 +1211,55 @@ export function Simpleatom() {
 
         <div className={styles.section8__second_container}>
           <div className={styles.section8__second_container_left}>
-            <p
-            //  className={ref8InView ? styles.view_anim : ''} 
-             ref={ref8}>
-              <span>Full automation of trading</span> - you don’t need to study
-              tons of materials or sit on the stock exchange for days.
-            </p>
+            <div ref={ref8}>
+              <p className={ref8InView ? styles.view_anim : ''}>
+                <span>Full automation of trading</span> - you don’t need to
+                study tons of materials or sit on the stock exchange for days.
+              </p>
+            </div>
 
-            <p
-            //  className={ref9InView ? styles.view_anim : ''}
-              ref={ref9}>
-              We do not buy assets, we trade futures. That`s how
-              <span>you make money on both the rise and fall</span> of the
-              exchange rate.
-            </p>
+            <div ref={ref9}>
+              <p className={ref9InView ? styles.view_anim : ''}>
+                We do not buy assets, we trade futures. That`s how
+                <span> you make money on both the rise and fall</span> of the
+                exchange rate.
+              </p>
+            </div>
 
-            <p
-            //  className={ref10InView ? styles.view_anim : ''}
-              ref={ref10}>
-              Suitable for <span>novice</span> investors, professionals,{' '}
-              <span>funds</span> wishing to diversify capital
-            </p>
+            <div ref={ref10}>
+              <p className={ref10InView ? styles.view_anim : ''}>
+                Suitable for <span>novice</span> investors, professionals,{' '}
+                <span>funds</span> wishing to diversify capital
+              </p>
+            </div>
           </div>
 
           <div className={styles.section8__second_container_right}>
-            <p 
-            // className={ref15InView ? styles.view_anim : ''}
-             ref={ref15}>
-              Unbelievable
-            </p>
+            <div ref={ref15}>
+              <p className={ref15InView ? styles.view_anim : ''}>
+                Unbelievable
+              </p>
+            </div>
 
-            <h3 
-            // className={ref16InView ? styles.view_anim : ''}
-             ref={ref16}>
-              Passive income
-            </h3>
-
-            <p 
-            // className={ref17InView ? styles.view_anim : ''}
-             ref={ref17}>
-              Up to 1470,75% profit in a year for long term investing
-            </p>
+            <div ref={ref16}>
+              <h3 className={ref16InView ? styles.view_anim : ''}>
+                Passive income
+              </h3>
+            </div>
+            <div ref={ref17}>
+              <p className={ref17InView ? styles.view_anim : ''}>
+                Up to 1470,75% profit in a year for long term investing
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <section className={styles.connect__button}>
         <button
-        //  onClick={() => setShowConversationalModal(true)}
-         onClick={() => navigate('/form/simpleatom-from-site')}
-         
-         >
+          //  onClick={() => setShowConversationalModal(true)}
+          onClick={() => navigate('/form/simpleatom-from-site')}
+        >
           {/* <a href="https://dev.fcm.by/form/home/" target="blanc"> */}
           Connect
           {/* </a> */}

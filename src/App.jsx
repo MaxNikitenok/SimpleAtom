@@ -18,6 +18,7 @@ import { useTheme } from './hooks/use-theme';
 import themeLogo from './assets/light-theme-icon.png';
 import { Clock } from './components/Clock/Clock';
 import { ConversationalFormModal } from './components/form-modal/Form-modal';
+import axios from 'axios';
 
 export const App = () => {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ export const App = () => {
     { id: 1, tile: 'Main', path: '/main' },
     { id: 2, tile: 'Simpleatom', path: '/simpleatom' },
     { id: 3, tile: 'About us', path: '/aboutUs' },
-    { id: 4, tile: 'Contact us', path: '/contactUs' },
+    { id: 4, tile: 'Contact us', path: 'contactUs' },
     // { id: 5, tile: 'Form', path: '/form' },
   ];
 
@@ -35,6 +36,33 @@ export const App = () => {
   const [activePage, setActivePage] = useState(locationPath);
   const [showContactModal, setShowContactModal] = useState(false);
   // const [showConversationalModal, setShowConversationalModal] = useState(false);
+  const [contactUsData, setContactUsData] = useState({});
+
+  const postData = async (data) => {
+    await axios
+      .post('https://4dev.itcoty.ru/forms/form_data/', data)
+      .then((res) => {
+        const postTGData = async (resp) => {
+          await axios
+            .post('https://4dev.itcoty.ru/forms/send/', {
+              id: resp.data.id,
+              form_data: resp.data.data,
+            })
+            .catch((error) => {
+              console.log(`ERROR! ${error.message}`);
+              throw new Error(error);
+            });
+        };
+        postTGData(res);
+      })
+      .then(() => {
+        setShowContactModal(false);
+      })
+      .catch((error) => {
+        console.log(`ERROR! ${error.message}`);
+        throw new Error(error);
+      });
+  };
 
   useEffect(() => {
     if (locationPath === '/') {
@@ -49,7 +77,7 @@ export const App = () => {
   };
 
   const navHandler = (path) => {
-    if (path === '/contactUs') {
+    if (path === 'contactUs') {
       setShowContactModal(true);
     } else {
       setActivePage(path);
@@ -324,6 +352,9 @@ export const App = () => {
         showContactModal={showContactModal}
         setShowContactModal={setShowContactModal}
         theme={theme}
+        contactUsData={contactUsData}
+        setContactUsData={setContactUsData}
+        postData={postData}
       />
       {/* {showConversationalModal && (
         <ConversationalFormModal

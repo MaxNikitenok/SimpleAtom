@@ -60,10 +60,7 @@ export const Form = () => {
 
   const submitCallback = () => {
     const formDataSerialized = cf.getFormData(true);
-    const dataForPost =
-      form_name === 'simpleatom-from-site'
-        ? formDataSerialized
-        : { ...formDataSerialized, label: utm };
+    const dataForPost = { ...formDataSerialized, label: utm };
 
     const postData = async () => {
       await axios
@@ -102,8 +99,8 @@ export const Form = () => {
 
     setTempData({
       ...tempData,
-      [dto.tag.questions[0] === 'Email *'
-        ? dto.tag.questions[0].toLowerCase().slice(0, -2)
+      [dto.tag.questions[0] === 'Email'
+        ? dto.tag.questions[0].toLowerCase()
         : dto.tag.questions[0]]: dto.text,
       label: utm,
     });
@@ -149,11 +146,11 @@ export const Form = () => {
 
   const formFields = data.map((item) => {
     if (item.type === 'inputfield') {
-      if (item.question === 'Email *') {
+      if (item.question === 'Email') {
         return {
           tag: 'input',
           type: 'email',
-          name: item.question.toLowerCase().slice(0, -2),
+          name: item.question.toLowerCase(),
           'cf-questions': item.question,
           required: 'required',
         };
