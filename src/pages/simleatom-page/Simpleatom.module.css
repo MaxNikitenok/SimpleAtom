@@ -1438,6 +1438,8 @@
 .video_container {
   grid-area: c;
   padding-left: 64px;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .section8__second_container {
@@ -1477,14 +1479,10 @@
   width: 316px;
 }
 
-.video_container {
-  display: flex;
-  justify-content: flex-start;
-  
-}
-
 .video_container video {
   border-radius: 20px;
+  height: 600px;
+  width: 270px;
   transform: translateY(25px);
   opacity: 0;
   transition: all 0.5s cubic-bezier(0, 0, 0.5, 1);

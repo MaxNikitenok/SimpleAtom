@@ -28,7 +28,7 @@ export function Simpleatom() {
       rootMargin: '1110px 0px 0px 0px',
     }),
     { ref: sectionTwoRef, inView: sectionTwoInView } = useInView({
-      threshold: 1,
+      threshold: 0.8,
       rootMargin: '1110px 0px -100px 0px',
     }),
     { ref: graphOneRef, inView: graphOneInView } = useInView({
@@ -1197,14 +1197,16 @@ export function Simpleatom() {
 
           <div ref={ref14} className={styles.video_container}>
             <video
-              className={ref14InView ? styles.view_anim : ''}
+              playsInline
               autoPlay
-              height="600"
-              muted
               poster={screenshot}
-              width="270"
-            >
-              <source src={Video} type="video/mp4" />
+              muted
+              type="video/mp4"
+              src={Video}
+              loop
+              className={ref14InView ? styles.view_anim : ''}
+              >
+              {/* <source src={Video} type="video/mp4" /> */}
             </video>
           </div>
         </div>
