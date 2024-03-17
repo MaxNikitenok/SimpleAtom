@@ -79,7 +79,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 15px;
+  padding: 0 16px;
 }
 
 .team__photos {
@@ -156,6 +156,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0 16px;
+  gap: 16px;
   animation: profileAnimation 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
 }
 
@@ -244,6 +245,7 @@
 
 .meetUs__image_container {
   position: relative;
+  cursor: pointer;
 }
 
 .meetUs__image_title {
@@ -350,7 +352,7 @@ height: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 140px;
 }
 
 .mission__text {
@@ -392,7 +394,7 @@ height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 15px;
+    padding: 0 16px;
   }
 
   .team__photos {
@@ -489,12 +491,12 @@ height: 350px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 0;
+    /* padding: 0; */
   }
 
   .profiles__item {
     width: 200px;
-    height: 269px;
+    /* height: 269px; */
     margin-bottom: 22px;
   }
 

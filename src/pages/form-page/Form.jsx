@@ -7,8 +7,10 @@ import axios from 'axios';
 export const Form = () => {
   const [data, setData] = useState([]);
   const [message, setMessage] = useState('');
-  const { form_name } = useParams();
+  const { form_name, partner_country } = useParams();
   const [tempData, setTempData] = useState({});
+
+  console.log(33333, form_name, partner_country)
 
   const utm = Object.fromEntries(
     (window.location.href.match(/(?<=utm_).+?=[^&]*/g) || []).map((n) =>
@@ -60,7 +62,7 @@ export const Form = () => {
 
   const submitCallback = () => {
     const formDataSerialized = cf.getFormData(true);
-    const dataForPost = { ...formDataSerialized, label: utm };
+    const dataForPost = { ...formDataSerialized, label: utm, partner_country };
 
     const postData = async () => {
       await axios
@@ -103,6 +105,7 @@ export const Form = () => {
         ? dto.tag.questions[0].toLowerCase()
         : dto.tag.questions[0]]: dto.text,
       label: utm,
+      partner_country
     });
 
     console.log('tempData===>>>', tempData);

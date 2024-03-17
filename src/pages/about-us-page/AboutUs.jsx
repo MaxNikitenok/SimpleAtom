@@ -111,8 +111,8 @@ export const AboutUs = () => {
   const navigate = useNavigate();
 
   const { ref: teamRef, inView: teamRefInView } = useInView({
-    threshold: 1,
-    rootMargin: '1500px 0px 0px 0px',
+    threshold: 0.9,
+    rootMargin: '500px 0px 0px 0px',
   });
 
   return (
@@ -150,10 +150,9 @@ export const AboutUs = () => {
       <article className={styles.aboutUs__team}>
         <h1 className={styles.team__title}>Professional team</h1>
         <p className={styles.team__subTitle}>Top Managers and Founders</p>
-        <div className={styles.team__container}>
+        <div className={styles.team__container} ref={teamRef}>
           {!isProfilesVisible && (
             <div
-              ref={teamRef}
               className={cn(
                 styles.team__photos,
                 teamRefInView ? styles.view_anim : ''
@@ -198,7 +197,10 @@ export const AboutUs = () => {
         <p className={styles.meetUs__subTitle}>
           Book your meeting with <span>Simpleatom</span> today
         </p>
-        <div className={styles.meetUs__image_container}>
+        <div
+          className={styles.meetUs__image_container}
+          onClick={() => navigate('/form/simpleatom-from-site/dubai')}
+        >
           <span className={styles.meetUs__image_title}>Dubai, UAE</span>
           {isDarkTheme ? (
             <img
@@ -212,7 +214,7 @@ export const AboutUs = () => {
         </div>
         <p
           // href="https://4dev.itcoty.ru/forms/home/"
-          onClick={() => navigate('/form/simpleatom-from-site')}
+          onClick={() => navigate('/form/simpleatom-from-site/dubai')}
           target="blanc"
           className={cn(styles.meetUs__link, styles.link)}
         >
@@ -225,7 +227,7 @@ export const AboutUs = () => {
           {partners.map((item) => {
             return (
               <div
-                onClick={() => navigate('/form/simpleatom-from-site')}
+                onClick={() => navigate(`/form/simpleatom-from-site/${item.title}`)}
                 className={cn(styles.partners__item, styles.hide_item)}
                 key={item.id}
               >

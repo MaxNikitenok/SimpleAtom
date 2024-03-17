@@ -18,7 +18,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/simpleatom" element={<Simpleatom />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/form">
-            <Route path=":form_name" element={<Form />}></Route>
+            <Route path=":form_name" element={<Form />}>
+            <Route path=":partner_country" element={<Form />}></Route>
+            </Route>
           </Route>
         </Route>
       </Routes>

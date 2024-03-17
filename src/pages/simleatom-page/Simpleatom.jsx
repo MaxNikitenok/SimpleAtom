@@ -1205,7 +1205,7 @@ export function Simpleatom() {
               src={Video}
               loop
               className={ref14InView ? styles.view_anim : ''}
-              >
+            >
               {/* <source src={Video} type="video/mp4" /> */}
             </video>
           </div>
@@ -1269,33 +1269,32 @@ export function Simpleatom() {
       </section>
 
       <section className={styles.page__footer}>
-        <ol type="1">
-          <li>
-            The data presented is derived from the performance statistics of the{' '}
-            <span
-              onClick={() => {
-                window.scrollTo({
-                  top: conservativeRef.current.offsetTop - 90,
-                  behavior: 'smooth',
-                });
-              }}
+        <p>
+          1. The data presented is derived from the performance statistics of
+          the{' '}
+          <span
+            onClick={() => {
+              window.scrollTo({
+                top: conservativeRef.current.offsetTop - 90,
+                behavior: 'smooth',
+              });
+            }}
+          >
+            Conservative Strategy
+          </span>{' '}
+          managed account for the year 2023. Account verification is confirmed
+          by data from{' '}
+          <span className={styles.footer__link}>
+            <a
+              href="https://www.myfxbook.com/members/Milkivays/conserve-a/9947281"
+              target="blanc"
             >
-              Conservative Strategy
-            </span>{' '}
-            managed account for the year 2023. Account verification is confirmed
-            by data from{' '}
-            <span className={styles.footer__link}>
-              <a
-                href="https://www.myfxbook.com/members/Milkivays/conserve-a/9947281"
-                target="blanc"
-              >
-                myfxbook.
-              </a>
-            </span>{' '}
-            The account has been active on the exchange since August 22, 2022,
-            and data is available for viewing from that date to the present.
-          </li>
-        </ol>
+              myfxbook.
+            </a>
+          </span>{' '}
+          The account has been active on the exchange since August 22, 2022, and
+          data is available for viewing from that date to the present.
+        </p>
       </section>
     </main>
   );

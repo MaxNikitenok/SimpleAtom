@@ -1,8 +1,8 @@
 import styles from './App.module.css';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import aboutUs from './assets/menu-about-us.png';
+import aboutUs from './assets/menu-about-us.svg';
 import simpleatom from './assets/menu-simpleatom.svg';
-import letsTalk from './assets/menu-lets-talk.svg';
+import letsTalk from './assets/menu-lets-talk.png';
 import telegram from './assets/menu-telegram.svg';
 import linkedIn from './assets/menu-linkedin.svg';
 import Lock from './assets/Lock.png';

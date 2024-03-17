@@ -50,6 +50,7 @@
   animation-timing-function: cubic-bezier(0, 0, 0.5, 1);
   animation-delay: 0.9s;
   animation-fill-mode: backwards;
+  user-select: none;
 }
 
 .main__button:hover {
