@@ -626,7 +626,6 @@ export function Simpleatom() {
                   <p
                     onClick={() => navigate('/form/simpleatom-from-site')}
                     className={cn(styles.graph1__button, styles.button_min)}
-                    // href="https://4dev.itcoty.ru/forms/home/"
                     target="blanc"
                   >
                     Try it
@@ -638,7 +637,6 @@ export function Simpleatom() {
             <p
               onClick={() => navigate('/form/simpleatom-from-site')}
               className={cn(styles.graph1__button, styles.button_full)}
-              // href="https://4dev.itcoty.ru/forms/home/"
               target="blanc"
             >
               Try it
@@ -1073,7 +1071,6 @@ export function Simpleatom() {
                   <p
                     onClick={() => navigate('/form/simpleatom-from-site')}
                     className={cn(styles.graph2__button, styles.button_min)}
-                    // href="https://4dev.itcoty.ru/forms/home/"
                     target="blanc"
                   >
                     Try it
@@ -1085,7 +1082,6 @@ export function Simpleatom() {
             <p
               onClick={() => navigate('/form/simpleatom-from-site')}
               className={cn(styles.graph2__button, styles.button_full)}
-              // href="https://4dev.itcoty.ru/forms/home/"
               target="blanc"
             >
               Try it

@@ -3,14 +3,13 @@ import { ConversationalForm } from 'conversational-form';
 import './Form.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import { formUrl } from '../../api';
 
 export const Form = () => {
   const [data, setData] = useState([]);
   const [message, setMessage] = useState('');
   const { form_name, partner_country } = useParams();
   const [tempData, setTempData] = useState({});
-
-  console.log(33333, form_name, partner_country)
 
   const utm = Object.fromEntries(
     (window.location.href.match(/(?<=utm_).+?=[^&]*/g) || []).map((n) =>
@@ -21,7 +20,7 @@ export const Form = () => {
   useEffect(() => {
     const fetchData = async () => {
       await axios
-        .get(`https://4dev.itcoty.ru/forms/questions/?form_name=${form_name}`)
+        .get(`${formUrl}questions/?form_name=${form_name}`)
         .then((e) => {
           setData(e.data[0].questions);
           setMessage(e.data[0].message);
@@ -66,11 +65,11 @@ export const Form = () => {
 
     const postData = async () => {
       await axios
-        .post('https://4dev.itcoty.ru/forms/form_data/', dataForPost)
+        .post(`${formUrl}form_data/`, dataForPost)
         .then((res) => {
           const postTGData = async (resp) => {
             await axios
-              .post('https://4dev.itcoty.ru/forms/send/', {
+              .post(`${formUrl}send/`, {
                 id: resp.data.id,
                 form_data: resp.data.data,
               })
@@ -124,11 +123,11 @@ export const Form = () => {
   const postTempData = async () => {
     if (tempData.email) {
       await axios
-        .post('https://4dev.itcoty.ru/forms/form_data/', tempData)
+        .post(`${formUrl}form_data/`, tempData)
         .then((res) => {
           const postTGData = async (resp) => {
             await axios
-              .post('https://4dev.itcoty.ru/forms/send/', {
+              .post(`${formUrl}send/`, {
                 id: res.data.id,
                 form_data: resp.data,
               })
@@ -208,7 +207,8 @@ export const Form = () => {
         className="closeButton"
         onClick={() => {
           postTempData();
-          navigate(-1);
+          if(form_name === 'simpleatom-from-site') navigate(-1);
+          if(form_name === 'simpleatom-direсt-link') navigate('/main');
         }}
       >
         Close

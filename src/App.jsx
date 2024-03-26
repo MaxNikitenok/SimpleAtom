@@ -17,8 +17,8 @@ import { ContactUsModal } from './components/Contact-us/ContactUsModal';
 import { useTheme } from './hooks/use-theme';
 import themeLogo from './assets/light-theme-icon.png';
 import { Clock } from './components/Clock/Clock';
-import { ConversationalFormModal } from './components/form-modal/Form-modal';
 import axios from 'axios';
+import { formUrl } from './api';
 
 export const App = () => {
   const navigate = useNavigate();
@@ -40,11 +40,11 @@ export const App = () => {
 
   const postData = async (data) => {
     await axios
-      .post('https://4dev.itcoty.ru/forms/form_data/', data)
+      .post(`${formUrl}form_data/`, data)
       .then((res) => {
         const postTGData = async (resp) => {
           await axios
-            .post('https://4dev.itcoty.ru/forms/send/', {
+            .post(`${formUrl}send/`, {
               id: resp.data.id,
               form_data: resp.data.data,
             })

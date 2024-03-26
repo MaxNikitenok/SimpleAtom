@@ -10,8 +10,8 @@ import Alexander_B from '../../assets/Alexander_B.png';
 import Alexander_K from '../../assets/Alexander_K.png';
 import Dubai_night from '../../assets/Dubai_night.png';
 import Dubai from '../../assets/Dubai.png';
-import Pakistan from '../../assets/Pakistan.png';
-import Pakistan_night from '../../assets/Pakistan_night.png';
+import Switzerland from '../../assets/Switzerland.png';
+import Switzerland_night from '../../assets/Switzerland_night.png';
 import Norway from '../../assets/Norway.png';
 import Norway_night from '../../assets/Norway_night.png';
 import Brazil from '../../assets/Brazil.png';
@@ -69,7 +69,7 @@ const partners = [
   { id: 1, title: 'Singapore', image: Singapore, imageNight: Singapore_night },
   { id: 2, title: 'Brazil', image: Brazil, imageNight: Brazil_night },
   { id: 3, title: 'Norway', image: Norway, imageNight: Norway_night },
-  { id: 4, title: 'Pakistan', image: Pakistan, imageNight: Pakistan_night },
+  { id: 4, title: 'Switzerland', image: Switzerland, imageNight: Switzerland_night },
 ];
 
 const ProfileItem = ({ item }) => {
@@ -213,7 +213,6 @@ export const AboutUs = () => {
           )}
         </div>
         <p
-          // href="https://4dev.itcoty.ru/forms/home/"
           onClick={() => navigate('/form/simpleatom-from-site/dubai')}
           target="blanc"
           className={cn(styles.meetUs__link, styles.link)}
