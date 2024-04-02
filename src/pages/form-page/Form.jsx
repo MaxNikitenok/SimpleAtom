@@ -65,7 +65,8 @@ export const Form = () => {
 
     const postData = async () => {
       await axios
-        .post(`${formUrl}form_data/`, dataForPost)
+      console.log(dataForPost)
+        .post(`${formUrl}form_data7/`, dataForPost)
         .then((res) => {
           const postTGData = async (resp) => {
             await axios

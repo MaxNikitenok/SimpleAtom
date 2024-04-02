@@ -8,6 +8,7 @@ import { App } from './App.jsx';
 import { Simpleatom } from './pages/simleatom-page/Simpleatom.jsx';
 import { AboutUs } from './pages/about-us-page/AboutUs.jsx';
 import { Form } from './pages/form-page/Form.jsx';
+import { NoMatch, NotFound } from './components/NotFound/NotFound.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -19,10 +20,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/form">
             <Route path=":form_name" element={<Form />}>
-            <Route path=":partner_country" element={<Form />}></Route>
+              <Route path=":partner_country" element={<Form />}></Route>
             </Route>
           </Route>
+          <Route path="/404" element={<NotFound />} />
         </Route>
+        <Route path="*" element={<NoMatch />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

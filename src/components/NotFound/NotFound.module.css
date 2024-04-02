@@ -1,0 +1,105 @@
+.notFound {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 150px;
+  align-items: center;
+}
+
+/* .notFound__logo img {
+  width: 310px;
+  height: 296px;
+  animation-name: opacity-animation;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0, 0, 0.5, 1);
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+} */
+
+.notFound__logo video {
+  width: 400px;
+}
+
+.notFound__404 {
+  max-width: 736px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 60px;
+  text-align: center;
+  color: var(--Text-Text-accent);
+  margin: 20px 0 40px;
+  animation-name: opacity-animation;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0, 0, 0.5, 1);
+  animation-delay: 0.7s;
+  animation-fill-mode: backwards;
+}
+
+.notFound__description {
+  max-width: 736px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  color: var(--Text-Text-accent);
+  margin: 20px 0 40px;
+  animation-name: opacity-animation;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0, 0, 0.5, 1);
+  animation-delay: 0.7s;
+  animation-fill-mode: backwards;
+}
+
+
+@keyframes opacity-animation {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+@media screen and (max-height: 850px) {
+  .notFound {
+    padding-top: calc(100dvh / 5 - 70px);
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .notFound {
+    padding-top: calc(100dvh / 5 - 80px);
+  }
+}
+
+@media screen and (max-height: 784px) {
+  .notFound {
+    padding-top: calc(100dvh / 5 - 100px);
+  }
+
+  .notFound__logo img {
+    width: 250px;
+    height: 238px;
+  }
+
+  .notFound__logo video {
+    width: 320px;
+  }
+
+  .notFound__description {
+    max-width: 480px;
+    padding: 0 15px;
+    margin: 40px 0 30px;
+  }
+}
+
+@media screen and (max-height: 648px) {
+  .notFound {
+    padding-top: calc(100dvh / 5 - 80px);
+  }
+  .notFound__description {
+    margin: 10px 0 30px;
+  }
+}
