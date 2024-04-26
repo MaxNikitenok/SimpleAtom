@@ -9,7 +9,8 @@ export const Form = () => {
   const [data, setData] = useState([]);
   const [message, setMessage] = useState('');
   const { form_name, partner_country } = useParams();
-  const [tempData, setTempData] = useState({});
+
+  let tempData = {};
 
   const utm = Object.fromEntries(
     (window.location.href.match(/(?<=utm_).+?=[^&]*/g) || []).map((n) =>
@@ -24,7 +25,6 @@ export const Form = () => {
         .then((e) => {
           setData(e.data[0].questions);
           setMessage(e.data[0].message);
-          // console.log('data======>', e.data[0]);
         })
         .catch((error) => {
           console.log(`ERROR! ${error.message}`);
@@ -59,14 +59,19 @@ export const Form = () => {
     };
   }, [data]);
 
+  window.onbeforeunload = function(e) {
+    postTempData()
+    e.returnValue = 'There are unsaved changes! Are you sure you want to delete the page?';
+    return e.returnValue;
+  };
+
   const submitCallback = () => {
     const formDataSerialized = cf.getFormData(true);
     const dataForPost = { ...formDataSerialized, label: utm, partner_country };
 
     const postData = async () => {
       await axios
-      console.log(dataForPost)
-        .post(`${formUrl}form_data7/`, dataForPost)
+        .post(`${formUrl}form_data/`, dataForPost)
         .then((res) => {
           const postTGData = async (resp) => {
             await axios
@@ -86,29 +91,27 @@ export const Form = () => {
           throw new Error(error);
         });
     };
+
     postData();
 
-    console.log('Formdata, obj:', dataForPost);
     cf.addRobotChatResponse(
       "Thanks! We'll use your info to find the ideal manager for you. We'll reach you as soon as possible."
     );
-    setTempData({});
+    tempData = {};
   };
 
   const flowCallback = function (dto, success, error) {
     //Подгрузка и добавление вопроса сюда
-    console.log('dto....', dto);
-
-    setTempData({
+    tempData = {
       ...tempData,
-      [dto.tag.questions[0] === 'Email'
-        ? dto.tag.questions[0].toLowerCase()
+
+      [dto.tag.questions[0] ===
+      'Your email (by providing this information you agree to receive email notifications, release can be in any of the emails)'
+        ? 'email'
         : dto.tag.questions[0]]: dto.text,
       label: utm,
-      partner_country
-    });
-
-    console.log('tempData===>>>', tempData);
+      partner_country,
+    };
 
     // cf.addTags([
     //   {
@@ -138,7 +141,7 @@ export const Form = () => {
               });
           };
           postTGData(res);
-          setTempData({});
+          tempData = {};
         })
         .catch((error) => {
           console.log(`ERROR! ${error.message}`);
@@ -149,13 +152,24 @@ export const Form = () => {
 
   const formFields = data.map((item) => {
     if (item.type === 'inputfield') {
-      if (item.question === 'Email') {
+      if (
+        item.question ===
+        'Your email (by providing this information you agree to receive email notifications, release can be in any of the emails)'
+      ) {
         return {
           tag: 'input',
           type: 'email',
-          name: item.question.toLowerCase(),
+          name: 'email',
           'cf-questions': item.question,
           required: 'required',
+        };
+      } else if (item.question === 'Your contact phone number') {
+        return {
+          tag: 'input',
+          type: 'tel',
+          pattern: '[0-9]',
+          name: item.question,
+          'cf-questions': item.question,
         };
       } else {
         return {
@@ -208,8 +222,8 @@ export const Form = () => {
         className="closeButton"
         onClick={() => {
           postTempData();
-          if(form_name === 'simpleatom-from-site') navigate(-1);
-          if(form_name === 'simpleatom-direсt-link') navigate('/main');
+          if (form_name === 'simpleatom-from-site') navigate(-1);
+          if (form_name === 'simpleatom-direсt-link') navigate('/main');
         }}
       >
         Close
