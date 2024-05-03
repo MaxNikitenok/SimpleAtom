@@ -96,12 +96,30 @@
   margin-left: 20px;
 }
 
+.form button[disabled] {
+  background: #85868B;
+}
+
 img.closeButton {
   position: absolute;
   top: 27px;
   right: 27px;
   width: 40px;
   height: 40px;
+}
+
+.checkbox {
+  input {
+    margin-right: 10px;
+  }
+  label {
+    color: var(--Text-Text-accent);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 130%;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -182,7 +200,7 @@ img.closeButton {
     max-height: 100%;
     flex-direction: column;
   }
-/* 
+  /* 
   .modal img {
     width: 440px;
     height: 392px;

@@ -4,8 +4,7 @@ import logo_white from '../../assets/logo_white.jpg';
 import video_logo_black from '../../assets/video_logo_black.mp4';
 import video_logo_white from '../../assets/video_logo_white.mp4';
 import Close from '../../assets/Close_gray.png';
-import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const ContactUsModal = ({
   showContactModal,
@@ -24,14 +23,25 @@ export const ContactUsModal = ({
     window.scrollTo(0, parseInt(scrollY || '0') * -1);
   }
 
+  const emailReg = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  const [email, setEmail] = useState('');
+  const [agree, setAgree] = useState(false);
+  const [emailValid, setEmailValid] = useState(false);
+  const onValidation = (name, reg) => email?.match(reg);
+
   const submitHandler = () => {
     if (Object.keys(contactUsData).length !== 0) {
       postData({
-        telegramUserName: contactUsData,
-        // email: '***fromContactUs***',
+        // telegramUserName: contactUsData,
+        email: contactUsData,
       });
     }
   };
+
+  useEffect(() => {
+    setEmailValid(!!onValidation('email', emailReg));
+    console.log(emailValid)
+  }, [email]);
 
   return showContactModal ? (
     <div className={styles.wrapper} onClick={() => setShowContactModal(false)}>
@@ -62,16 +72,38 @@ export const ContactUsModal = ({
           <div className={styles.content}>
             <p>Contact us</p>
             <span>
-              Leave your Telegram username, and we reply to you shortly
+              Leave your Email, and we reply to you shortly
             </span>
-            <div className={styles.form}>
+            <div
+              className={styles.form}
+            >
               <input
-                type="text"
-                placeholder="Enter your @telegram"
-                pattern=".*\B@(?=\w{5,32}\b)[a-zA-Z0-9]+(?:_[a-zA-Z0-9]+)*.*"
-                onChange={(e) => setContactUsData(e.target.value)}
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setContactUsData(e.target.value);
+                }}
               />
-              <button  onClick={() => submitHandler()}>Send</button>
+              <button
+                disabled={!agree || !emailValid}
+                onClick={() => submitHandler()}
+              >
+                Send
+              </button>
+            </div>
+            <div className={styles.checkbox}>
+              <input
+                type="checkbox"
+                checked={agree}
+                onChange={() => setAgree(!agree)}
+                name="agreeCheck"
+                id="agreeCheck"
+              />
+              <label htmlFor="agreeCheck">
+                Do you agree to receive notifications by email?
+              </label>
             </div>
             <img
               src={Close}
