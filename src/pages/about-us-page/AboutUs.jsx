@@ -56,13 +56,13 @@ const profiles = [
     position: 'Managing Director',
     desc: '16 years of Management. Highly skilled in creative marketing, direct sales, project management, operational management. Specialization - creation and development of digital projects.',
   },
-  {
-    id: 5,
-    image: Alexander_K,
-    name: 'Alexander',
-    position: 'Head of Corporate department',
-    desc: '7+ years of experience in working with investors at the international level. Deep knowledge of investment projects analysis, business development and communication.',
-  },
+  // {
+  //   id: 5,
+  //   image: Alexander_K,
+  //   name: 'Alexander',
+  //   position: 'Head of Corporate department',
+  //   desc: '7+ years of experience in working with investors at the international level. Deep knowledge of investment projects analysis, business development and communication.',
+  // },
 ];
 
 const partners = [

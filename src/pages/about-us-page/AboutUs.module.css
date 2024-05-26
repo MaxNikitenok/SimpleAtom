@@ -75,7 +75,7 @@
 }
 
 .team__container {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,7 +84,7 @@
 
 .team__photos {
   position: relative;
-  width: 42%;
+  width: 44%;
   display: flex;
   align-items: stretch;
   flex-direction: column;
@@ -108,30 +108,31 @@
 
 .team__photos_item:nth-child(1) {
   z-index: 1;
+  left: 5%;
 }
 
 .team__photos_item:nth-child(2) {
-  left: 25%;
-  transform: translate(-25%);
+  left: 27%;
+  /* transform: translate(-25%); */
   z-index: 2;
 }
 
 .team__photos_item:nth-child(3) {
-  left: 50%;
-  transform: translate(-50%);
+  left: 48%;
+  /* transform: translate(-50%); */
   z-index: 3;
 }
 
 .team__photos_item:nth-child(4) {
-  left: 75%;
-  transform: translate(-75%);
+  right: 5%;
+  /* transform: translate(-75%); */
   z-index: 2;
 }
 
-.team__photos_item:nth-child(5) {
+/* .team__photos_item:nth-child(5) {
   right: 0;
   z-index: 1;
-}
+} */
 
 .photos__link {
   margin-top: 31px;
@@ -403,7 +404,7 @@ height: 350px;
 
   .team__profiles {
     flex-wrap: wrap;
-    padding: 0 70px;
+    padding: 0 30px;
   }
 
   .profiles__item {
@@ -470,6 +471,17 @@ height: 350px;
   .team__photos {
     width: 70%;
   }
+
+  .profiles__item {
+    width: 200px;
+    /* height: 269px; */
+    margin-bottom: 22px;
+  }
+
+  .profiles__item_imageContainer img {
+    height: 200px;
+  }
+  
 }
 
 @media screen and (max-width: 992px) {
@@ -487,7 +499,7 @@ height: 350px;
   }
 
   .team__profiles {
-    width: 100%;
+    width: 60%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -641,7 +653,7 @@ height: 350px;
   }
 
   .team__container {
-    width: 100%;
+    width: 90%;
   }
 
   .team__title {
@@ -666,7 +678,30 @@ height: 350px;
   }
 
   .team__photos_item {
-    height: 75px;
+    height: 90px;
+  }
+
+  .team__photos_item:nth-child(1) {
+    z-index: 1;
+    left: 0%;
+  }
+  
+  .team__photos_item:nth-child(2) {
+    left: 25%;
+    /* transform: translate(-25%); */
+    z-index: 2;
+  }
+  
+  .team__photos_item:nth-child(3) {
+    left: 50%;
+    /* transform: translate(-50%); */
+    z-index: 3;
+  }
+  
+  .team__photos_item:nth-child(4) {
+    left: 75%;
+    /* transform: translate(-75%); */
+    z-index: 2;
   }
 
   .photos__link {
@@ -718,5 +753,9 @@ height: 350px;
   .mission__text {
     font-size: 16px;
     padding: 20px;
+  }
+
+  .team__photos_item {
+    height: 75px;
   }
 }
