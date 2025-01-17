@@ -31,6 +31,10 @@ export function Simpleatom() {
       threshold: 0.8,
       rootMargin: '1110px 0px -100px 0px',
     }),
+    { ref: sectionTwoNewRef, inView: sectionTwoNewInView } = useInView({
+      threshold: 0.8,
+      rootMargin: '1110px 0px -100px 0px',
+    }),
     { ref: graphOneRef, inView: graphOneInView } = useInView({
       threshold: 0.9,
       rootMargin: '1110px 0px 0px 0px',
@@ -44,6 +48,10 @@ export function Simpleatom() {
       rootMargin: '1200px 0px -100px 0px',
     }),
     { ref: ref2, inView: ref2InView } = useInView({
+      threshold: 1,
+      rootMargin: '1200px 0px -100px 0px',
+    }),
+    { ref: ref2a, inView: ref2aInView } = useInView({
       threshold: 1,
       rootMargin: '1200px 0px -100px 0px',
     }),
@@ -146,16 +154,16 @@ export function Simpleatom() {
 
       <h1 className={styles.simpleatom__description}>
         <span>Simpleatom</span>
-        <br /> is a <span>money management</span> using algorithmic trading
-        software.
+        <br /> is a <span>software development</span> company specializing in
+        money management solutions, using its own trading algorithms.
       </h1>
 
       <section className={styles.section1}>
         <div className={styles.section1__text_wrapper}>
           <p>
-            We multiply your investment automatically and with fully
-            controllable risks. It is the perfect solution to diversify your
-            capital with over 240%
+            Our software will multiply your investment automatically and with
+            fully controllable risks. It is the perfect solution to diversify
+            your capital with over 100%
             <sup>1</sup> returns per year.
           </p>
         </div>
@@ -168,7 +176,7 @@ export function Simpleatom() {
 
         <div className={styles.section2__container}>
           <div className={styles.container__left}>
-            <div className={styles.container__left_1}>9</div>
+            <div className={styles.container__left_1}>20+</div>
 
             <div className={styles.container__left_2}>
               <span>M</span>
@@ -178,11 +186,9 @@ export function Simpleatom() {
           </div>
 
           <div className={styles.container__right}>
-            <h3>Assets under management</h3>
+            <h3>Assets under our software management</h3>
 
-            <p>
-              Funds managed by SimpleAtom and provided by our investors and VCs
-            </p>
+            <p>Assets under our software management</p>
           </div>
         </div>
       </section>
@@ -199,6 +205,59 @@ export function Simpleatom() {
             leaders. It eliminates emotions, fears, weaknesses, and human error
             from trading - all situations where a person may make mistakes.
           </p>
+
+          {/* <p>
+            Simpleatom is the result of 4 years of data analysis and
+            systematization, development of a unique trading strategy, including
+            work with 4 assets: BTC, SOL, XAU, JPY, as well as 16 algorithms for
+            rising and falling asset prices (without averaging), long and short
+            strategies.
+          </p> */}
+        </section>
+      </div>
+      <section className={styles.section4}>
+        <div
+          className={styles.section4__container_first}
+          onClick={() => {
+            window.scrollTo({
+              top: conservativeRef.current.offsetTop - 90,
+              behavior: 'smooth',
+            });
+          }}
+        >
+          <p className={styles.__newTitle}>SIMPLEATOM OVERVIEW</p>
+
+          <div className={styles.container_second}>
+            <div className={styles.container__left__new}>
+              <span>Trading Frequency</span>
+              <span>Trading pair</span>
+              <span>Starting Date</span>
+              <span>Currency</span>
+
+              {/* <span>%</span> */}
+            </div>
+
+            <div className={styles.container__right__new}>
+              <span>Low to mid-frequency</span>
+              <span>BTC, ETH, XAU, JPY</span>
+              <span>Live since Aug 2022</span>
+              <span>USD</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div ref={sectionTwoNewRef}>
+        <section
+          className={cn(
+            styles.section3,
+            sectionTwoNewInView ? styles.view_anim : ''
+          )}
+        >
+          {/* <p>
+            Simpleatom incorporates the knowledge and experience of market
+            leaders. It eliminates emotions, fears, weaknesses, and human error
+            from trading - all situations where a person may make mistakes.
+          </p> */}
 
           <p>
             Simpleatom is the result of 4 years of data analysis and
@@ -223,7 +282,7 @@ export function Simpleatom() {
 
           <div className={styles.container_second}>
             <div className={styles.container__left}>
-              <span>240</span>
+              <span>100</span>
 
               <span>%</span>
             </div>
@@ -232,16 +291,13 @@ export function Simpleatom() {
               <span>Annual yield</span>
 
               <span>
-                For 2023 on the{' '}
-                <span className={styles.conservative}>“Conservative”</span>{' '}
-                strategy
+                For 2024 achieved by clients using our software.
+                {/* <span className={styles.conservative}>“Conservative”</span>{' '} */}
               </span>
             </div>
           </div>
         </div>
       </section>
-
-     
 
       <section className={styles.graph2} ref={conservativeRef}>
         <div className={styles.graph2__big_container}>
@@ -663,31 +719,6 @@ export function Simpleatom() {
         </div>
       </section>
 
-      <section className={styles.section5}>
-        <div
-          className={styles.section5__container_first}
-          onClick={() => {
-            navigate('/aboutUs');
-            window.scrollTo(0, 0);
-            setTimeout(scrollToPartnersRef, 1000);
-          }}
-        >
-          <p>over</p>
-
-          <div className={styles.container_second}>
-            <div className={styles.container__left}>
-              <span>80</span>
-            </div>
-
-            <div className={styles.container__right}>
-              <span>Clients worldwide</span>
-
-              <span>Individual investors and venture capital funds</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className={styles.graph1}>
         <div className={styles.graph1__big_container}>
           <p className={styles.graph1__title}>ATOM</p>
@@ -1092,6 +1123,31 @@ export function Simpleatom() {
         </div>
       </section>
 
+      <section className={styles.section5}>
+        <div
+          className={styles.section5__container_first}
+          onClick={() => {
+            navigate('/aboutUs');
+            window.scrollTo(0, 0);
+            setTimeout(scrollToPartnersRef, 1000);
+          }}
+        >
+          <p>over</p>
+
+          <div className={styles.container_second}>
+            <div className={styles.container__left}>
+              <span>80</span>
+            </div>
+
+            <div className={styles.container__right}>
+              <span>Clients worldwide</span>
+
+              <span>Individual investors, trust and funds</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className={styles.section6}>
         <div
           className={styles.section6__container_first}
@@ -1126,7 +1182,11 @@ export function Simpleatom() {
           <div className={styles.section8__container_one}>
             <div ref={ref1}>
               <p className={ref1InView ? styles.view_anim : ''}>
-                Trading on <span>BYBIT</span> - one of top-3 exchanges.
+                {/* Trading on <span>BYBIT</span> - one of top-3 exchanges. */}
+                Our trading software works with MT4 and MT5 and only on
+                top-rated and regulated platforms, such as Bybit, IC Markets,
+                Exness, Pepperstone, Tickmill, Vantage, Fusion Markets,
+                RannForex.
               </p>
             </div>
 
@@ -1135,6 +1195,13 @@ export function Simpleatom() {
                 <span>Your money is always on your personal account</span>, you
                 do not need to transfer it anywhere. You have instant access to
                 your funds.
+              </p>
+            </div>
+
+            <div ref={ref2a}>
+              <p className={ref2aInView ? styles.view_anim : ''}>
+                We can work with any regulators supported by the broker (FSA,
+                FCA, DFSA UAE, CySEC, AFSA, and FSCA).
               </p>
             </div>
 
@@ -1169,8 +1236,8 @@ export function Simpleatom() {
 
             <div ref={ref7}>
               <p className={ref7InView ? styles.view_anim : ''}>
-                We have a very <span>strict risk management.</span> On a
-                conservative account the risk per trade does not exceed 0.3%
+                Very strict risk management: the risk per trade does not exceed
+                0.3%.
               </p>
             </div>
           </div>
@@ -1188,7 +1255,7 @@ export function Simpleatom() {
 
             <div ref={ref13}>
               <p className={ref13InView ? styles.view_anim : ''}>
-                With Metatrader (MT4)
+                With Metatrader (MT4 and MT5)
               </p>
             </div>
           </div>
@@ -1213,8 +1280,8 @@ export function Simpleatom() {
           <div className={styles.section8__second_container_left}>
             <div ref={ref8}>
               <p className={ref8InView ? styles.view_anim : ''}>
-                <span>Full automation of trading</span> - you don’t need to
-                study tons of materials or sit on the stock exchange for days.
+                <span>Full automation of trading</span> with global assist and
+                control by the Simpleatom team.
               </p>
             </div>
 
@@ -1236,9 +1303,7 @@ export function Simpleatom() {
 
           <div className={styles.section8__second_container_right}>
             <div ref={ref15}>
-              <p className={ref15InView ? styles.view_anim : ''}>
-                Unbelievable
-              </p>
+              <p className={ref15InView ? styles.view_anim : ''}>Stable</p>
             </div>
 
             <div ref={ref16}>
@@ -1248,7 +1313,7 @@ export function Simpleatom() {
             </div>
             <div ref={ref17}>
               <p className={ref17InView ? styles.view_anim : ''}>
-                Up to 1470,75% profit in a year for long term investing
+                Up to 700% profit in a year for long term investing
               </p>
             </div>
           </div>
@@ -1267,7 +1332,7 @@ export function Simpleatom() {
       </section>
 
       <section className={styles.page__footer}>
-        <p>
+        {/* <p>
           1. The data presented is derived from the performance statistics of
           the{' '}
           <span
@@ -1292,6 +1357,10 @@ export function Simpleatom() {
           </span>{' '}
           The account has been active on the exchange since August 22, 2022, and
           data is available for viewing from that date to the present.
+        </p> */}
+        <p>
+          SIMPLEATOM SOFTWARE - FZCO Dubai Silicon Oasis, Dubai Digital Park,
+          Building A1, Dubai, UAE Premises number: 54194-001
         </p>
       </section>
     </main>

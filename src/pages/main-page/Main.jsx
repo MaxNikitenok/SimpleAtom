@@ -34,8 +34,7 @@ export const Main = () => {
         />}
       </div>
       <h1 className={styles.main__description}>
-        SimpleAtom is an investment management company specializing in
-        cryptocurrency trading
+      SimpleAtom Software - FZCO is a software development company based in the UAE, specializing in copy trading solutions.
       </h1>
       <button
         className={styles.main__button}

@@ -113,7 +113,7 @@
 .section2 .container__left_1 {
   font-family: var(--font-family);
   font-weight: 800;
-  font-size: 230px;
+  font-size: 120px;
   line-height: 90%;
   letter-spacing: -0.02em;
   color: var(--Text-Text-accent);
@@ -128,7 +128,7 @@
 .section2 .container__left_2 span:first-child {
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 91px;
+  font-size: 70px;
   line-height: 100%;
   letter-spacing: -0.02em;
 }
@@ -136,7 +136,7 @@
 .section2 .container__left_2 span:last-child {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 38px;
+  font-size: 28px;
   line-height: 150%;
   letter-spacing: -0.02em;
 }
@@ -216,6 +216,18 @@
   padding: 20px 0 0 30px;
 }
 
+.section4__container_first p.__newTitle {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 90%;
+  letter-spacing: -0.02em;
+  color: var(--Text-Text-accent);
+  text-align: center;
+  padding: 30px 0 0 0;
+  margin-bottom: 20px;
+}
+
 .section4 .container_second {
   display: flex;
   height: 100%;
@@ -228,6 +240,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.section4 .container__left__new {
+  min-width: 368px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.section4 .container__left__new span {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 200%;
+  letter-spacing: -0.02em;
+  color: var(--Text-Text-accent);
+  padding-left: 36px;
 }
 
 .section4 .container__left span:first-child {
@@ -254,6 +285,23 @@
   justify-content: center;
   text-align: left;
   padding-right: 26px;
+}
+
+.section4 .container__right__new {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  padding-right: 26px;
+}
+
+.section4 .container__right__new span {
+  font-family: var(--font-family);
+  font-weight: 350;
+  font-size: 32px;
+  line-height: 200%;
+  letter-spacing: -0.02em;
+  color: var(--Text-Text-accent);
 }
 
 .section4 .container__right span:first-child {
@@ -1381,7 +1429,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  padding-right: 26px;
+  padding-right: 27px;
 }
 
 .section6 .container__right span:first-child {

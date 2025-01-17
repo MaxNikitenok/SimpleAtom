@@ -46,7 +46,7 @@ const profiles = [
     id: 3,
     image: Viktar,
     name: 'Viktar',
-    position: 'Co-founder & CTO',
+    position: 'Co-founder & General Manager',
     desc: '12+ years of experience in developing and optimizing trading algorithms and trading strategies. Expert in ensuring technical security of financial markets.',
   },
   {
@@ -69,7 +69,12 @@ const partners = [
   { id: 1, title: 'Singapore', image: Singapore, imageNight: Singapore_night },
   { id: 2, title: 'Brazil', image: Brazil, imageNight: Brazil_night },
   { id: 3, title: 'Norway', image: Norway, imageNight: Norway_night },
-  { id: 4, title: 'Switzerland', image: Switzerland, imageNight: Switzerland_night },
+  {
+    id: 4,
+    title: 'Switzerland',
+    image: Switzerland,
+    imageNight: Switzerland_night,
+  },
 ];
 
 const ProfileItem = ({ item }) => {
@@ -226,7 +231,9 @@ export const AboutUs = () => {
           {partners.map((item) => {
             return (
               <div
-                onClick={() => navigate(`/form/simpleatom-from-site/${item.title}`)}
+                onClick={() =>
+                  navigate(`/form/simpleatom-from-site/${item.title}`)
+                }
                 className={cn(styles.partners__item, styles.hide_item)}
                 key={item.id}
               >
@@ -250,15 +257,18 @@ export const AboutUs = () => {
           Our mission is to make the investment world transparent and safe.
           <br /> We help people:{' '}
           <li>Distinguish scam projects from real investment opportunities.</li>
-          <li>Understand how financial markets work.</li>
-          <li>Preserve and grow their savings.</li>We do this by:
           <li>
-            Creating educational materials and reviews of investment projects.
+            Make working with investments, as well as preserving and growing
+            capital, simple and accessible.
           </li>
-          <li>Sharing our experience and knowledge.</li>
-          <li>Promoting honest and transparent investment principles.</li>We
-          believe that everyone should have access to reliable information about
-          the investment world. <br />
+          {/* <li>Preserve and grow their savings.</li>We do this by: */}
+          {/* <li>
+            Creating educational materials and reviews of investment projects.
+          </li> */}
+          {/* <li>Sharing our experience and knowledge.</li> */}
+          {/* <li>Promoting honest and transparent investment principles.</li> */}
+          {/* We believe that everyone should have access to reliable information
+          about the investment world. <br /> */}
           We are working to make the investment world more accessible,
           understandable, and safe for everyone.
         </p>
