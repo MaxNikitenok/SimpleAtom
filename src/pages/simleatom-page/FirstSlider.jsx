@@ -1,8 +1,12 @@
 // import { useState, useEffect, useRef } from 'react';
 import Slider from 'react-slick';
-import styles from './Simpleatom.module.css';
+// import styles from './Simpleatom.module.css';
+import styles from './FirstSlider.module.css';
+import { useNavigate } from 'react-router-dom';
+import { partnersRef } from '../about-us-page/AboutUs';
 
-export const FirstSlider = (conservativeRef) => {
+
+export const FirstSlider = () => {
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -13,109 +17,124 @@ export const FirstSlider = (conservativeRef) => {
     appendDots: (dots) => (
       <div
         style={{
-          backgroundColor: 'transparent',
-          borderRadius: '10px',
-          padding: '10px',
+          // backgroundColor: '#373739',
+          borderRadius: '50px',
+          padding: '0px',
+          // width: '300px',
+          bottom: '-70px'
         }}
       >
         <ul style={{ margin: '0px' }}> {dots} </ul>
       </div>
     ),
-    customPaging: (i) => (
-      <div
-        style={{
-          width: '30px',
-          color: 'blue',
-          border: '1px blue solid',
-        }}
+    customPaging: () => (
+      <div className={styles.dddot}
+        // style={{
+        //   width: '0px',
+        //   color: '#CFCED1',
+        //   border: '6px #CFCED1 solid',
+        //   borderRadius: '10px',
+        //   opacity: '0.8',
+        // }}
       >
-        {i + 1}
+        {}
       </div>
     ),
   };
+
+  const scrollToPartnersRef = () => {
+        window.scrollTo({
+          top: partnersRef.current.offsetTop,
+          left: 100,
+          behavior: 'smooth',
+        });
+      };
+
+  const navigate = useNavigate()
+
   return (
     <div className="slider-container">
-      <h4>First Slider</h4>
-      <Slider {...sliderSettings}>
-        <div>
-          <div>
-            <div className={styles.section2__container}>
-              <div className={styles.container__left}>
-                <div className={styles.container__left_1}>20+</div>
-
-                <div className={styles.container__left_2}>
-                  <span>M</span>
-
-                  <span>USD</span>
-                </div>
-              </div>
-
-              <div className={styles.container__right}>
-                <h3>Assets under our software management</h3>
-
-                <p>Assets under our software management</p>
-              </div>
-            </div>
+      <Slider {...sliderSettings} className={styles.slider}>
+        <div className={styles.card}>
+          <div className={styles.card__span}>
+            <span>Over</span>
           </div>
-        </div>
-        <div>
-          <div
-            className={styles.section4__container_first}
-            onClick={() => {
-              window.scrollTo({
-                top: conservativeRef.current.offsetTop - 90,
-                behavior: 'smooth',
-              });
-            }}
-          >
-            <p className={styles.__newTitle}>SIMPLEATOM OVERVIEW</p>
 
-            <div className={styles.container_second}>
-              <div className={styles.container__left__new}>
-                <span>Trading Frequency</span>
-                <span>Trading pair</span>
-                <span>Starting Date</span>
-                <span>Currency</span>
-
-                {/* <span>%</span> */}
-              </div>
-
-              <div className={styles.container__right__new}>
-                <span>Low to mid-frequency</span>
-                <span>BTC, ETH, XAU, JPY</span>
-                <span>Live since Aug 2022</span>
-                <span>USD</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div
-            className={styles.section4__container_first}
-            onClick={() => {
-              window.scrollTo({
-                top: conservativeRef.current.offsetTop - 90,
-                behavior: 'smooth',
-              });
-            }}
-          >
-            <p>over</p>
-
-            <div className={styles.container_second}>
-              <div className={styles.container__left}>
-                <span>100</span>
-
+          <div className={styles.card__content}>
+            <div className={styles.content__title}>
+              100
+              <div className={styles.title_2_subWrappers}>
                 <span>%</span>
               </div>
+            </div>
+            <div className={styles.content__subTitle}>
+              <p>Annual yield</p>
+            </div>
+            <div className={styles.content__description}>
+              <p>For 2024 achieved by clients using our software</p>
+            </div>
+          </div>
+        </div>
+        <div className={styles.card} >
+          <div className={styles.card__span}>
+            <span>Over</span>
+          </div>
 
-              <div className={styles.container__right}>
-                <span>Annual yield</span>
-
-                <span>
-                  For 2024 achieved by clients using our software.
-                  {/* <span className={styles.conservative}>“Conservative”</span>{' '} */}
-                </span>
+          <div className={styles.card__content}>
+            <div className={styles.content__title_2}>
+              <div className={styles.title_2_wrapper}>25</div>
+              <div className={styles.title_2_subWrappers}>
+                <div className={styles.title_2_subWrapper}>M</div>
+                <div className={styles.title_2_subSubWrapper}>USD</div>
               </div>
+            </div>
+            <div className={styles.content__subTitle}>
+              <p>AUM</p>
+            </div>
+            <div className={styles.content__description}>
+              <p>Assets under our software management</p>
+            </div>
+          </div>
+        </div>
+        <div className={styles.card} onClick={() => {
+            navigate('/aboutUs');
+            window.scrollTo(0, 0);
+            setTimeout(scrollToPartnersRef, 1000);
+          }}>
+          <div className={styles.card__span}>
+            <span>Over</span>
+          </div>
+
+          <div className={styles.card__content}>
+            <div className={styles.content__title}>
+              <p>137</p>
+            </div>
+            <div className={styles.content__subTitle}>
+              <p>Clients</p>
+            </div>
+            <div className={styles.content__description}>
+              <p>Individual investors, trusts and funds</p>
+            </div>
+          </div>
+        </div>
+        <div className={styles.card}>
+          <div className={styles.card__span}>
+            <span>Over</span>
+          </div>
+
+          <div className={styles.card__content}>
+            <div className={styles.content__title}>
+              <p>5</p>
+            </div>
+            <div className={styles.content__subTitle}>
+              <p>
+                Partner
+                <br />
+                countries
+              </p>
+            </div>
+            <div className={styles.content__description}>
+              {/* <p>Individual investors, trusts and funds</p> */}
             </div>
           </div>
         </div>

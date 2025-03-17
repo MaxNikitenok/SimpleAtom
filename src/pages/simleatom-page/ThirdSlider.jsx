@@ -1,0 +1,59 @@
+import { useState, useEffect, useRef } from 'react';
+import Slider from 'react-slick';
+
+export const ThirdSlider = () => {
+  const [nav1, setNav1] = useState(null);
+  const [nav2, setNav2] = useState(null);
+  let sliderRef1 = useRef(null);
+  let sliderRef2 = useRef(null);
+
+  useEffect(() => {
+    setNav1(sliderRef1);
+    setNav2(sliderRef2);
+  }, []);
+
+  const sliderSettings = {
+    // dots: true,
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+  return (
+    <div className="slider-container">
+      <Slider
+        {...sliderSettings}
+        asNavFor={nav2}
+        ref={(slider) => (sliderRef1 = slider)}
+      >
+        <div>
+          <h3>1</h3>
+        </div>
+        <div>
+          <h3>2</h3>
+        </div>
+        <div>
+          <h3>3</h3>
+        </div>
+      </Slider>
+      <Slider
+        asNavFor={nav1}
+        ref={(slider) => (sliderRef2 = slider)}
+        slidesToShow={3}
+        swipeToSlide={true}
+        focusOnSelect={true}
+      >
+        <div>
+          <h3>1</h3>
+        </div>
+        <div>
+          <h3>2</h3>
+        </div>
+        <div>
+          <h3>3</h3>
+        </div>
+      </Slider>
+    </div>
+  );
+};
