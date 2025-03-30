@@ -9,9 +9,11 @@ import video_logo_black from '../../assets/video_logo_black.mp4';
 import video_logo_white from '../../assets/video_logo_white.mp4';
 import QR1 from '../../assets/QR_Atom_1.png';
 import QR2 from '../../assets/QR_Atom_2.png';
-import devices from '../../assets/devices.png';
+import iphone_img from '../../assets/iphone_img.png';
 import screenshot from '../../assets/screenshot.png';
-import Video from '../../assets/video.mp4';
+import mac_img from '../../assets/mac_img.png';
+import video_on_iphone from '../../assets/video_on_iphone.mp4';
+import video_on_mac from '../../assets/video_on_mac.mp4';
 import cn from 'classnames';
 import { useNavigate, useOutletContext } from 'react-router-dom';
 import { partnersRef } from '../about-us-page/AboutUs';
@@ -166,7 +168,7 @@ export const Simpleatom = () => {
         algorithms.
       </h1>
 
-      <section className={styles.section1}>
+      {/* <section className={styles.section1}>
         <div className={styles.section1__text_wrapper}>
           <p>
             Our software will multiply your investment automatically and with
@@ -175,7 +177,7 @@ export const Simpleatom = () => {
             <sup>1</sup> returns per year.
           </p>
         </div>
-      </section>
+      </section> */}
 
       <section ref={sectionOneRef} className={styles.section2}>
         <div className={styles.section2__text_wrapper}>
@@ -210,7 +212,6 @@ export const Simpleatom = () => {
         </div>
         <SecondSlider />
       </section>
-      <section className={styles.section4}></section>
       <div ref={sectionTwoNewRef}>
         <section
           className={cn(
@@ -228,7 +229,7 @@ export const Simpleatom = () => {
         </section>
       </div>
       <section className={styles.section4}>
-        <div className={styles.section2__text_wrapper}>
+        <div className={styles.section4__title}>
           <h1 className={sectionOneInView ? styles.view_anim : ''}>
             All strategies. <span>Take your pick.</span>
           </h1>
@@ -236,99 +237,107 @@ export const Simpleatom = () => {
         <ThirdSlider />
       </section>
       <section className={styles.section5}>
-        <div
-          className={styles.section5__container_first}
-          onClick={() => {
-            navigate('/aboutUs');
-            window.scrollTo(0, 0);
-            setTimeout(scrollToPartnersRef, 1000);
-          }}
-        >
-          <p>over</p>
-
-          <div className={styles.container_second}>
-            <div className={styles.container__left}>
-              <span>80</span>
+        <div className={styles.section5__content}>
+          <div className={styles.section5__title}>SECURITY</div>
+          <div className={styles.section5__subTitle}>No compromises.</div>
+          <div className={styles.section5__descriptions}>
+            <div className={styles.section5__description}>
+              <div className={styles.section5__description_line}></div>
+              <p>
+                Our trading software works with MT4 and MT5 and only on{' '}
+                <span>top-rated and regulated platforms</span>, such as Bybit,
+                IC Markets, Exness, Pepperstone, Tickmill, Vantage, Fusion
+                Markets, RannForex.
+              </p>
             </div>
-
-            <div className={styles.container__right}>
-              <span>Clients worldwide</span>
-
-              <span>Individual investors, trust and funds</span>
+            <div className={styles.section5__description}>
+              <div className={styles.section5__description_line}></div>
+              <p>
+                <span>Your money is always on your personal account</span>, you
+                do not need to transfer it anywhere. You have instant access to
+                your funds. We can work with any regulators supported by the
+                broker (FSA, FCA, DFSA UAE, CySEC, AFSA, and FSCA).
+              </p>
+            </div>
+            <div className={styles.section5__description}>
+              <div className={styles.section5__description_line}></div>
+              <p>
+                We do not buy assets, we trade futures. That's how{' '}
+                <span>you make money on both the rise and fall</span> of the
+                exchange rate.
+              </p>
+            </div>
+          </div>
+          <div className={styles.section5__image}>
+            <div className={styles.section5__macBook}>
+              <div className={styles.section5__videoWrapper}>
+                <video
+                  playsInline
+                  autoPlay
+                  poster={logo_black}
+                  muted
+                  type="video/mp4"
+                  loop
+                  src={video_on_mac}
+                ></video>
+              </div>
+              <img src={mac_img} alt="macbook" />
+            </div>
+          </div>
+          <div className={styles.section5__descriptions}>
+            <div className={styles.section5__description}>
+              <div className={styles.section5__description_line}></div>
+              <p>
+                <span>Full automation of trading</span> with global assist and
+                control by the Simpleatom team.
+              </p>
+            </div>
+            <div className={styles.section5__description}>
+              <div className={styles.section5__description_line}></div>
+              <p>
+                Very <span>strict risk management</span>: the risk per trade
+                does not exceed 0.3%.
+              </p>
+            </div>
+            <div className={styles.section5__description}>
+              <div className={styles.section5__description_line}></div>
+              <p>
+                Our software will <span>only</span> be accessed for{' '}
+                <span>trading</span> transactions on your behalf.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       <section className={styles.section6}>
-        <div
-          className={styles.section6__container_first}
-          onClick={() => {
-            navigate('/aboutUs');
-            window.scrollTo(0, 0);
-            setTimeout(scrollToPartnersRef, 1000);
-          }}
-        >
-          <p>over</p>
+        <div className={styles.section6__iphone}>
+          <video
+            playsInline
+            autoPlay
+            poster={logo_black}
+            muted
+            type="video/mp4"
+            loop
+            src={video_on_iphone}
+          ></video>
 
-          <div className={styles.container_second}>
-            <div className={styles.container__left}>
-              <span>5</span>
-            </div>
-
-            <div className={styles.container__right}>
-              <span>Partner countries</span>
-            </div>
-          </div>
+          <img src={iphone_img} alt="iphone" />
         </div>
       </section>
 
-      <section className={styles.section7}>
-        <img alt="devices" src={devices} />
-      </section>
+      <section className={styles.section7}></section>
 
       <section className={styles.section8}>
         <h2>The best because</h2>
 
         <div className={styles.section8__container}>
           <div className={styles.section8__container_one}>
-            <div ref={ref1}>
-              <p className={ref1InView ? styles.view_anim : ''}>
-                {/* Trading on <span>BYBIT</span> - one of top-3 exchanges. */}
-                Our trading software works with MT4 and MT5 and only on
-                top-rated and regulated platforms, such as Bybit, IC Markets,
-                Exness, Pepperstone, Tickmill, Vantage, Fusion Markets,
-                RannForex.
-              </p>
-            </div>
-
-            <div ref={ref2}>
-              <p className={ref2InView ? styles.view_anim : ''}>
-                <span>Your money is always on your personal account</span>, you
-                do not need to transfer it anywhere. You have instant access to
-                your funds.
-              </p>
-            </div>
-
-            <div ref={ref2a}>
-              <p className={ref2aInView ? styles.view_anim : ''}>
-                We can work with any regulators supported by the broker (FSA,
-                FCA, DFSA UAE, CySEC, AFSA, and FSCA).
-              </p>
-            </div>
-
             <div ref={ref3}>
               <p className={ref3InView ? styles.view_anim : ''}>
                 <span>You transfer </span>
                 us the reward only
                 <span> after you make a profit.</span>
-              </p>
-            </div>
-
-            <div ref={ref4}>
-              <p className={ref4InView ? styles.view_anim : ''}>
-                Our software will <span>only</span> be accessed for{' '}
-                <span>trading</span> transactions on your behalf.
               </p>
             </div>
 
@@ -345,66 +354,6 @@ export const Simpleatom = () => {
                 confirmed by statistics.
               </p>
             </div>
-
-            <div ref={ref7}>
-              <p className={ref7InView ? styles.view_anim : ''}>
-                Very strict risk management: the risk per trade does not exceed
-                0.3%.
-              </p>
-            </div>
-          </div>
-
-          <div className={styles.section8__container_two}>
-            <div ref={ref11}>
-              <p className={ref11InView ? styles.view_anim : ''}>
-                Highest level of
-              </p>
-            </div>
-
-            <div ref={ref12}>
-              <h3 className={ref12InView ? styles.view_anim : ''}>Security</h3>
-            </div>
-
-            <div ref={ref13}>
-              <p className={ref13InView ? styles.view_anim : ''}>
-                With Metatrader (MT4 and MT5)
-              </p>
-            </div>
-          </div>
-
-          <div ref={ref14} className={styles.video_container}>
-            <video
-              playsInline
-              autoPlay
-              poster={screenshot}
-              muted
-              type="video/mp4"
-              src={Video}
-              loop
-              className={ref14InView ? styles.view_anim : ''}
-            >
-              {/* <source src={Video} type="video/mp4" /> */}
-            </video>
-          </div>
-        </div>
-
-        <div className={styles.section8__second_container}>
-          <div className={styles.section8__second_container_left}>
-            <div ref={ref8}>
-              <p className={ref8InView ? styles.view_anim : ''}>
-                <span>Full automation of trading</span> with global assist and
-                control by the Simpleatom team.
-              </p>
-            </div>
-
-            <div ref={ref9}>
-              <p className={ref9InView ? styles.view_anim : ''}>
-                We do not buy assets, we trade futures. That`s how
-                <span> you make money on both the rise and fall</span> of the
-                exchange rate.
-              </p>
-            </div>
-
             <div ref={ref10}>
               <p className={ref10InView ? styles.view_anim : ''}>
                 Suitable for <span>novice</span> investors, professionals,{' '}
@@ -413,11 +362,10 @@ export const Simpleatom = () => {
             </div>
           </div>
 
-          <div className={styles.section8__second_container_right}>
-            <div ref={ref15}>
-              <p className={ref15InView ? styles.view_anim : ''}>Stable</p>
+          <div className={styles.section8__container_two}>
+            <div ref={ref11}>
+              <p className={ref11InView ? styles.view_anim : ''}>Stable</p>
             </div>
-
             <div ref={ref16}>
               <h3 className={ref16InView ? styles.view_anim : ''}>
                 Passive income
@@ -430,49 +378,49 @@ export const Simpleatom = () => {
             </div>
           </div>
         </div>
-      </section>
 
-      <section className={styles.connect__button}>
-        <button
-          //  onClick={() => setShowConversationalModal(true)}
-          onClick={() => navigate('/form/simpleatom-from-site')}
-        >
-          {/* <a href="https://dev.fcm.by/form/home/" target="blanc"> */}
-          Connect
-          {/* </a> */}
-        </button>
+        <div className={styles.section8__second_container}>
+          <div className={styles.section8__second_container_left}></div>
+
+          <div className={styles.section8__second_container_right}></div>
+        </div>
       </section>
 
       <section className={styles.page__footer}>
-        {/* <p>
-          1. The data presented is derived from the performance statistics of
-          the{' '}
-          <span
-            onClick={() => {
-              window.scrollTo({
-                top: conservativeRef.current.offsetTop - 90,
-                behavior: 'smooth',
-              });
-            }}
-          >
-            Conservative Strategy
-          </span>{' '}
-          managed account for the year 2023. Account verification is confirmed
-          by data from{' '}
-          <span className={styles.footer__link}>
-            <a
-              href="https://www.myfxbook.com/members/Milkivays/conserve-a/9947281"
-              target="blanc"
+        <ol value='1'>
+          <p>
+            The data presented is derived from the performance statistics of
+            the{' '}
+            <span
+              onClick={() => {
+                window.scrollTo({
+                  top: conservativeRef.current.offsetTop - 90,
+                  behavior: 'smooth',
+                });
+              }}
             >
-              myfxbook.
-            </a>
-          </span>{' '}
-          The account has been active on the exchange since August 22, 2022, and
-          data is available for viewing from that date to the present.
-        </p> */}
-        <p>
-          SIMPLEATOM SOFTWARE - FZCO Dubai Silicon Oasis, Dubai Digital Park,
-          Building A1, Dubai, UAE Premises number: 54194-001
+              Conservative Strategy
+            </span>{' '}
+            managed account for the year 2023. The account has been active on
+            the exchange since August 22, 2022, and data is available for
+            viewing from that date to the present.
+          </p>
+        </ol>
+        <ol>
+          <p>
+            The software supports integration with any brokers that comply
+            with the requirements of relevant regulatory authorities and offer
+            MetaTrader-4 or MetaTrader-5 accounts. It is the sole responsibility
+            of the broker to ensure full compliance with all applicable
+            regulatory standards and obligations.
+          </p>
+        </ol>
+        <p className={styles.page__footer_contacts}>
+          SIMPLEATOM SOFTWARE - FZCO
+          <br />
+          Dubai Silicon Oasis, Dubai Digital Park, Building A1, Dubai, UAE
+          <br />
+          Premises number: 54194-001
         </p>
       </section>
     </main>

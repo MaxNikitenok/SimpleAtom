@@ -6,18 +6,31 @@
   padding: 0;
 }
 
-.dddot {
-  border: 4px #CFCED1 solid;
-  width: 2px;
-  border-radius: 4px;
+:global .slick-dots li {
+  height: 7px;
+  width: 7px;
+  background-color: #cfced1;
+  margin: 0 10px;
+  top: -14px;
+  position: relative;
+  border-radius: 10px;
 }
 
-:global li.slick-active   {
-  border: 4px #CFCED1 solid;
+:global li.slick-active {
+  border: none;
+  width: 50px;
+  height: 7px;
+  background-color: #cfced1;
+  top: -14px;
+  border-radius: 5px;
 }
 
 :global .slick-dots ul {
-  padding: 0;
+  display: inline-block;
+  padding: 0 16px;
+  background-color: #373739;
+  height: 56px;
+  border-radius: 56px;
 }
 
 :global .slick-track {
@@ -25,9 +38,17 @@
 }
 
 :global .slick-slide {
-  /* width: 430px; */
   height: 500px;
   margin: 15px;
+}
+
+.dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  top: -6px;
+  left: -7px;
 }
 
 .card {

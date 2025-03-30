@@ -2,14 +2,15 @@
 import Slider from 'react-slick';
 // import styles from './Simpleatom.module.css';
 import styles from './FirstSlider.module.css';
+
 import { useNavigate } from 'react-router-dom';
 import { partnersRef } from '../about-us-page/AboutUs';
-
 
 export const FirstSlider = () => {
   const sliderSettings = {
     dots: true,
-    infinite: true,
+    arrows: false,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -17,44 +18,31 @@ export const FirstSlider = () => {
     appendDots: (dots) => (
       <div
         style={{
-          // backgroundColor: '#373739',
           borderRadius: '50px',
           padding: '0px',
-          // width: '300px',
-          bottom: '-70px'
+
+          bottom: '-75px',
         }}
       >
         <ul style={{ margin: '0px' }}> {dots} </ul>
       </div>
     ),
-    customPaging: () => (
-      <div className={styles.dddot}
-        // style={{
-        //   width: '0px',
-        //   color: '#CFCED1',
-        //   border: '6px #CFCED1 solid',
-        //   borderRadius: '10px',
-        //   opacity: '0.8',
-        // }}
-      >
-        {}
-      </div>
-    ),
+    customPaging: () => <div className={styles.dot}>{}</div>,
   };
 
   const scrollToPartnersRef = () => {
-        window.scrollTo({
-          top: partnersRef.current.offsetTop,
-          left: 100,
-          behavior: 'smooth',
-        });
-      };
+    window.scrollTo({
+      top: partnersRef.current.offsetTop,
+      left: 100,
+      behavior: 'smooth',
+    });
+  };
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
-    <div className="slider-container">
-      <Slider {...sliderSettings} className={styles.slider}>
+    <div className={styles.slider_container}>
+      <Slider {...sliderSettings} className={styles.slider1}>
         <div className={styles.card}>
           <div className={styles.card__span}>
             <span>Over</span>
@@ -75,7 +63,7 @@ export const FirstSlider = () => {
             </div>
           </div>
         </div>
-        <div className={styles.card} >
+        <div className={styles.card}>
           <div className={styles.card__span}>
             <span>Over</span>
           </div>
@@ -96,11 +84,14 @@ export const FirstSlider = () => {
             </div>
           </div>
         </div>
-        <div className={styles.card} onClick={() => {
+        <div
+          className={styles.card}
+          onClick={() => {
             navigate('/aboutUs');
             window.scrollTo(0, 0);
             setTimeout(scrollToPartnersRef, 1000);
-          }}>
+          }}
+        >
           <div className={styles.card__span}>
             <span>Over</span>
           </div>

@@ -11,7 +11,8 @@ import Safety from '../../assets/Safety.mp4';
 export const SecondSlider = () => {
   const sliderSettings = {
     dots: true,
-    infinite: true,
+    arrows: false,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -19,30 +20,16 @@ export const SecondSlider = () => {
     appendDots: (dots) => (
       <div
         style={{
-          // backgroundColor: '#373739',
           borderRadius: '50px',
           padding: '0px',
-          // width: '300px',
+
           bottom: '-70px',
         }}
       >
         <ul style={{ margin: '0px' }}> {dots} </ul>
       </div>
     ),
-    customPaging: () => (
-      <div
-        className={styles.dddot}
-        // style={{
-        //   width: '0px',
-        //   color: '#CFCED1',
-        //   border: '6px #CFCED1 solid',
-        //   borderRadius: '10px',
-        //   opacity: '0.8',
-        // }}
-      >
-        {}
-      </div>
-    ),
+    customPaging: () => <div className={styles.dot}>{}</div>,
   };
 
   return (
@@ -54,7 +41,7 @@ export const SecondSlider = () => {
             <div className={styles.content__subTitle}>
               <p>Low to mid-frequency</p>
             </div>
-            <div className={styles.content__video}>
+            <div className={styles.content__video_1}>
               <video
                 playsInline
                 autoPlay
@@ -71,9 +58,9 @@ export const SecondSlider = () => {
           <div className={styles.card__content}>
             <div className={styles.content__title}>Safety</div>
             <div className={styles.content__subTitle}>
-              <p>FSA, FCA, DFSA UAE, CySEC, AFSA, FSCA</p>
+              <p>FSA, FCA, DFSA UAE, CySEC,<br/>AFSA, FSCA</p>
             </div>
-            <div className={styles.content__video}>
+            <div className={styles.content__video_2}>
               <video
                 playsInline
                 autoPlay
@@ -92,7 +79,7 @@ export const SecondSlider = () => {
             <div className={styles.content__subTitle}>
               <p>BTC, ETH, XAU, JPY</p>
             </div>
-            <div className={styles.content__video}>
+            <div className={styles.content__video_3}>
               <video
                 playsInline
                 autoPlay
@@ -111,7 +98,7 @@ export const SecondSlider = () => {
             <div className={styles.content__subTitle}>
               <p>USD</p>
             </div>
-            <div className={styles.content__video}>
+            <div className={styles.content__video_4}>
               <video
                 playsInline
                 autoPlay
@@ -124,7 +111,6 @@ export const SecondSlider = () => {
             </div>
           </div>
         </div>
-
       </Slider>
     </div>
   );

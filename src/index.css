@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap);
 
 html {
   overflow-x: hidden;
@@ -8,6 +9,7 @@ html {
 html[data-theme='dark'] {
   --font-family: 'Inter', sans-serif;
   --second-family: 'Roboto', sans-serif;
+  --third-family: 'Readex Pro', sans-serif;
   --link: #0366cc;
   --Text-Main-text: #85868b;
   --Text-Text-accent: #fff;
@@ -24,6 +26,7 @@ html[data-theme='dark'] {
 [data-theme='light'] {
   --font-family: 'Inter', sans-serif;
   --second-family: 'Roboto', sans-serif;
+  --third-family: 'Readex Pro', sans-serif;
   --link: #0366cc;
   --Text-Main-text: #85868b;
   --Text-Text-accent: #000;
