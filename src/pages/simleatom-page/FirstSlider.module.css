@@ -185,3 +185,9 @@
   line-height: 150%; /* 49.5px */
   letter-spacing: -0.726px;
 }
+
+@media screen and (max-width: 576px) {
+  :global .slick-track {
+    margin-left: calc((100vw - 400px)/2);
+  }
+}

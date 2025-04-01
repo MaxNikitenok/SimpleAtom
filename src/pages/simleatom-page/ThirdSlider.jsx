@@ -28,7 +28,7 @@ export const ThirdSlider = () => {
 
   useEffect(() => {
     setStrategy('medium');
-    setYear('2021');
+    setYear('2022');
   }, []);
 
   // const track = document.getElementById("image-track");
@@ -73,170 +73,172 @@ export const ThirdSlider = () => {
   // }
 
   return (
-    <div className="slider-container">
-      <div className={styles.thirdSlider__minCardsContainer}>
-        <div
-          className={
-            strategy === 'ultra'
-              ? styles.thirdSlider__cardMin_activeWrapper
-              : styles.thirdSlider__cardMin_wrapper
-          }
-        >
+    <div className={styles.thirdSlider__container}>
+      <div className={styles.thirdSlider__minCardsWrapper}>
+        <div className={cn(styles.thirdSlider__minCardsContainer, strategy==='ultra' && styles.cardMin__activeRight, strategy==='medium' && styles.cardMin__activeLeft)}>
           <div
-            className={styles.thirdSlider__cardMin}
-            onClick={() => setStrategy('ultra')}
+            className={
+              strategy === 'ultra'
+                ? styles.thirdSlider__cardMin_activeWrapper
+                : styles.thirdSlider__cardMin_wrapper
+            }
           >
-            <div className={styles.cardMin__content}>
-              <div className={styles.cardMin__titles}>
-                <div
-                  className={
-                    strategy === 'ultra'
-                      ? styles.cardMin__activeTitle
-                      : styles.cardMin__title
-                  }
-                >
-                  ULTRA-CONSERVATIVE STRATEGY
+            <div
+              className={styles.thirdSlider__cardMin}
+              onClick={() => setStrategy('ultra')}
+            >
+              <div className={styles.cardMin__content}>
+                <div className={styles.cardMin__titles}>
+                  <div
+                    className={
+                      strategy === 'ultra'
+                        ? styles.cardMin__activeTitle
+                        : styles.cardMin__title
+                    }
+                  >
+                    ULTRA-CONSERVATIVE STRATEGY
+                  </div>
+                  <div className={styles.cardMin__subTitle}>
+                    Maximum safety, low drawdowns - protect your wealth with
+                    reliable returns.
+                  </div>
                 </div>
-                <div className={styles.cardMin__subTitle}>
-                  Maximum safety, low drawdowns - protect your wealth with
-                  reliable returns.
+                <div className={styles.cardMin__description}>
+                  <div className={styles.cardMin__description_text}>
+                    <p>Average Annual Income</p>
+                    <p>Average Monthly Income</p>
+                  </div>
+                  <div className={styles.cardMin__description_numbers}>
+                    <p>59.70%</p>
+                    <p>4.98%</p>
+                  </div>
                 </div>
-              </div>
-              <div className={styles.cardMin__description}>
-                <div className={styles.cardMin__description_text}>
-                  <p>Average Annual Income</p>
-                  <p>Average Monthly Income</p>
-                </div>
-                <div className={styles.cardMin__description_numbers}>
-                  <p>59.70%</p>
-                  <p>4.98%</p>
-                </div>
-              </div>
-              <div className={styles.cardMin__subDescription}>
-                <div className={styles.cardMin__subDescription_text}>
-                  <p>Profit Factor</p>
-                  <p>Recovery Factor</p>
-                  <p>Sharpe Ratio</p>
-                  <p>Max Equity Drawdown</p>
-                  <p>Max Stagnation, days</p>
-                </div>
-                <div className={styles.cardMin__subDescription_numbers}>
-                  <p>1.94</p>
-                  <p>16.73</p>
-                  <p>0.21</p>
-                  <p>5.60%</p>
-                  <p>92</p>
+                <div className={styles.cardMin__subDescription}>
+                  <div className={styles.cardMin__subDescription_text}>
+                    <p>Profit Factor</p>
+                    <p>Recovery Factor</p>
+                    <p>Sharpe Ratio</p>
+                    <p>Max Equity Drawdown</p>
+                    <p>Max Stagnation, days</p>
+                  </div>
+                  <div className={styles.cardMin__subDescription_numbers}>
+                    <p>1.94</p>
+                    <p>16.73</p>
+                    <p>0.21</p>
+                    <p>5.60%</p>
+                    <p>92</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          className={
-            strategy === 'conservative'
-              ? styles.thirdSlider__cardMin_activeWrapper
-              : styles.thirdSlider__cardMin_wrapper
-          }
-        >
           <div
-            className={styles.thirdSlider__cardMin}
-            onClick={() => setStrategy('conservative')}
+            className={
+              strategy === 'conservative'
+                ? styles.thirdSlider__cardMin_activeWrapper
+                : styles.thirdSlider__cardMin_wrapper
+            }
           >
-            <div className={styles.cardMin__content}>
-              <div className={styles.cardMin__titles}>
-                <div
-                  className={
-                    strategy === 'conservative'
-                      ? styles.cardMin__activeTitle
-                      : styles.cardMin__title
-                  }
-                >
-                  CONSERVATIVE STRATEGY
+            <div
+              className={styles.thirdSlider__cardMin}
+              onClick={() => setStrategy('conservative')}
+            >
+              <div className={styles.cardMin__content}>
+                <div className={styles.cardMin__titles}>
+                  <div
+                    className={
+                      strategy === 'conservative'
+                        ? styles.cardMin__activeTitle
+                        : styles.cardMin__title
+                    }
+                  >
+                    CONSERVATIVE STRATEGY
+                  </div>
+                  <div className={styles.cardMin__subTitle}>
+                    Steady growth with minimal risk - your capital grows safely
+                    over time.
+                  </div>
                 </div>
-                <div className={styles.cardMin__subTitle}>
-                  Steady growth with minimal risk - your capital grows safely
-                  over time.
+                <div className={styles.cardMin__description}>
+                  <div className={styles.cardMin__description_text}>
+                    <p>Average Annual Income</p>
+                    <p>Average Monthly Income</p>
+                  </div>
+                  <div className={styles.cardMin__description_numbers}>
+                    <p>72.55%</p>
+                    <p>6.05%</p>
+                  </div>
                 </div>
-              </div>
-              <div className={styles.cardMin__description}>
-                <div className={styles.cardMin__description_text}>
-                  <p>Average Annual Income</p>
-                  <p>Average Monthly Income</p>
-                </div>
-                <div className={styles.cardMin__description_numbers}>
-                  <p>72.55%</p>
-                  <p>6.05%</p>
-                </div>
-              </div>
-              <div className={styles.cardMin__subDescription}>
-                <div className={styles.cardMin__subDescription_text}>
-                  <p>Profit Factor</p>
-                  <p>Recovery Factor</p>
-                  <p>Sharpe Ratio</p>
-                  <p>Max Equity Drawdown</p>
-                  <p>Max Stagnation, days</p>
-                </div>
-                <div className={styles.cardMin__subDescription_numbers}>
-                  <p>2.01</p>
-                  <p>10.44</p>
-                  <p>0.16</p>
-                  <p>9.20%</p>
-                  <p>49</p>
+                <div className={styles.cardMin__subDescription}>
+                  <div className={styles.cardMin__subDescription_text}>
+                    <p>Profit Factor</p>
+                    <p>Recovery Factor</p>
+                    <p>Sharpe Ratio</p>
+                    <p>Max Equity Drawdown</p>
+                    <p>Max Stagnation, days</p>
+                  </div>
+                  <div className={styles.cardMin__subDescription_numbers}>
+                    <p>2.01</p>
+                    <p>10.44</p>
+                    <p>0.16</p>
+                    <p>9.20%</p>
+                    <p>49</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          className={
-            strategy === 'medium'
-              ? styles.thirdSlider__cardMin_activeWrapper
-              : styles.thirdSlider__cardMin_wrapper
-          }
-        >
           <div
-            className={styles.thirdSlider__cardMin}
-            onClick={() => setStrategy('medium')}
+            className={
+              strategy === 'medium'
+                ? styles.thirdSlider__cardMin_activeWrapper
+                : styles.thirdSlider__cardMin_wrapper
+            }
           >
-            <div className={styles.cardMin__content}>
-              <div className={styles.cardMin__titles}>
-                <div
-                  className={
-                    strategy === 'medium'
-                      ? styles.cardMin__activeTitle
-                      : styles.cardMin__title
-                  }
-                >
-                  MEDIUM-VOLATILITY STRATEGY
+            <div
+              className={styles.thirdSlider__cardMin}
+              onClick={() => setStrategy('medium')}
+            >
+              <div className={styles.cardMin__content}>
+                <div className={styles.cardMin__titles}>
+                  <div
+                    className={
+                      strategy === 'medium'
+                        ? styles.cardMin__activeTitle
+                        : styles.cardMin__title
+                    }
+                  >
+                    MEDIUM-VOLATILITY STRATEGY
+                  </div>
+                  <div className={styles.cardMin__subTitle}>
+                    Balanced risk, high returns - capitalize on market trends
+                    for profit.
+                  </div>
                 </div>
-                <div className={styles.cardMin__subTitle}>
-                  Balanced risk, high returns - capitalize on market trends for
-                  profit.
+                <div className={styles.cardMin__description}>
+                  <div className={styles.cardMin__description_text}>
+                    <p>Average Annual Income</p>
+                    <p>Average Monthly Income</p>
+                  </div>
+                  <div className={styles.cardMin__description_numbers}>
+                    <p>431.18%</p>
+                    <p>35.93%</p>
+                  </div>
                 </div>
-              </div>
-              <div className={styles.cardMin__description}>
-                <div className={styles.cardMin__description_text}>
-                  <p>Average Annual Income</p>
-                  <p>Average Monthly Income</p>
-                </div>
-                <div className={styles.cardMin__description_numbers}>
-                  <p>431.18%</p>
-                  <p>35.93%</p>
-                </div>
-              </div>
-              <div className={styles.cardMin__subDescription}>
-                <div className={styles.cardMin__subDescription_text}>
-                  <p>Profit Factor</p>
+                <div className={styles.cardMin__subDescription}>
+                  <div className={styles.cardMin__subDescription_text}>
+                    <p>Profit Factor</p>
 
-                  <p>Sharpe Ratio</p>
-                  <p>Max Equity Drawdown</p>
-                  <p>Max Stagnation, days</p>
-                </div>
-                <div className={styles.cardMin__subDescription_numbers}>
-                  <p>2.19</p>
-                  <p>0.23</p>
-                  <p>17.05%</p>
-                  <p>122</p>
+                    <p>Sharpe Ratio</p>
+                    <p>Max Equity Drawdown</p>
+                    <p>Max Stagnation, days</p>
+                  </div>
+                  <div className={styles.cardMin__subDescription_numbers}>
+                    <p>2.19</p>
+                    <p>0.23</p>
+                    <p>17.05%</p>
+                    <p>122</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1314,7 +1316,12 @@ export const ThirdSlider = () => {
                   </div>
                 </div>
               )}
-              <div className={styles.cardMax__stats_button} onClick={()=>{setShowMoreStats(!showMoreStats)}}>
+              <div
+                className={styles.cardMax__stats_button}
+                onClick={() => {
+                  setShowMoreStats(!showMoreStats);
+                }}
+              >
                 Learn more about Stats {'>'}
               </div>
               {showMoreStats && (

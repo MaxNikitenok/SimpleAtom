@@ -329,7 +329,7 @@ export const Simpleatom = () => {
       <section className={styles.section7}></section>
 
       <section className={styles.section8}>
-        <h2>The best because</h2>
+        {/* <h2>The best because</h2> */}
 
         <div className={styles.section8__container}>
           <div className={styles.section8__container_one}>
