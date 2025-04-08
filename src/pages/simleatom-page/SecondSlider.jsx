@@ -7,16 +7,21 @@ import { partnersRef } from '../about-us-page/AboutUs';
 import logo_black from '../../assets/logo_black.jpg';
 import Trading_Frequency from '../../assets/Trading_Frequency.mp4';
 import Safety from '../../assets/Safety.mp4';
+import Currency from '../../assets/currency.mov';
+import Trading_pair from '../../assets/trading_pair.mov';
 
 export const SecondSlider = () => {
   const sliderSettings = {
     dots: true,
     arrows: false,
-    infinite: false,
-    speed: 500,
+    infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     variableWidth: true,
+    autoplay: true,
+    speed: 3000,
+    autoplaySpeed: 2000,
+    cssEase: 'linear',
     appendDots: (dots) => (
       <div
         style={{
@@ -86,7 +91,7 @@ export const SecondSlider = () => {
                 poster={logo_black}
                 muted
                 type="video/mp4"
-                // src={Trading_Frequency}
+                src={Trading_pair}
                 loop
               />
             </div>
@@ -105,7 +110,7 @@ export const SecondSlider = () => {
                 poster={logo_black}
                 muted
                 type="video/mp4"
-                // src={Trading_Frequency}
+                src={Currency}
                 loop
               />
             </div>

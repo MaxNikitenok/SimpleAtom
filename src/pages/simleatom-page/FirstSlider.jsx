@@ -10,8 +10,11 @@ export const FirstSlider = () => {
   const sliderSettings = {
     dots: true,
     arrows: false,
-    infinite: false,
-    speed: 500,
+    infinite: true,
+    autoplay: true,
+    speed: 3000,
+    autoplaySpeed: 2000,
+    cssEase: 'linear',
     slidesToShow: 1,
     slidesToScroll: 1,
     variableWidth: true,

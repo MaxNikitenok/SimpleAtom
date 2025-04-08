@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import styles from './ThirdSlider.module.css';
 import cn from 'classnames';
 import graph_ultra from '../../assets/graph_ultra.png';
+import graph_ultra_more from '../../assets/graph_ultra_more.png';
 import graph_conservative from '../../assets/graph_conservative.png';
+import graph_conservative_more from '../../assets/graph_conservative_more.png';
 import graph_medium_2021_color from '../../assets/graph_medium_2021_color.png';
 import graph_medium_2021_bw from '../../assets/graph_medium_2021_bw.png';
 import graph_medium_2021_more from '../../assets/graph_medium_2021_more.png';
@@ -27,8 +29,8 @@ export const ThirdSlider = () => {
   const [showMoreStats, setShowMoreStats] = useState(false);
 
   useEffect(() => {
-    setStrategy('medium');
-    setYear('2022');
+    setStrategy('conservative');
+    setYear('2021');
   }, []);
 
   // const track = document.getElementById("image-track");
@@ -75,7 +77,13 @@ export const ThirdSlider = () => {
   return (
     <div className={styles.thirdSlider__container}>
       <div className={styles.thirdSlider__minCardsWrapper}>
-        <div className={cn(styles.thirdSlider__minCardsContainer, strategy==='ultra' && styles.cardMin__activeRight, strategy==='medium' && styles.cardMin__activeLeft)}>
+        <div
+          className={cn(
+            styles.thirdSlider__minCardsContainer,
+            strategy === 'ultra' && styles.cardMin__activeRight,
+            strategy === 'medium' && styles.cardMin__activeLeft
+          )}
+        >
           <div
             className={
               strategy === 'ultra'
@@ -425,8 +433,25 @@ export const ThirdSlider = () => {
                 ULTRA-CONSERVATIVE strategy
               </div>
               <div className={styles.cardMax__graph}>
-                <img src={graph_ultra} alt="graph"></img>
-                <div className={styles.cardMax__graphButton}>More details</div>
+                <img
+                  src={graph_ultra}
+                  alt="graph"
+                  className={!showMoreDetails ? '' : styles.hide}
+                ></img>
+                <img
+                  src={graph_ultra_more}
+                  alt="graph"
+                  className={showMoreDetails ? '' : styles.hide}
+                ></img>
+                <div
+                  className={styles.cardMax__graphButton}
+                  onClick={() => {
+                    setShowMoreDetails(!showMoreDetails);
+                  }}
+                >
+                  {!showMoreDetails && <span>More details</span>}
+                  {showMoreDetails && <span>Hide details</span>}
+                </div>
               </div>
             </div>
           </div>
@@ -610,8 +635,26 @@ export const ThirdSlider = () => {
                 CONSERVATIVE strategy
               </div>
               <div className={styles.cardMax__graph}>
-                <img src={graph_conservative} alt="graph"></img>
-                <div className={styles.cardMax__graphButton}>More details</div>
+                <img
+                  src={graph_conservative}
+                  alt="graph"
+                  className={!showMoreDetails ? '' : styles.hide}
+                ></img>
+                <img
+                  src={graph_conservative_more}
+                  alt="graph"
+                  className={showMoreDetails ? '' : styles.hide}
+                ></img>
+
+                <div
+                  className={styles.cardMax__graphButton}
+                  onClick={() => {
+                    setShowMoreDetails(!showMoreDetails);
+                  }}
+                >
+                  {!showMoreDetails && <span>More details</span>}
+                  {showMoreDetails && <span>Hide details</span>}
+                </div>
               </div>
             </div>
           </div>
@@ -757,6 +800,7 @@ export const ThirdSlider = () => {
                     <img
                       src={graph_medium_2021_color}
                       alt="graph"
+                      id="graph"
                       className={
                         year === '2021' && !showMoreDetails ? '' : styles.hide
                       }
@@ -764,11 +808,13 @@ export const ThirdSlider = () => {
                     <img
                       src={graph_medium_2021_bw}
                       alt="graph"
+                      id="graph"
                       className={year !== '2021' ? '' : styles.hide}
                     ></img>
                     <img
                       src={graph_medium_2021_more}
                       alt="graph"
+                      id="graph"
                       className={
                         year === '2021' && showMoreDetails ? '' : styles.hide
                       }
@@ -789,6 +835,7 @@ export const ThirdSlider = () => {
                     <img
                       src={graph_medium_2022_color}
                       alt="graph"
+                      id="graph"
                       className={
                         year === '2022' && !showMoreDetails ? '' : styles.hide
                       }
@@ -796,11 +843,13 @@ export const ThirdSlider = () => {
                     <img
                       src={graph_medium_2022_bw}
                       alt="graph"
+                      id="graph"
                       className={year !== '2022' ? '' : styles.hide}
                     ></img>
                     <img
                       src={graph_medium_2022_more}
                       alt="graph"
+                      id="graph"
                       className={
                         year === '2022' && showMoreDetails ? '' : styles.hide
                       }
@@ -821,6 +870,7 @@ export const ThirdSlider = () => {
                     <img
                       src={graph_medium_2023_color}
                       alt="graph"
+                      id="graph"
                       className={
                         year === '2023' && !showMoreDetails ? '' : styles.hide
                       }
@@ -828,11 +878,13 @@ export const ThirdSlider = () => {
                     <img
                       src={graph_medium_2023_bw}
                       alt="graph"
+                      id="graph"
                       className={year !== '2023' ? '' : styles.hide}
                     ></img>
                     <img
                       src={graph_medium_2023_more}
                       alt="graph"
+                      id="graph"
                       className={
                         year === '2023' && showMoreDetails ? '' : styles.hide
                       }
@@ -853,6 +905,7 @@ export const ThirdSlider = () => {
                     <img
                       src={graph_medium_2024_color}
                       alt="graph"
+                      id="graph"
                       className={
                         year === '2024' && !showMoreDetails ? '' : styles.hide
                       }
@@ -860,11 +913,13 @@ export const ThirdSlider = () => {
                     <img
                       src={graph_medium_2024_bw}
                       alt="graph"
+                      id="graph"
                       className={year !== '2024' ? '' : styles.hide}
                     ></img>
                     <img
                       src={graph_medium_2024_more}
                       alt="graph"
+                      id="graph"
                       className={
                         year === '2024' && showMoreDetails ? '' : styles.hide
                       }
@@ -883,88 +938,6 @@ export const ThirdSlider = () => {
                   </div>
                 </div>
               </div>
-              {/* <div
-                id="image-track"
-                className={styles.imageTrack}
-                data-mouse-down-at="0"
-                data-prev-percentage="0"
-              >
-                <img
-                  src={graph_medium_2021_color}
-                  alt="img"
-                  className={styles.image}
-                  draggable="false"
-                />
-                <img
-                  src={graph_medium_2021_bw}
-                  alt="img"
-                  className={cn(styles.image, styles.hide)}
-                  draggable="false"
-                />
-                <img
-                  src={graph_medium_2021_more}
-                  alt="img"
-                  className={cn(styles.image, styles.hide)}
-                  draggable="false"
-                />
-
-                <img
-                  src={graph_medium_2022_color}
-                  alt="img"
-                  className={cn(styles.image, styles.hide)}
-                  draggable="false"
-                />
-                <img
-                  src={graph_medium_2022_bw}
-                  alt="img"
-                  className={styles.image}
-                  draggable="false"
-                />
-                <img
-                  src={graph_medium_2022_more}
-                  alt="img"
-                  className={cn(styles.image, styles.hide)}
-                  draggable="false"
-                />
-
-                <img
-                  src={graph_medium_2023_color}
-                  alt="img"
-                  className={cn(styles.image, styles.hide)}
-                  draggable="false"
-                />
-                <img
-                  src={graph_medium_2023_bw}
-                  alt="img"
-                  className={styles.image}
-                  draggable="false"
-                />
-                <img
-                  src={graph_medium_2023_more}
-                  alt="img"
-                  className={cn(styles.image, styles.hide)}
-                  draggable="false"
-                />
-
-                <img
-                  src={graph_medium_2024_color}
-                  alt="img"
-                  className={cn(styles.image, styles.hide)}
-                  draggable="false"
-                />
-                <img
-                  src={graph_medium_2024_bw}
-                  alt="img"
-                  className={styles.image}
-                  draggable="false"
-                />
-                <img
-                  src={graph_medium_2024_more}
-                  alt="img"
-                  className={cn(styles.image, styles.hide)}
-                  draggable="false"
-                />
-              </div> */}
               <div className={styles.cardMax__yearButtons}>
                 <div
                   className={
@@ -1038,281 +1011,265 @@ export const ThirdSlider = () => {
               </div>
               {year === '2021' && (
                 <div className={styles.cardMax__stats}>
-                  <div className={styles.cardMax__stats_string}>
-                    <div className={styles.cardMax__stats_column}>
-                      <span># OF TRADES</span>
-                      <p>2708</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>SHARPE RATIO</span>
-                      <p>0.22</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>PROFIT FACTOR</span>
-                      <p>1.88</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>RETURN / DD RATIO</span>
-                      <p>24.49</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>WINNING PERCENTAGE</span>
-                      <p>48.82 %</p>
-                    </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span># OF TRADES</span>
+                    <p>2708</p>
                   </div>
-                  <div className={styles.cardMax__stats_string}>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>DRAWDOWN</span>
-                      <p>$ 146302.67</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>% DRAWDOWN</span>
-                      <p>1.05 %</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>DAILY AVG PROFIT</span>
-                      <p>$ 9842.09</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>MONTHLY AVG PROFIT</span>
-                      <p>$ 298543.51</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>AVERAGE TRADE</span>
-                      <p>$ 1322.94</p>
-                    </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>SHARPE RATIO</span>
+                    <p>0.22</p>
                   </div>
-                  <div className={styles.cardMax__stats_string}>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>ANNUAL % / MAX DD %</span>
-                      <p>24.37</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>R EXPECTANCY</span>
-                      <p>0.45 R</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>R EXPECTANCY SCORE</span>
-                      <p>1217.69 R</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>STR QUALITY NUMBER</span>
-                      <p>9.8</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>SQN SCORE</span>
-                      <p>47.9</p>
-                    </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>PROFIT FACTOR</span>
+                    <p>1.88</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>RETURN / DD RATIO</span>
+                    <p>24.49</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>WINNING PERCENTAGE</span>
+                    <p>48.82 %</p>
+                  </div>
+
+                  <div className={styles.cardMax__stats_column}>
+                    <span>DRAWDOWN</span>
+                    <p>$ 146302.67</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>% DRAWDOWN</span>
+                    <p>1.05 %</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>DAILY AVG PROFIT</span>
+                    <p>$ 9842.09</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>MONTHLY AVG PROFIT</span>
+                    <p>$ 298543.51</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>AVERAGE TRADE</span>
+                    <p>$ 1322.94</p>
+                  </div>
+
+                  <div className={styles.cardMax__stats_column}>
+                    <span>ANNUAL % / MAX DD %</span>
+                    <p>24.37</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>R EXPECTANCY</span>
+                    <p>0.45 R</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>R EXPECTANCY SCORE</span>
+                    <p>1217.69 R</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>STR QUALITY NUMBER</span>
+                    <p>9.8</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>SQN SCORE</span>
+                    <p>47.9</p>
                   </div>
                 </div>
               )}
               {year === '2022' && (
                 <div className={styles.cardMax__stats}>
-                  <div className={styles.cardMax__stats_string}>
-                    <div className={styles.cardMax__stats_column}>
-                      <span># OF TRADES</span>
-                      <p>3035</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>SHARPE RATIO</span>
-                      <p>0.33</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>PROFIT FACTOR</span>
-                      <p>2.71</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>RETURN / DD RATIO</span>
-                      <p>65.65</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>WINNING PERCENTAGE</span>
-                      <p>53.18 %</p>
-                    </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span># OF TRADES</span>
+                    <p>3035</p>
                   </div>
-                  <div className={styles.cardMax__stats_string}>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>DRAWDOWN</span>
-                      <p>$ 127948.7</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>% DRAWDOWN</span>
-                      <p>0.65 %</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>DAILY AVG PROFIT</span>
-                      <p>$ 23139.58</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>MONTHLY AVG PROFIT</span>
-                      <p>$ 699972.39</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>AVERAGE TRADE</span>
-                      <p>$ 2767.6</p>
-                    </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>SHARPE RATIO</span>
+                    <p>0.33</p>
                   </div>
-                  <div className={styles.cardMax__stats_string}>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>ANNUAL % / MAX DD %</span>
-                      <p>92.3</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>R EXPECTANCY</span>
-                      <p>0.8 R</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>R EXPECTANCY SCORE</span>
-                      <p>22425.73 R</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>STR QUALITY NUMBER</span>
-                      <p>13.89</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>SQN SCORE</span>
-                      <p>75.09</p>
-                    </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>PROFIT FACTOR</span>
+                    <p>2.71</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>RETURN / DD RATIO</span>
+                    <p>65.65</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>WINNING PERCENTAGE</span>
+                    <p>53.18 %</p>
+                  </div>
+
+                  <div className={styles.cardMax__stats_column}>
+                    <span>DRAWDOWN</span>
+                    <p>$ 127948.7</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>% DRAWDOWN</span>
+                    <p>0.65 %</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>DAILY AVG PROFIT</span>
+                    <p>$ 23139.58</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>MONTHLY AVG PROFIT</span>
+                    <p>$ 699972.39</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>AVERAGE TRADE</span>
+                    <p>$ 2767.6</p>
+                  </div>
+
+                  <div className={styles.cardMax__stats_column}>
+                    <span>ANNUAL % / MAX DD %</span>
+                    <p>92.3</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>R EXPECTANCY</span>
+                    <p>0.8 R</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>R EXPECTANCY SCORE</span>
+                    <p>22425.73 R</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>STR QUALITY NUMBER</span>
+                    <p>13.89</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>SQN SCORE</span>
+                    <p>75.09</p>
                   </div>
                 </div>
               )}
               {year === '2023' && (
                 <div className={styles.cardMax__stats}>
-                  <div className={styles.cardMax__stats_string}>
-                    <div className={styles.cardMax__stats_column}>
-                      <span># OF TRADES</span>
-                      <p>2973</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>SHARPE RATIO</span>
-                      <p>0.14</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>PROFIT FACTOR</span>
-                      <p>2.18</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>RETURN / DD RATIO</span>
-                      <p>33.16</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>WINNING PERCENTAGE</span>
-                      <p>48.23 %</p>
-                    </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span># OF TRADES</span>
+                    <p>2973</p>
                   </div>
-                  <div className={styles.cardMax__stats_string}>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>DRAWDOWN</span>
-                      <p>$ 158504.85</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>% DRAWDOWN</span>
-                      <p>0.94 %</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>DAILY AVG PROFIT</span>
-                      <p>$ 15352.64</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>MONTHLY AVG PROFIT</span>
-                      <p>$ 464417.31</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>AVERAGE TRADE</span>
-                      <p>$ 1874.54</p>
-                    </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>SHARPE RATIO</span>
+                    <p>0.14</p>
                   </div>
-                  <div className={styles.cardMax__stats_string}>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>ANNUAL % / MAX DD %</span>
-                      <p>42.35</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>R EXPECTANCY</span>
-                      <p>0.61 R</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>R EXPECTANCY SCORE</span>
-                      <p>1814.34 R</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>STR QUALITY NUMBER</span>
-                      <p>8.62</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>SQN SCORE</span>
-                      <p>49.33</p>
-                    </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>PROFIT FACTOR</span>
+                    <p>2.18</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>RETURN / DD RATIO</span>
+                    <p>33.16</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>WINNING PERCENTAGE</span>
+                    <p>48.23 %</p>
+                  </div>
+
+                  <div className={styles.cardMax__stats_column}>
+                    <span>DRAWDOWN</span>
+                    <p>$ 158504.85</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>% DRAWDOWN</span>
+                    <p>0.94 %</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>DAILY AVG PROFIT</span>
+                    <p>$ 15352.64</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>MONTHLY AVG PROFIT</span>
+                    <p>$ 464417.31</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>AVERAGE TRADE</span>
+                    <p>$ 1874.54</p>
+                  </div>
+
+                  <div className={styles.cardMax__stats_column}>
+                    <span>ANNUAL % / MAX DD %</span>
+                    <p>42.35</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>R EXPECTANCY</span>
+                    <p>0.61 R</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>R EXPECTANCY SCORE</span>
+                    <p>1814.34 R</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>STR QUALITY NUMBER</span>
+                    <p>8.62</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>SQN SCORE</span>
+                    <p>49.33</p>
                   </div>
                 </div>
               )}
               {year === '2024' && (
                 <div className={styles.cardMax__stats}>
-                  <div className={styles.cardMax__stats_string}>
-                    <div className={styles.cardMax__stats_column}>
-                      <span># OF TRADES</span>
-                      <p>2531</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>SHARPE RATIO</span>
-                      <p>0.21</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>PROFIT FACTOR</span>
-                      <p>1.98</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>RETURN / DD RATIO</span>
-                      <p>26.36</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>WINNING PERCENTAGE</span>
-                      <p>53.81 %</p>
-                    </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span># OF TRADES</span>
+                    <p>2531</p>
                   </div>
-                  <div className={styles.cardMax__stats_string}>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>DRAWDOWN</span>
-                      <p>$ 140079.64</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>% DRAWDOWN</span>
-                      <p>0.82 %</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>DAILY AVG PROFIT</span>
-                      <p>$ 12144.73</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>MONTHLY AVG PROFIT</span>
-                      <p>$ 369199.86</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>AVERAGE TRADE</span>
-                      <p>$ 1458.71</p>
-                    </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>SHARPE RATIO</span>
+                    <p>0.21</p>
                   </div>
-                  <div className={styles.cardMax__stats_string}>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>ANNUAL % / MAX DD %</span>
-                      <p>32.16</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>R EXPECTANCY</span>
-                      <p>0.45 R</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>R EXPECTANCY SCORE</span>
-                      <p>1370.2 R</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>STR QUALITY NUMBER</span>
-                      <p>9.83</p>
-                    </div>
-                    <div className={styles.cardMax__stats_column}>
-                      <span>SQN SCORE</span>
-                      <p>54.99</p>
-                    </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>PROFIT FACTOR</span>
+                    <p>1.98</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>RETURN / DD RATIO</span>
+                    <p>26.36</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>WINNING PERCENTAGE</span>
+                    <p>53.81 %</p>
+                  </div>
+
+                  <div className={styles.cardMax__stats_column}>
+                    <span>DRAWDOWN</span>
+                    <p>$ 140079.64</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>% DRAWDOWN</span>
+                    <p>0.82 %</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>DAILY AVG PROFIT</span>
+                    <p>$ 12144.73</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>MONTHLY AVG PROFIT</span>
+                    <p>$ 369199.86</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>AVERAGE TRADE</span>
+                    <p>$ 1458.71</p>
+                  </div>
+
+                  <div className={styles.cardMax__stats_column}>
+                    <span>ANNUAL % / MAX DD %</span>
+                    <p>32.16</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>R EXPECTANCY</span>
+                    <p>0.45 R</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>R EXPECTANCY SCORE</span>
+                    <p>1370.2 R</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>STR QUALITY NUMBER</span>
+                    <p>9.83</p>
+                  </div>
+                  <div className={styles.cardMax__stats_column}>
+                    <span>SQN SCORE</span>
+                    <p>54.99</p>
                   </div>
                 </div>
               )}

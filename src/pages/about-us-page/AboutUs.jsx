@@ -35,13 +35,13 @@ const profiles = [
     position: 'Co-founder & CBDO',
     desc: '6+ years of trading at financial markets. Deep knowledge of market analysis, venture investment, blockchain projects, financial accounting. Successful cooperation with clients and partners.',
   },
-  {
-    id: 2,
-    image: Yulia,
-    name: 'Yulia',
-    position: 'Head of PR and influencer marketing',
-    desc: 'Expert in PR and influencer marketing, reputation management, audience growth, and effective communication. Well-known crypto-blogger.',
-  },
+  // {
+  //   id: 2,
+  //   image: Yulia,
+  //   name: 'Yulia',
+  //   position: 'Head of PR and influencer marketing',
+  //   desc: 'Expert in PR and influencer marketing, reputation management, audience growth, and effective communication. Well-known crypto-blogger.',
+  // },
   {
     id: 3,
     image: Viktar,
