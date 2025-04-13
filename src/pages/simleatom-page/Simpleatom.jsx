@@ -189,7 +189,7 @@ export const Simpleatom = () => {
         <FirstSlider />
       </section>
 
-      <div ref={sectionTwoRef}>
+      <div className={styles.section_3_container} ref={sectionTwoRef}>
         <section
           className={cn(
             styles.section3,
@@ -212,7 +212,7 @@ export const Simpleatom = () => {
         </div>
         <SecondSlider />
       </section>
-      <div ref={sectionTwoNewRef}>
+      <div className={styles.section_3_container} ref={sectionTwoNewRef}>
         <section
           className={cn(
             styles.section3,

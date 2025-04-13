@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './ThirdSlider.module.css';
 import cn from 'classnames';
 import graph_ultra from '../../assets/graph_ultra.png';
@@ -27,11 +27,149 @@ export const ThirdSlider = () => {
   const [year, setYear] = useState(null);
   const [showMoreDetails, setShowMoreDetails] = useState(false);
   const [showMoreStats, setShowMoreStats] = useState(false);
+  const graphsTrackRef = useRef(null);
+  const graphsRef = useRef(null);
 
   useEffect(() => {
     setStrategy('conservative');
     setYear('2021');
   }, []);
+
+  const moreStats2021 = {
+    strategy: [
+      { title: 'Wins / Losses Ratio', description: '0.95' },
+      { title: 'Payout Ratio (Avg Win/Loss)', description: '1.97' },
+      { title: 'Average # of Bars in Trade', description: '0' },
+      { title: 'AHPR', description: '0.01' },
+      { title: 'Z-Score', description: '-12.03' },
+      { title: 'Z-Probability', description: '99.9 %' },
+      { title: 'Expectancy', description: '1322.94' },
+      { title: 'Deviation', description: '$ 7026.86' },
+      { title: 'Max Pos. Exposure', description: '118' },
+      { title: 'Stagnation in Days', description: '48' },
+      { title: 'Stagnation in %', description: '13.22 %' },
+      { title: 'Max Lots Exposure', description: '994.2' },
+    ],
+    trades: [
+      { title: '# of Wins', description: '1322' },
+      { title: '# of Losses', description: '1386' },
+      { title: '# of Cancelled/Expired', description: '0' },
+      { title: 'Gross Profit', description: '$ 7660285.36' },
+      { title: 'Gross Loss', description: '$ -4077763.28' },
+      { title: 'Average Win', description: '$ 5794.47' },
+      { title: 'Average Loss', description: '$ -2942.11' },
+      { title: 'Largest Win', description: '$ 94359.08' },
+      { title: 'Largest Loss', description: '$ -11034.79' },
+      { title: 'Max Consec Wins', description: '45' },
+      { title: 'Max Consec Losses', description: '13' },
+      { title: 'Avg Consec Wins', description: '2.54' },
+      { title: 'Avg Consec Loss', description: '2.66' },
+      { title: 'Avg # of Bars in Wins', description: '0' },
+      { title: 'Avg # of bars in Losses', description: '0' },
+    ],
+  };
+
+  const moreStats2022 = {
+    strategy: [
+      { title: 'Wins / Losses Ratio', description: '1.14' },
+      { title: 'Payout Ratio (Avg Win/Loss)', description: '2.38' },
+      { title: 'Average # of Bars in Trade', description: '0' },
+      { title: 'AHPR', description: '0.02' },
+      { title: 'Z-Score', description: '-15.23' },
+      { title: 'Z-Probability', description: '99.9 %' },
+      { title: 'Expectancy', description: '2767.6' },
+      { title: 'Deviation', description: '$ 10975.52' },
+      { title: 'Max Pos. Exposure', description: '126' },
+      { title: 'Stagnation in Days', description: '34' },
+      { title: 'Stagnation in %', description: '9.39 %' },
+      { title: 'Max Lots Exposure', description: '1434.96' },
+    ],
+    trades: [
+      { title: '# of Wins', description: '1614' },
+      { title: '# of Losses', description: '1421' },
+      { title: '# of Cancelled/Expired', description: '0' },
+      { title: 'Gross Profit', description: '$ 13320289.9' },
+      { title: 'Gross Loss', description: '$ -4920621.21' },
+      { title: 'Average Win', description: '$ 8252.97' },
+      { title: 'Average Loss', description: '$ -3462.79' },
+      { title: 'Largest Win', description: '$ 92314.12' },
+      { title: 'Largest Loss', description: '$ -15643.44' },
+      { title: 'Max Consec Wins', description: '46' },
+      { title: 'Max Consec Losses', description: '20' },
+      { title: 'Avg Consec Wins', description: '2.95' },
+      { title: 'Avg Consec Loss', description: '2.59' },
+      { title: 'Avg # of Bars in Wins', description: '0' },
+      { title: 'Avg # of bars in Losses', description: '0' },
+    ],
+  };
+
+  const moreStats2023 = {
+    strategy: [
+      { title: 'Wins / Losses Ratio', description: '0.93' },
+      { title: 'Payout Ratio (Avg Win/Loss)', description: '2.34' },
+      { title: 'Average # of Bars in Trade', description: '0' },
+      { title: 'AHPR', description: '0.01' },
+      { title: 'Z-Score', description: '-15.36' },
+      { title: 'Z-Probability', description: '99.9 %' },
+      { title: 'Expectancy', description: '1874.54' },
+      { title: 'Deviation', description: '$ 11852.43' },
+      { title: 'Max Pos. Exposure', description: '111' },
+      { title: 'Stagnation in Days', description: '122' },
+      { title: 'Stagnation in %', description: '33.8 %' },
+      { title: 'Max Lots Exposure', description: '1413.34' },
+    ],
+    trades: [
+      { title: '# of Wins', description: '1434' },
+      { title: '# of Losses', description: '1539' },
+      { title: '# of Cancelled/Expired', description: '0' },
+      { title: 'Gross Profit', description: '$ 10300270.53' },
+      { title: 'Gross Loss', description: '$ -4727262.8' },
+      { title: 'Average Win', description: '$ 7182.89' },
+      { title: 'Average Loss', description: '$ -3071.65' },
+      { title: 'Largest Win', description: '$ 258107.84' },
+      { title: 'Largest Loss', description: '$ -13522.41' },
+      { title: 'Max Consec Wins', description: '29' },
+      { title: 'Max Consec Losses', description: '25' },
+      { title: 'Avg Consec Wins', description: '2.69' },
+      { title: 'Avg Consec Loss', description: '2.88' },
+      { title: 'Avg # of Bars in Wins', description: '0' },
+      { title: 'Avg # of bars in Losses', description: '0' },
+    ],
+  };
+
+  const moreStats2024 = {
+    strategy: [
+      { title: 'Wins / Losses Ratio', description: '1.17' },
+      { title: 'Payout Ratio (Avg Win/Loss)', description: '1.7' },
+      { title: 'Average # of Bars in Trade', description: '0' },
+      { title: 'AHPR', description: '0.01' },
+      { title: 'Z-Score', description: '-14.38' },
+      { title: 'Z-Probability', description: '99.9 %' },
+      { title: 'Expectancy', description: '1458.71' },
+      { title: 'Deviation', description: '$ 7464.14' },
+      { title: 'Max Pos. Exposure', description: '107' },
+      { title: 'Stagnation in Days', description: '37' },
+      { title: 'Stagnation in %', description: '12.25 %' },
+      { title: 'Max Lots Exposure', description: '1167.89' },
+    ],
+    trades: [
+      { title: '# of Wins', description: '1362' },
+      { title: '# of Losses', description: '1169' },
+      { title: '# of Cancelled/Expired', description: '0' },
+      { title: 'Gross Profit', description: '$ 7471826.56' },
+      { title: 'Gross Loss', description: '$ -3779827.98' },
+      { title: 'Average Win', description: '$ 5485.92' },
+      { title: 'Average Loss', description: '$ -3233.39' },
+      { title: 'Largest Win', description: '$ 148348.32' },
+      { title: 'Largest Loss', description: '$ -14870.22' },
+      { title: 'Max Consec Wins', description: '31' },
+      { title: 'Max Consec Losses', description: '16' },
+      { title: 'Avg Consec Wins', description: '3.03' },
+      { title: 'Avg Consec Loss', description: '2.6' },
+      { title: 'Avg # of Bars in Wins', description: '0' },
+      { title: 'Avg # of bars in Losses', description: '0' },
+    ],
+  };
 
   // const track = document.getElementById("image-track");
 
@@ -786,42 +924,60 @@ export const ThirdSlider = () => {
               <div className={styles.cardMax__graphSubTitle}>
                 MEDIUM-VOLATILITY strategy
               </div>
-              <div className={styles.cardMax__graphs_wrapper}>
-                <div
-                  className={cn(
-                    styles.cardMax__graphs,
-                    year === '2021' && styles.graph2021,
-                    year === '2022' && styles.graph2022,
-                    year === '2023' && styles.graph2023,
-                    year === '2024' && styles.graph2024
-                  )}
-                >
-                  <div className={styles.cardMax__graph_wrapper}>
-                    <img
-                      src={graph_medium_2021_color}
-                      alt="graph"
-                      id="graph"
-                      className={
-                        year === '2021' && !showMoreDetails ? '' : styles.hide
-                      }
-                    ></img>
-                    <img
-                      src={graph_medium_2021_bw}
-                      alt="graph"
-                      id="graph"
-                      className={year !== '2021' ? '' : styles.hide}
-                    ></img>
-                    <img
-                      src={graph_medium_2021_more}
-                      alt="graph"
-                      id="graph"
-                      className={
-                        year === '2021' && showMoreDetails ? '' : styles.hide
-                      }
-                    ></img>
-                    {year === '2021' && (
+              <div className={styles.medium__container}>
+                <div className={styles.medium__graphs_container}>
+                  <div
+                    ref={graphsTrackRef}
+                    className={cn(
+                      styles.medium__graphs,
+                      year === '2021' && styles.graph2021,
+                      year === '2022' && styles.graph2022,
+                      year === '2023' && styles.graph2023,
+                      year === '2024' && styles.graph2024
+                    )}
+                    // onWheel={(e) => {
+                    //   console.log(e.target.offsetLeft);
+                    //   if (e.deltaY > 0) {
+                    //     e.currentTarget.scrollLeft +=
+                    //       e.currentTarget.clientWidth;
+                    //   } else {
+                    //     e.currentTarget.scrollLeft -=
+                    //       e.currentTarget.clientWidth;
+                    //   }
+                    // }}
+                  >
+                    <div
+                      className={styles.medium__graph_wrapper}
+                      ref={graphsRef}
+                    >
+                      <img
+                        src={graph_medium_2021_color}
+                        alt="graph"
+                        id="graph"
+                        className={
+                          year === '2021' && !showMoreDetails ? '' : styles.hide
+                        }
+                      ></img>
+                      <img
+                        src={graph_medium_2021_bw}
+                        alt="graph"
+                        id="graph"
+                        className={year !== '2021' ? '' : styles.hide}
+                      ></img>
+                      <img
+                        src={graph_medium_2021_more}
+                        alt="graph"
+                        id="graph"
+                        className={
+                          year === '2021' && showMoreDetails ? '' : styles.hide
+                        }
+                      ></img>
+
                       <div
-                        className={styles.cardMax__graphButton}
+                        className={cn(
+                          styles.cardMax__graphButton,
+                          year === '2021' ? '' : styles.visibilityHidden
+                        )}
                         onClick={() => {
                           setShowMoreDetails(!showMoreDetails);
                         }}
@@ -829,34 +985,36 @@ export const ThirdSlider = () => {
                         {!showMoreDetails && <span>More details</span>}
                         {showMoreDetails && <span>Hide details</span>}
                       </div>
-                    )}
-                  </div>
-                  <div>
-                    <img
-                      src={graph_medium_2022_color}
-                      alt="graph"
-                      id="graph"
-                      className={
-                        year === '2022' && !showMoreDetails ? '' : styles.hide
-                      }
-                    ></img>
-                    <img
-                      src={graph_medium_2022_bw}
-                      alt="graph"
-                      id="graph"
-                      className={year !== '2022' ? '' : styles.hide}
-                    ></img>
-                    <img
-                      src={graph_medium_2022_more}
-                      alt="graph"
-                      id="graph"
-                      className={
-                        year === '2022' && showMoreDetails ? '' : styles.hide
-                      }
-                    ></img>
-                    {year === '2022' && (
+                    </div>
+                    <div className={styles.medium__graph_wrapper}>
+                      <img
+                        src={graph_medium_2022_color}
+                        alt="graph"
+                        id="graph"
+                        className={
+                          year === '2022' && !showMoreDetails ? '' : styles.hide
+                        }
+                      ></img>
+                      <img
+                        src={graph_medium_2022_bw}
+                        alt="graph"
+                        id="graph"
+                        className={year !== '2022' ? '' : styles.hide}
+                      ></img>
+                      <img
+                        src={graph_medium_2022_more}
+                        alt="graph"
+                        id="graph"
+                        className={
+                          year === '2022' && showMoreDetails ? '' : styles.hide
+                        }
+                      ></img>
+
                       <div
-                        className={styles.cardMax__graphButton}
+                        className={cn(
+                          styles.cardMax__graphButton,
+                          year === '2022' ? '' : styles.visibilityHidden
+                        )}
                         onClick={() => {
                           setShowMoreDetails(!showMoreDetails);
                         }}
@@ -864,34 +1022,36 @@ export const ThirdSlider = () => {
                         {!showMoreDetails && <span>More details</span>}
                         {showMoreDetails && <span>Hide details</span>}
                       </div>
-                    )}
-                  </div>
-                  <div>
-                    <img
-                      src={graph_medium_2023_color}
-                      alt="graph"
-                      id="graph"
-                      className={
-                        year === '2023' && !showMoreDetails ? '' : styles.hide
-                      }
-                    ></img>
-                    <img
-                      src={graph_medium_2023_bw}
-                      alt="graph"
-                      id="graph"
-                      className={year !== '2023' ? '' : styles.hide}
-                    ></img>
-                    <img
-                      src={graph_medium_2023_more}
-                      alt="graph"
-                      id="graph"
-                      className={
-                        year === '2023' && showMoreDetails ? '' : styles.hide
-                      }
-                    ></img>
-                    {year === '2023' && (
+                    </div>
+                    <div className={styles.medium__graph_wrapper}>
+                      <img
+                        src={graph_medium_2023_color}
+                        alt="graph"
+                        id="graph"
+                        className={
+                          year === '2023' && !showMoreDetails ? '' : styles.hide
+                        }
+                      ></img>
+                      <img
+                        src={graph_medium_2023_bw}
+                        alt="graph"
+                        id="graph"
+                        className={year !== '2023' ? '' : styles.hide}
+                      ></img>
+                      <img
+                        src={graph_medium_2023_more}
+                        alt="graph"
+                        id="graph"
+                        className={
+                          year === '2023' && showMoreDetails ? '' : styles.hide
+                        }
+                      ></img>
+
                       <div
-                        className={styles.cardMax__graphButton}
+                        className={cn(
+                          styles.cardMax__graphButton,
+                          year === '2023' ? '' : styles.visibilityHidden
+                        )}
                         onClick={() => {
                           setShowMoreDetails(!showMoreDetails);
                         }}
@@ -899,34 +1059,36 @@ export const ThirdSlider = () => {
                         {!showMoreDetails && <span>More details</span>}
                         {showMoreDetails && <span>Hide details</span>}
                       </div>
-                    )}
-                  </div>
-                  <div>
-                    <img
-                      src={graph_medium_2024_color}
-                      alt="graph"
-                      id="graph"
-                      className={
-                        year === '2024' && !showMoreDetails ? '' : styles.hide
-                      }
-                    ></img>
-                    <img
-                      src={graph_medium_2024_bw}
-                      alt="graph"
-                      id="graph"
-                      className={year !== '2024' ? '' : styles.hide}
-                    ></img>
-                    <img
-                      src={graph_medium_2024_more}
-                      alt="graph"
-                      id="graph"
-                      className={
-                        year === '2024' && showMoreDetails ? '' : styles.hide
-                      }
-                    ></img>
-                    {year === '2024' && (
+                    </div>
+                    <div className={styles.medium__graph_wrapper}>
+                      <img
+                        src={graph_medium_2024_color}
+                        alt="graph"
+                        id="graph"
+                        className={
+                          year === '2024' && !showMoreDetails ? '' : styles.hide
+                        }
+                      ></img>
+                      <img
+                        src={graph_medium_2024_bw}
+                        alt="graph"
+                        id="graph"
+                        className={year !== '2024' ? '' : styles.hide}
+                      ></img>
+                      <img
+                        src={graph_medium_2024_more}
+                        alt="graph"
+                        id="graph"
+                        className={
+                          year === '2024' && showMoreDetails ? '' : styles.hide
+                        }
+                      ></img>
+
                       <div
-                        className={styles.cardMax__graphButton}
+                        className={cn(
+                          styles.cardMax__graphButton,
+                          year === '2024' ? '' : styles.visibilityHidden
+                        )}
                         onClick={() => {
                           setShowMoreDetails(!showMoreDetails);
                         }}
@@ -934,7 +1096,7 @@ export const ThirdSlider = () => {
                         {!showMoreDetails && <span>More details</span>}
                         {showMoreDetails && <span>Hide details</span>}
                       </div>
-                    )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -945,8 +1107,9 @@ export const ThirdSlider = () => {
                       ? styles.cardMax__activeYearButton
                       : styles.cardMax__yearButton
                   }
-                  onClick={() => {
+                  onClick={(e) => {
                     setYear('2021');
+                    graphsTrackRef.current.scrollLeft = 0;
                   }}
                 >
                   2021
@@ -966,6 +1129,9 @@ export const ThirdSlider = () => {
                   }
                   onClick={() => {
                     setYear('2022');
+                    console.log(graphsRef);
+                    graphsTrackRef.current.scrollLeft =
+                      graphsRef.current.clientWidth;
                   }}
                 >
                   2022
@@ -985,6 +1151,9 @@ export const ThirdSlider = () => {
                   }
                   onClick={() => {
                     setYear('2023');
+                    console.log(graphsRef);
+                    graphsTrackRef.current.scrollLeft =
+                      graphsRef.current.clientWidth * 2;
                   }}
                 >
                   2023
@@ -1004,6 +1173,8 @@ export const ThirdSlider = () => {
                   }
                   onClick={() => {
                     setYear('2024');
+                    graphsTrackRef.current.scrollLeft =
+                      graphsRef.current.clientWidth * 3;
                   }}
                 >
                   2024
@@ -1283,10 +1454,106 @@ export const ThirdSlider = () => {
               </div>
               {showMoreStats && (
                 <div>
-                  {year === '2021' && <img src={stats2021} alt="stats" />}
-                  {year === '2022' && <img src={stats2022} alt="stats" />}
-                  {year === '2023' && <img src={stats2023} alt="stats" />}
-                  {year === '2024' && <img src={stats2024} alt="stats" />}
+                  {year === '2021' && (
+                    <div className={styles.cardMax__moreStats}>
+                      <div className={styles.cardMax__moreStats_title}>
+                        <p>STATS</p>
+                      </div>
+                      <div className={styles.cardMax__moreStats_subTitle}>
+                        <p>Strategy</p><div className={styles.moreStats_items}>
+                        {moreStats2021.strategy.map((strategy, i) => (
+                          <div className={styles.moreStats_item} key={i}>
+                            <div>{strategy.title}</div>
+                            <div>{strategy.description}</div>
+                          </div>
+                        ))}</div>
+                      </div>
+                      <div className={styles.cardMax__moreStats_subTitle}>
+                        <p>Trades</p><div className={styles.moreStats_items}>
+                        {moreStats2021.trades.map((strategy, i) => (
+                          <div className={styles.moreStats_item} key={i}>
+                            <div>{strategy.title}</div>
+                            <div>{strategy.description}</div>
+                          </div>
+                        ))}</div>
+                      </div>
+                    </div>
+                  )}
+                  {year === '2022' && (
+                    <div className={styles.cardMax__moreStats}>
+                      <div className={styles.cardMax__moreStats_title}>
+                        <p>STATS</p>
+                      </div>
+                      <div className={styles.cardMax__moreStats_subTitle}>
+                        <p>Strategy</p><div className={styles.moreStats_items}>
+                        {moreStats2022.strategy.map((strategy, i) => (
+                          <div className={styles.moreStats_item} key={i}>
+                            <div>{strategy.title}</div>
+                            <div>{strategy.description}</div>
+                          </div>
+                        ))}</div>
+                      </div>
+                      <div className={styles.cardMax__moreStats_subTitle}>
+                        <p>Trades</p><div className={styles.moreStats_items}>
+                        {moreStats2021.trades.map((strategy, i) => (
+                          <div className={styles.moreStats_item} key={i}>
+                            <div>{strategy.title}</div>
+                            <div>{strategy.description}</div>
+                          </div>
+                        ))}</div>
+                      </div>
+                    </div>
+                  )}
+                  {year === '2023' && (
+                    <div className={styles.cardMax__moreStats}>
+                      <div className={styles.cardMax__moreStats_title}>
+                        <p>STATS</p>
+                      </div>
+                      <div className={styles.cardMax__moreStats_subTitle}>
+                        <p>Strategy</p><div className={styles.moreStats_items}>
+                        {moreStats2023.strategy.map((strategy, i) => (
+                          <div className={styles.moreStats_item} key={i}>
+                            <div>{strategy.title}</div>
+                            <div>{strategy.description}</div>
+                          </div>
+                        ))}</div>
+                      </div>
+                      <div className={styles.cardMax__moreStats_subTitle}>
+                        <p>Trades</p><div className={styles.moreStats_items}>
+                        {moreStats2021.trades.map((strategy, i) => (
+                          <div className={styles.moreStats_item} key={i}>
+                            <div>{strategy.title}</div>
+                            <div>{strategy.description}</div>
+                          </div>
+                        ))}</div>
+                      </div>
+                    </div>
+                  )}
+                  {year === '2024' && (
+                    <div className={styles.cardMax__moreStats}>
+                      <div className={styles.cardMax__moreStats_title}>
+                        <p>STATS</p>
+                      </div>
+                      <div className={styles.cardMax__moreStats_subTitle}>
+                        <p>Strategy</p><div className={styles.moreStats_items}>
+                        {moreStats2024.strategy.map((strategy, i) => (
+                          <div className={styles.moreStats_item} key={i}>
+                            <div>{strategy.title}</div>
+                            <div>{strategy.description}</div>
+                          </div>
+                        ))}</div>
+                      </div>
+                      <div className={styles.cardMax__moreStats_subTitle}>
+                        <p>Trades</p><div className={styles.moreStats_items}>
+                        {moreStats2021.trades.map((strategy, i) => (
+                          <div className={styles.moreStats_item} key={i}>
+                            <div>{strategy.title}</div>
+                            <div>{strategy.description}</div>
+                          </div>
+                        ))}</div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
             </div>

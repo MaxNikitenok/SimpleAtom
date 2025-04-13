@@ -4,6 +4,8 @@
 
 html {
   overflow-x: hidden;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
 }
 
 html[data-theme='dark'] {
@@ -40,16 +42,12 @@ html[data-theme='dark'] {
   --Text-Green-text: #14D6A1;
 }
 
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--Text-Main-text) transparent;
-}
-
 body {
   width: 100vw;
   min-height: 100dvh;
   background: var(--Clear-base-bg);
   overflow-x: hidden;
+  
 }
 
 #root {

@@ -1,3 +1,15 @@
+.secondSlider_container {
+  height: 500px;
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  padding: 0 56px 0 270px;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  user-select: none;
+  scroll-behavior: smooth;
+}
+
 .dot {
   position: absolute;
   width: 20px;
@@ -14,7 +26,6 @@
   height: 440px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   border-radius: 20px;
   background: var(--Clear-base-bg, #000);
 }
