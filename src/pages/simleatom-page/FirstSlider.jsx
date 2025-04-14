@@ -43,101 +43,111 @@ export const FirstSlider = () => {
   };
 
   return (
-    <div
-      className={styles.firstSlider_container}
-      ref={itemsRef}
-      onMouseDown={handleMouseDown}
-      onMouseLeave={handleMouseLeave}
-      onMouseUp={handleMouseUp}
-      onMouseMove={handleMouseMove}
-      onWheel={handleWheel}
-    >
-      <div className={styles.card}>
-        <div className={styles.card__span}>
-          <span>Over</span>
-        </div>
-
-        <div className={styles.card__content}>
-          <div className={styles.content__title}>
-            100
-            <div className={styles.title_2_subWrappers}>
-              <span>%</span>
-            </div>
-          </div>
-          <div className={styles.content__subTitle}>
-            <p>Annual yield</p>
-          </div>
-          <div className={styles.content__description}>
-            <p>For 2024 achieved by clients using our software</p>
-          </div>
-        </div>
-      </div>
-      <div className={styles.card}>
-        <div className={styles.card__span}>
-          <span>Over</span>
-        </div>
-
-        <div className={styles.card__content}>
-          <div className={styles.content__title_2}>
-            <div className={styles.title_2_wrapper}>25</div>
-            <div className={styles.title_2_subWrappers}>
-              <div className={styles.title_2_subWrapper}>M</div>
-              <div className={styles.title_2_subSubWrapper}>USD</div>
-            </div>
-          </div>
-          <div className={styles.content__subTitle}>
-            <p>AUM</p>
-          </div>
-          <div className={styles.content__description}>
-            <p>Assets under our software management</p>
-          </div>
-        </div>
-      </div>
+    <>
       <div
-        className={styles.card}
-        // onClick={() => {
-        //   navigate('/aboutUs');
-        //   window.scrollTo(0, 0);
-        //   setTimeout(scrollToPartnersRef, 1000);
-        // }}
+        className={styles.firstSlider_container}
+        ref={itemsRef}
+        onMouseDown={handleMouseDown}
+        onMouseLeave={handleMouseLeave}
+        onMouseUp={handleMouseUp}
+        onMouseMove={handleMouseMove}
+        onWheel={handleWheel}
       >
-        <div className={styles.card__span}>
-          <span>Over</span>
-        </div>
+        <div className={styles.card}>
+          <div className={styles.card__span}>
+            <span>Over</span>
+          </div>
 
-        <div className={styles.card__content}>
-          <div className={styles.content__title}>
-            <p>137</p>
+          <div className={styles.card__content}>
+            <div className={styles.content__title}>
+              100
+              <div className={styles.title_2_subWrappers}>
+                <span>%</span>
+              </div>
+            </div>
+            <div className={styles.content__subTitle}>
+              <p>Annual yield</p>
+            </div>
+            <div className={styles.content__description}>
+              <p>For 2024 achieved by clients using our software</p>
+            </div>
           </div>
-          <div className={styles.content__subTitle}>
-            <p>Clients</p>
+        </div>
+        <div className={styles.card}>
+          <div className={styles.card__span}>
+            <span>Over</span>
           </div>
-          <div className={styles.content__description}>
-            <p>Individual investors, trusts and funds</p>
+
+          <div className={styles.card__content}>
+            <div className={styles.content__title_2}>
+              <div className={styles.title_2_wrapper}>25</div>
+              <div className={styles.title_2_subWrappers}>
+                <div className={styles.title_2_subWrapper}>M</div>
+                <div className={styles.title_2_subSubWrapper}>USD</div>
+              </div>
+            </div>
+            <div className={styles.content__subTitle}>
+              <p>AUM</p>
+            </div>
+            <div className={styles.content__description}>
+              <p>Assets under our software management</p>
+            </div>
+          </div>
+        </div>
+        <div
+          className={styles.card}
+          // onClick={() => {
+          //   navigate('/aboutUs');
+          //   window.scrollTo(0, 0);
+          //   setTimeout(scrollToPartnersRef, 1000);
+          // }}
+        >
+          <div className={styles.card__span}>
+            <span>Over</span>
+          </div>
+
+          <div className={styles.card__content}>
+            <div className={styles.content__title}>
+              <p>137</p>
+            </div>
+            <div className={styles.content__subTitle}>
+              <p>Clients</p>
+            </div>
+            <div className={styles.content__description}>
+              <p>Individual investors, trusts and funds</p>
+            </div>
+          </div>
+        </div>
+        <div className={styles.card}>
+          <div className={styles.card__span}>
+            <span>Over</span>
+          </div>
+
+          <div className={styles.card__content}>
+            <div className={styles.content__title}>
+              <p>5</p>
+            </div>
+            <div className={styles.content__subTitle}>
+              <p>
+                Partner
+                <br />
+                countries
+              </p>
+            </div>
+            <div className={styles.content__description}>
+              {/* <p>Individual investors, trusts and funds</p> */}
+            </div>
           </div>
         </div>
       </div>
-      <div className={styles.card}>
-        <div className={styles.card__span}>
-          <span>Over</span>
-        </div>
-
-        <div className={styles.card__content}>
-          <div className={styles.content__title}>
-            <p>5</p>
-          </div>
-          <div className={styles.content__subTitle}>
-            <p>
-              Partner
-              <br />
-              countries
-            </p>
-          </div>
-          <div className={styles.content__description}>
-            {/* <p>Individual investors, trusts and funds</p> */}
-          </div>
+      <div className={styles.dots__container}>
+        <div className={styles.dots__wrapper}>
+          <div className={styles.dots__dot}></div>
+          <div className={styles.dots__dot}></div>
+          <div className={styles.dots__dot}></div>
+          <div className={styles.dots__dot}></div>
         </div>
       </div>
-    </div>
+    </>
   );
 };

@@ -64,9 +64,10 @@
   color: var(--Text-Main-text, #85868b);
   text-align: center;
   font-family: Roboto;
+  font-size: 22px;
   font-weight: 500;
   line-height: 150%;
-  max-width: 300px;
+  max-width: 280px;
 }
 
 .content__title_2 {
@@ -117,11 +118,28 @@
   letter-spacing: -0.726px;
 }
 
-@media screen and (max-width: 576px) {
+.dots__container {
+  margin-top: 26px;
+}
 
+.dots__wrapper {
+display: inline-flex;
+gap: 10px;
+padding: 24px;
+background-color: #373739;
+border-radius: 28px;
+}
+
+.dots__dot {
+width: 8px;
+height: 8px;
+background-color: #CFCED1;
+border-radius: 8px;
+}
+
+@media screen and (max-width: 576px) {
   .firstSlider_container {
     padding: 0 30px;
-    
   }
 
   .card {
