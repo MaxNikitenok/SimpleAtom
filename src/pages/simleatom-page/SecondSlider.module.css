@@ -139,6 +139,13 @@
   border-radius: 8px;
 }
 
+.dots__activeDot {
+  width: 40px;
+  height: 8px;
+  background-color: #cfced1;
+  border-radius: 8px;
+}
+
 @media screen and (max-width: 576px) {
   .secondSlider_container {
     padding: 0 30px;

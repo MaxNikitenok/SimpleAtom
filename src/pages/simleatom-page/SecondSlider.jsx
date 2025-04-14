@@ -140,7 +140,7 @@ export const SecondSlider = () => {
       <div className={styles.dots__container}>
         <div className={styles.dots__wrapper}>
           <div className={styles.dots__dot}></div>
-          <div className={styles.dots__dot}></div>
+          <div className={styles.dots__activeDot}></div>
           <div className={styles.dots__dot}></div>
           <div className={styles.dots__dot}></div>
         </div>
