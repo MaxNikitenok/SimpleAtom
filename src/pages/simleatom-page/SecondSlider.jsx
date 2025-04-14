@@ -38,13 +38,13 @@ export const SecondSlider = () => {
     itemsRef.current.scrollLeft = scrollLeft - walk;
   };
 
-  // const handleWheel = (e) => {
-  //   if (e.deltaY > 0) {
-  //     e.currentTarget.scrollLeft += e.currentTarget.clientWidth;
-  //   } else {
-  //     e.currentTarget.scrollLeft -= e.currentTarget.clientWidth;
-  //   }
-  // };
+  const handleWheel = (e) => {
+    if (e.deltaY > 0) {
+      e.currentTarget.scrollLeft += e.currentTarget.clientWidth;
+    } else {
+      e.currentTarget.scrollLeft -= e.currentTarget.clientWidth;
+    }
+  };
   return (
     <div
       className={styles.secondSlider_container}
@@ -53,7 +53,7 @@ export const SecondSlider = () => {
       onMouseLeave={handleMouseLeave}
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
-      // onWheel={handleWheel}
+      onWheel={handleWheel}
     >
       <div className={styles.card}>
         <div className={styles.card__content}>

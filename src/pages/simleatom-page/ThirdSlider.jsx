@@ -35,6 +35,15 @@ export const ThirdSlider = () => {
     setYear('2021');
   }, []);
 
+  
+  const handleWheel = (e) => {
+    if (e.deltaY > 0) {
+      e.currentTarget.scrollLeft += e.currentTarget.clientWidth;
+    } else {
+      e.currentTarget.scrollLeft -= e.currentTarget.clientWidth;
+    }
+  };
+
   const moreStats2021 = {
     strategy: [
       { title: 'Wins / Losses Ratio', description: '0.95' },
@@ -405,165 +414,168 @@ export const ThirdSlider = () => {
                 Disclaimer: Past perfomance is mot anindicator of future
                 perfomance. Please refer to the disclaimer statement page.
               </div>
-              <div
-                className={cn(styles.cardMax__table, styles.table__text_text)}
-              >
+              <div className={styles.cardMax__table_container} onWheel={(e)=>handleWheel(e)}>
                 <div
-                  className={cn(styles.table__year, styles.table__text_title)}
+                  className={cn(styles.cardMax__table, styles.table__text_text)}
                 >
-                  <div>YR</div>
-                  <div>YTD</div>
-                  <div>AMI</div>
-                  <div>Jan</div>
-                  <div>Feb</div>
-                  <div>Mar</div>
-                  <div>Apr</div>
-                  <div>May</div>
-                  <div>Jun</div>
-                  <div>Jul</div>
-                  <div>Aug</div>
-                  <div>Sep</div>
-                  <div>Oct</div>
-                  <div>Nov</div>
-                  <div>Dec</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>‘25</div>
-                  <div>-</div>
-                  <div>-</div>
-                  <div>1.05%</div>
-                  <div>0.81%</div>
-                  <div>-</div>
-                  <div>-</div>
-                  <div>-</div>
-                  <div>-</div>
-                  <div>-</div>
-                  <div>-</div>
-                  <div>-</div>
-                  <div>-</div>
-                  <div>-</div>
-                  <div>-</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>‘24</div>
-                  <div className={styles.table__text_normal}>34.89%</div>
-                  <div className={styles.table__text_normal}>2.91%</div>
-                  <div className={styles.table__text_low}>-0.31%</div>
-                  <div>1.59%</div>
-                  <div>5.96%</div>
-                  <div>7.08%</div>
-                  <div>2.57%</div>
-                  <div className={styles.table__text_low}>-0.42%</div>
-                  <div>3.33%</div>
-                  <div>1.87%</div>
-                  <div>2.29%</div>
-                  <div>2.33%</div>
-                  <div>3.37%</div>
-                  <div>0.92%</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>‘23</div>
-                  <div className={styles.table__text_normal}>28.32%</div>
-                  <div className={styles.table__text_normal}>2.36%</div>
-                  <div>5.99%</div>
-                  <div>1.55%</div>
-                  <div>2.34%</div>
-                  <div>1.34%</div>
-                  <div>2.22%</div>
-                  <div>1.10%</div>
-                  <div className={styles.table__text_low}>-0.11%</div>
-                  <div>1.45%</div>
-                  <div className={styles.table__text_low}>-0.27%</div>
-                  <div>2.14%</div>
-                  <div>4.13%</div>
-                  <div>3.47%</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>‘22</div>
-                  <div className={styles.table__text_normal}>77.33%</div>
-                  <div className={styles.table__text_normal}>6.44%</div>
-                  <div>5.96%</div>
-                  <div>6.96%</div>
-                  <div>16.05%</div>
-                  <div>6.87%</div>
-                  <div>2.32%</div>
-                  <div>4.83%</div>
-                  <div>1.40%</div>
-                  <div>1.09%</div>
-                  <div>4.83%</div>
-                  <div>7.05%</div>
-                  <div>0.78%</div>
-                  <div>1.45%</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>‘21</div>
-                  <div className={styles.table__text_normal}>59.01%</div>
-                  <div className={styles.table__text_normal}>4.92%</div>
-                  <div>10.24%</div>
-                  <div>7.05%</div>
-                  <div>1.76%</div>
-                  <div>0.51%</div>
-                  <div>3.61%</div>
-                  <div>4.00%</div>
-                  <div>4.28%</div>
-                  <div>4.07%</div>
-                  <div>0.09%</div>
-                  <div>6.47%</div>
-                  <div>2.80%</div>
-                  <div>2.83%</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>‘20</div>
-                  <div className={styles.table__text_normal}>98.43%</div>
-                  <div className={styles.table__text_normal}>8.20%</div>
-                  <div>10.01%</div>
-                  <div>15.89%</div>
-                  <div>6.97%</div>
-                  <div>2.05%</div>
-                  <div>3.62%</div>
-                  <div>4.65%</div>
-                  <div>1.31%</div>
-                  <div>11.31%</div>
-                  <div className={styles.table__text_low}>-0.09%</div>
-                  <div>1.16%</div>
-                  <div>10.32%</div>
-                  <div>4.56%</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>‘19</div>
-                  <div className={styles.table__text_normal}>60.22%</div>
-                  <div className={styles.table__text_normal}>5.05%</div>
-                  <div>3.18%</div>
-                  <div>8.17%</div>
-                  <div className={styles.table__text_low}>-1.58%</div>
-                  <div className={styles.table__text_low}>-5.93%</div>
-                  <div>10.54%</div>
-                  <div>23.47%</div>
-                  <div>4.87%</div>
-                  <div>7.81%</div>
-                  <div className={styles.table__text_low}>-0.41%</div>
-                  <div className={styles.table__text_low}>-0.27%</div>
-                  <div className={styles.table__text_low}>-0.45%</div>
-                  <div>1.63%</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>AVG:</div>
-                  <div className={styles.table__text_bright}>59.70%</div>
-                  <div className={styles.table__text_bright}>4.98%</div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
+                  <div
+                    className={cn(styles.table__year, styles.table__text_title)}
+                  >
+                    <div>YR</div>
+                    <div>YTD</div>
+                    <div>AMI</div>
+                    <div>Jan</div>
+                    <div>Feb</div>
+                    <div>Mar</div>
+                    <div>Apr</div>
+                    <div>May</div>
+                    <div>Jun</div>
+                    <div>Jul</div>
+                    <div>Aug</div>
+                    <div>Sep</div>
+                    <div>Oct</div>
+                    <div>Nov</div>
+                    <div>Dec</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>‘25</div>
+                    <div>-</div>
+                    <div>-</div>
+                    <div>1.05%</div>
+                    <div>0.81%</div>
+                    <div>-</div>
+                    <div>-</div>
+                    <div>-</div>
+                    <div>-</div>
+                    <div>-</div>
+                    <div>-</div>
+                    <div>-</div>
+                    <div>-</div>
+                    <div>-</div>
+                    <div>-</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>‘24</div>
+                    <div className={styles.table__text_normal}>34.89%</div>
+                    <div className={styles.table__text_normal}>2.91%</div>
+                    <div className={styles.table__text_low}>-0.31%</div>
+                    <div>1.59%</div>
+                    <div>5.96%</div>
+                    <div>7.08%</div>
+                    <div>2.57%</div>
+                    <div className={styles.table__text_low}>-0.42%</div>
+                    <div>3.33%</div>
+                    <div>1.87%</div>
+                    <div>2.29%</div>
+                    <div>2.33%</div>
+                    <div>3.37%</div>
+                    <div>0.92%</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>‘23</div>
+                    <div className={styles.table__text_normal}>28.32%</div>
+                    <div className={styles.table__text_normal}>2.36%</div>
+                    <div>5.99%</div>
+                    <div>1.55%</div>
+                    <div>2.34%</div>
+                    <div>1.34%</div>
+                    <div>2.22%</div>
+                    <div>1.10%</div>
+                    <div className={styles.table__text_low}>-0.11%</div>
+                    <div>1.45%</div>
+                    <div className={styles.table__text_low}>-0.27%</div>
+                    <div>2.14%</div>
+                    <div>4.13%</div>
+                    <div>3.47%</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>‘22</div>
+                    <div className={styles.table__text_normal}>77.33%</div>
+                    <div className={styles.table__text_normal}>6.44%</div>
+                    <div>5.96%</div>
+                    <div>6.96%</div>
+                    <div>16.05%</div>
+                    <div>6.87%</div>
+                    <div>2.32%</div>
+                    <div>4.83%</div>
+                    <div>1.40%</div>
+                    <div>1.09%</div>
+                    <div>4.83%</div>
+                    <div>7.05%</div>
+                    <div>0.78%</div>
+                    <div>1.45%</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>‘21</div>
+                    <div className={styles.table__text_normal}>59.01%</div>
+                    <div className={styles.table__text_normal}>4.92%</div>
+                    <div>10.24%</div>
+                    <div>7.05%</div>
+                    <div>1.76%</div>
+                    <div>0.51%</div>
+                    <div>3.61%</div>
+                    <div>4.00%</div>
+                    <div>4.28%</div>
+                    <div>4.07%</div>
+                    <div>0.09%</div>
+                    <div>6.47%</div>
+                    <div>2.80%</div>
+                    <div>2.83%</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>‘20</div>
+                    <div className={styles.table__text_normal}>98.43%</div>
+                    <div className={styles.table__text_normal}>8.20%</div>
+                    <div>10.01%</div>
+                    <div>15.89%</div>
+                    <div>6.97%</div>
+                    <div>2.05%</div>
+                    <div>3.62%</div>
+                    <div>4.65%</div>
+                    <div>1.31%</div>
+                    <div>11.31%</div>
+                    <div className={styles.table__text_low}>-0.09%</div>
+                    <div>1.16%</div>
+                    <div>10.32%</div>
+                    <div>4.56%</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>‘19</div>
+                    <div className={styles.table__text_normal}>60.22%</div>
+                    <div className={styles.table__text_normal}>5.05%</div>
+                    <div>3.18%</div>
+                    <div>8.17%</div>
+                    <div className={styles.table__text_low}>-1.58%</div>
+                    <div className={styles.table__text_low}>-5.93%</div>
+                    <div>10.54%</div>
+                    <div>23.47%</div>
+                    <div>4.87%</div>
+                    <div>7.81%</div>
+                    <div className={styles.table__text_low}>-0.41%</div>
+                    <div className={styles.table__text_low}>-0.27%</div>
+                    <div className={styles.table__text_low}>-0.45%</div>
+                    <div>1.63%</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>AVG:</div>
+                    <div className={styles.table__text_bright}>59.70%</div>
+                    <div className={styles.table__text_bright}>4.98%</div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
                 </div>
               </div>
+
               <div className={styles.cardMax__graphTitle}>
                 DETAILED REPORT 2019-2025
               </div>
@@ -607,165 +619,168 @@ export const ThirdSlider = () => {
                 Disclaimer: Past perfomance is mot anindicator of future
                 perfomance. Please refer to the disclaimer statement page.
               </div>
-              <div
-                className={cn(styles.cardMax__table, styles.table__text_text)}
-              >
+              <div className={styles.cardMax__table_container} onWheel={(e)=>handleWheel(e)}>
                 <div
-                  className={cn(styles.table__year, styles.table__text_title)}
+                  className={cn(styles.cardMax__table, styles.table__text_text)}
                 >
-                  <div>YR</div>
-                  <div>YTD</div>
-                  <div>AMI</div>
-                  <div>Jan</div>
-                  <div>Feb</div>
-                  <div>Mar</div>
-                  <div>Apr</div>
-                  <div>May</div>
-                  <div>Jun</div>
-                  <div>Jul</div>
-                  <div>Aug</div>
-                  <div>Sep</div>
-                  <div>Oct</div>
-                  <div>Nov</div>
-                  <div>Dec</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>‘25</div>
-                  <div>-</div>
-                  <div>-</div>
-                  <div>1.57%</div>
-                  <div>2.08%</div>
-                  <div>-</div>
-                  <div>-</div>
-                  <div>-</div>
-                  <div>-</div>
-                  <div>-</div>
-                  <div>-</div>
-                  <div>-</div>
-                  <div>-</div>
-                  <div>-</div>
-                  <div>-</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>‘24</div>
-                  <div className={styles.table__text_normal}>44.00%</div>
-                  <div className={styles.table__text_normal}>3.67%</div>
-                  <div className={styles.table__text_low}>-0.42%</div>
-                  <div>2.17%</div>
-                  <div>7.55%</div>
-                  <div>8.39%</div>
-                  <div>3.41%</div>
-                  <div className={styles.table__text_low}>-0.87%</div>
-                  <div>4.06%</div>
-                  <div>2.18%</div>
-                  <div>2.73%</div>
-                  <div>2.88%</div>
-                  <div>4.52%</div>
-                  <div>0.84%</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>‘23</div>
-                  <div className={styles.table__text_normal}>52.13%</div>
-                  <div className={styles.table__text_normal}>4.34%</div>
-                  <div>14.63%</div>
-                  <div>2.78%</div>
-                  <div>3.99%</div>
-                  <div>0.68%</div>
-                  <div>2.67%</div>
-                  <div>4.40%</div>
-                  <div className={styles.table__text_low}>-0.45%</div>
-                  <div>1.45%</div>
-                  <div className={styles.table__text_low}>-0.92%</div>
-                  <div>4.39%</div>
-                  <div>4.95%</div>
-                  <div>3.95%</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>‘22</div>
-                  <div className={styles.table__text_normal}>96.36%</div>
-                  <div className={styles.table__text_normal}>8.03%</div>
-                  <div>6.27%</div>
-                  <div>6.32%</div>
-                  <div>20.34%</div>
-                  <div>8.36%</div>
-                  <div>2.45%</div>
-                  <div>6.45%</div>
-                  <div>1.82%</div>
-                  <div>1.33%</div>
-                  <div>7.78%</div>
-                  <div>7.70%</div>
-                  <div>0.67%</div>
-                  <div>1.36%</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>‘21</div>
-                  <div className={styles.table__text_normal}>54.24%</div>
-                  <div className={styles.table__text_normal}>4.52%</div>
-                  <div>8.30%</div>
-                  <div>6.26%</div>
-                  <div>1.73%</div>
-                  <div>0.57%</div>
-                  <div>2.00%</div>
-                  <div>3.09%</div>
-                  <div>5.68%</div>
-                  <div>2.86%</div>
-                  <div>1.29%</div>
-                  <div>8.58%</div>
-                  <div>2.57%</div>
-                  <div>1.59%</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>‘20</div>
-                  <div className={styles.table__text_normal}>101.23%</div>
-                  <div className={styles.table__text_normal}>8.44%</div>
-                  <div>7.83%</div>
-                  <div>13.93%</div>
-                  <div>6.38%</div>
-                  <div>1.87%</div>
-                  <div>7.21%</div>
-                  <div>2.96%</div>
-                  <div>1.81%</div>
-                  <div>11.61%</div>
-                  <div>0.70%</div>
-                  <div>3.14%</div>
-                  <div>12.07%</div>
-                  <div>3.57%</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>‘19</div>
-                  <div className={styles.table__text_normal}>87.27%</div>
-                  <div className={styles.table__text_normal}>7.27%</div>
-                  <div>1.91%</div>
-                  <div>12.01%</div>
-                  <div className={styles.table__text_low}>-3.93%</div>
-                  <div className={styles.table__text_low}>-0.31%</div>
-                  <div>17.95%</div>
-                  <div>24.20%</div>
-                  <div>4.39%</div>
-                  <div>8.85%</div>
-                  <div className={styles.table__text_low}>-0.11%</div>
-                  <div>1.70%</div>
-                  <div>1.07%</div>
-                  <div>0.21%</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>AVG:</div>
-                  <div className={styles.table__text_bright}>72.55%</div>
-                  <div className={styles.table__text_bright}>6.05%</div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
+                  <div
+                    className={cn(styles.table__year, styles.table__text_title)}
+                  >
+                    <div>YR</div>
+                    <div>YTD</div>
+                    <div>AMI</div>
+                    <div>Jan</div>
+                    <div>Feb</div>
+                    <div>Mar</div>
+                    <div>Apr</div>
+                    <div>May</div>
+                    <div>Jun</div>
+                    <div>Jul</div>
+                    <div>Aug</div>
+                    <div>Sep</div>
+                    <div>Oct</div>
+                    <div>Nov</div>
+                    <div>Dec</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>‘25</div>
+                    <div>-</div>
+                    <div>-</div>
+                    <div>1.57%</div>
+                    <div>2.08%</div>
+                    <div>-</div>
+                    <div>-</div>
+                    <div>-</div>
+                    <div>-</div>
+                    <div>-</div>
+                    <div>-</div>
+                    <div>-</div>
+                    <div>-</div>
+                    <div>-</div>
+                    <div>-</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>‘24</div>
+                    <div className={styles.table__text_normal}>44.00%</div>
+                    <div className={styles.table__text_normal}>3.67%</div>
+                    <div className={styles.table__text_low}>-0.42%</div>
+                    <div>2.17%</div>
+                    <div>7.55%</div>
+                    <div>8.39%</div>
+                    <div>3.41%</div>
+                    <div className={styles.table__text_low}>-0.87%</div>
+                    <div>4.06%</div>
+                    <div>2.18%</div>
+                    <div>2.73%</div>
+                    <div>2.88%</div>
+                    <div>4.52%</div>
+                    <div>0.84%</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>‘23</div>
+                    <div className={styles.table__text_normal}>52.13%</div>
+                    <div className={styles.table__text_normal}>4.34%</div>
+                    <div>14.63%</div>
+                    <div>2.78%</div>
+                    <div>3.99%</div>
+                    <div>0.68%</div>
+                    <div>2.67%</div>
+                    <div>4.40%</div>
+                    <div className={styles.table__text_low}>-0.45%</div>
+                    <div>1.45%</div>
+                    <div className={styles.table__text_low}>-0.92%</div>
+                    <div>4.39%</div>
+                    <div>4.95%</div>
+                    <div>3.95%</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>‘22</div>
+                    <div className={styles.table__text_normal}>96.36%</div>
+                    <div className={styles.table__text_normal}>8.03%</div>
+                    <div>6.27%</div>
+                    <div>6.32%</div>
+                    <div>20.34%</div>
+                    <div>8.36%</div>
+                    <div>2.45%</div>
+                    <div>6.45%</div>
+                    <div>1.82%</div>
+                    <div>1.33%</div>
+                    <div>7.78%</div>
+                    <div>7.70%</div>
+                    <div>0.67%</div>
+                    <div>1.36%</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>‘21</div>
+                    <div className={styles.table__text_normal}>54.24%</div>
+                    <div className={styles.table__text_normal}>4.52%</div>
+                    <div>8.30%</div>
+                    <div>6.26%</div>
+                    <div>1.73%</div>
+                    <div>0.57%</div>
+                    <div>2.00%</div>
+                    <div>3.09%</div>
+                    <div>5.68%</div>
+                    <div>2.86%</div>
+                    <div>1.29%</div>
+                    <div>8.58%</div>
+                    <div>2.57%</div>
+                    <div>1.59%</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>‘20</div>
+                    <div className={styles.table__text_normal}>101.23%</div>
+                    <div className={styles.table__text_normal}>8.44%</div>
+                    <div>7.83%</div>
+                    <div>13.93%</div>
+                    <div>6.38%</div>
+                    <div>1.87%</div>
+                    <div>7.21%</div>
+                    <div>2.96%</div>
+                    <div>1.81%</div>
+                    <div>11.61%</div>
+                    <div>0.70%</div>
+                    <div>3.14%</div>
+                    <div>12.07%</div>
+                    <div>3.57%</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>‘19</div>
+                    <div className={styles.table__text_normal}>87.27%</div>
+                    <div className={styles.table__text_normal}>7.27%</div>
+                    <div>1.91%</div>
+                    <div>12.01%</div>
+                    <div className={styles.table__text_low}>-3.93%</div>
+                    <div className={styles.table__text_low}>-0.31%</div>
+                    <div>17.95%</div>
+                    <div>24.20%</div>
+                    <div>4.39%</div>
+                    <div>8.85%</div>
+                    <div className={styles.table__text_low}>-0.11%</div>
+                    <div>1.70%</div>
+                    <div>1.07%</div>
+                    <div>0.21%</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>AVG:</div>
+                    <div className={styles.table__text_bright}>72.55%</div>
+                    <div className={styles.table__text_bright}>6.05%</div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
                 </div>
               </div>
+              <div />
               <div className={styles.cardMax__graphTitle}>
                 DETAILED REPORT 2019-2025
               </div>
@@ -810,112 +825,114 @@ export const ThirdSlider = () => {
                 Disclaimer: Past perfomance is mot anindicator of future
                 perfomance. Please refer to the disclaimer statement page.
               </div>
-              <div
-                className={cn(styles.cardMax__table, styles.table__text_text)}
-              >
+              <div className={styles.cardMax__table_container} onWheel={(e)=>handleWheel(e)}>
                 <div
-                  className={cn(styles.table__year, styles.table__text_title)}
+                  className={cn(styles.cardMax__table, styles.table__text_text)}
                 >
-                  <div>YR</div>
-                  <div>YTD</div>
-                  <div>AMI</div>
-                  <div>Jan</div>
-                  <div>Feb</div>
-                  <div>Mar</div>
-                  <div>Apr</div>
-                  <div>May</div>
-                  <div>Jun</div>
-                  <div>Jul</div>
-                  <div>Aug</div>
-                  <div>Sep</div>
-                  <div>Oct</div>
-                  <div>Nov</div>
-                  <div>Dec</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>‘21</div>
-                  <div>258.25%</div>
-                  <div>21.52%</div>
-                  <div className={styles.table__text_low}>-11.91%</div>
-                  <div>16.74%</div>
-                  <div>28.07%</div>
-                  <div>3.28%</div>
-                  <div>22.93%</div>
-                  <div>16.49%</div>
-                  <div>17.12%</div>
-                  <div>12.77%</div>
-                  <div>4.53%</div>
-                  <div>28.6%</div>
-                  <div>11.52%</div>
-                  <div>18.82%</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>‘22</div>
-                  <div className={styles.table__text_normal}>739.97%</div>
-                  <div className={styles.table__text_normal}>61.66%</div>
-                  <div>11.75%</div>
-                  <div>20.53%</div>
-                  <div>108.91%</div>
-                  <div>36.91%</div>
-                  <div>9.15%</div>
-                  <div>25.98%</div>
-                  <div>8.22%</div>
-                  <div>5.38%</div>
-                  <div>27.25%</div>
-                  <div>15.23%</div>
-                  <div>4.54%</div>
-                  <div>1.51%</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>‘23</div>
-                  <div className={styles.table__text_normal}>457.30%</div>
-                  <div className={styles.table__text_normal}>38.11%</div>
-                  <div>97.71%</div>
-                  <div>13.75%</div>
-                  <div>13.44%</div>
-                  <div>10.65%</div>
-                  <div>7.82%</div>
-                  <div>24.67%</div>
-                  <div>1.28%</div>
-                  <div>11.35%</div>
-                  <div>3.07%</div>
-                  <div>17.55%</div>
-                  <div>9.45%</div>
-                  <div>15.83%</div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>‘24</div>
-                  <div className={styles.table__text_normal}>269.20%</div>
-                  <div className={styles.table__text_normal}>26.92%</div>
-                  <div>4.15%</div>
-                  <div>54.56%</div>
-                  <div>32.58%</div>
-                  <div>32.88%</div>
-                  <div>24.67%</div>
-                  <div>6.98%</div>
-                  <div>11.35%</div>
-                  <div>2.52%</div>
-                  <div>0.59%</div>
-                  <div>17.16%</div>
-                  <div></div>
-                  <div></div>
-                </div>
-                <div className={styles.table__year}>
-                  <div className={styles.table__text_normal}>AVG:</div>
-                  <div className={styles.table__text_bright}>431.18%</div>
-                  <div className={styles.table__text_bright}>35.93%</div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
+                  <div
+                    className={cn(styles.table__year, styles.table__text_title)}
+                  >
+                    <div>YR</div>
+                    <div>YTD</div>
+                    <div>AMI</div>
+                    <div>Jan</div>
+                    <div>Feb</div>
+                    <div>Mar</div>
+                    <div>Apr</div>
+                    <div>May</div>
+                    <div>Jun</div>
+                    <div>Jul</div>
+                    <div>Aug</div>
+                    <div>Sep</div>
+                    <div>Oct</div>
+                    <div>Nov</div>
+                    <div>Dec</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>‘21</div>
+                    <div>258.25%</div>
+                    <div>21.52%</div>
+                    <div className={styles.table__text_low}>-11.91%</div>
+                    <div>16.74%</div>
+                    <div>28.07%</div>
+                    <div>3.28%</div>
+                    <div>22.93%</div>
+                    <div>16.49%</div>
+                    <div>17.12%</div>
+                    <div>12.77%</div>
+                    <div>4.53%</div>
+                    <div>28.6%</div>
+                    <div>11.52%</div>
+                    <div>18.82%</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>‘22</div>
+                    <div className={styles.table__text_normal}>739.97%</div>
+                    <div className={styles.table__text_normal}>61.66%</div>
+                    <div>11.75%</div>
+                    <div>20.53%</div>
+                    <div>108.91%</div>
+                    <div>36.91%</div>
+                    <div>9.15%</div>
+                    <div>25.98%</div>
+                    <div>8.22%</div>
+                    <div>5.38%</div>
+                    <div>27.25%</div>
+                    <div>15.23%</div>
+                    <div>4.54%</div>
+                    <div>1.51%</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>‘23</div>
+                    <div className={styles.table__text_normal}>457.30%</div>
+                    <div className={styles.table__text_normal}>38.11%</div>
+                    <div>97.71%</div>
+                    <div>13.75%</div>
+                    <div>13.44%</div>
+                    <div>10.65%</div>
+                    <div>7.82%</div>
+                    <div>24.67%</div>
+                    <div>1.28%</div>
+                    <div>11.35%</div>
+                    <div>3.07%</div>
+                    <div>17.55%</div>
+                    <div>9.45%</div>
+                    <div>15.83%</div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>‘24</div>
+                    <div className={styles.table__text_normal}>269.20%</div>
+                    <div className={styles.table__text_normal}>26.92%</div>
+                    <div>4.15%</div>
+                    <div>54.56%</div>
+                    <div>32.58%</div>
+                    <div>32.88%</div>
+                    <div>24.67%</div>
+                    <div>6.98%</div>
+                    <div>11.35%</div>
+                    <div>2.52%</div>
+                    <div>0.59%</div>
+                    <div>17.16%</div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                  <div className={styles.table__year}>
+                    <div className={styles.table__text_normal}>AVG:</div>
+                    <div className={styles.table__text_bright}>431.18%</div>
+                    <div className={styles.table__text_bright}>35.93%</div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
                 </div>
               </div>
               <div className={styles.cardMax__graphTitle}>
@@ -928,13 +945,7 @@ export const ThirdSlider = () => {
                 <div className={styles.medium__graphs_container}>
                   <div
                     ref={graphsTrackRef}
-                    className={cn(
-                      styles.medium__graphs,
-                      year === '2021' && styles.graph2021,
-                      year === '2022' && styles.graph2022,
-                      year === '2023' && styles.graph2023,
-                      year === '2024' && styles.graph2024
-                    )}
+                    className={styles.medium__graphs}
                     // onWheel={(e) => {
                     //   console.log(e.target.offsetLeft);
                     //   if (e.deltaY > 0) {
@@ -1460,22 +1471,26 @@ export const ThirdSlider = () => {
                         <p>STATS</p>
                       </div>
                       <div className={styles.cardMax__moreStats_subTitle}>
-                        <p>Strategy</p><div className={styles.moreStats_items}>
-                        {moreStats2021.strategy.map((strategy, i) => (
-                          <div className={styles.moreStats_item} key={i}>
-                            <div>{strategy.title}</div>
-                            <div>{strategy.description}</div>
-                          </div>
-                        ))}</div>
+                        <p>Strategy</p>
+                        <div className={styles.moreStats_items}>
+                          {moreStats2021.strategy.map((strategy, i) => (
+                            <div className={styles.moreStats_item} key={i}>
+                              <div>{strategy.title}</div>
+                              <div>{strategy.description}</div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                       <div className={styles.cardMax__moreStats_subTitle}>
-                        <p>Trades</p><div className={styles.moreStats_items}>
-                        {moreStats2021.trades.map((strategy, i) => (
-                          <div className={styles.moreStats_item} key={i}>
-                            <div>{strategy.title}</div>
-                            <div>{strategy.description}</div>
-                          </div>
-                        ))}</div>
+                        <p>Trades</p>
+                        <div className={styles.moreStats_items}>
+                          {moreStats2021.trades.map((strategy, i) => (
+                            <div className={styles.moreStats_item} key={i}>
+                              <div>{strategy.title}</div>
+                              <div>{strategy.description}</div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   )}
@@ -1485,22 +1500,26 @@ export const ThirdSlider = () => {
                         <p>STATS</p>
                       </div>
                       <div className={styles.cardMax__moreStats_subTitle}>
-                        <p>Strategy</p><div className={styles.moreStats_items}>
-                        {moreStats2022.strategy.map((strategy, i) => (
-                          <div className={styles.moreStats_item} key={i}>
-                            <div>{strategy.title}</div>
-                            <div>{strategy.description}</div>
-                          </div>
-                        ))}</div>
+                        <p>Strategy</p>
+                        <div className={styles.moreStats_items}>
+                          {moreStats2022.strategy.map((strategy, i) => (
+                            <div className={styles.moreStats_item} key={i}>
+                              <div>{strategy.title}</div>
+                              <div>{strategy.description}</div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                       <div className={styles.cardMax__moreStats_subTitle}>
-                        <p>Trades</p><div className={styles.moreStats_items}>
-                        {moreStats2021.trades.map((strategy, i) => (
-                          <div className={styles.moreStats_item} key={i}>
-                            <div>{strategy.title}</div>
-                            <div>{strategy.description}</div>
-                          </div>
-                        ))}</div>
+                        <p>Trades</p>
+                        <div className={styles.moreStats_items}>
+                          {moreStats2021.trades.map((strategy, i) => (
+                            <div className={styles.moreStats_item} key={i}>
+                              <div>{strategy.title}</div>
+                              <div>{strategy.description}</div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   )}
@@ -1510,22 +1529,26 @@ export const ThirdSlider = () => {
                         <p>STATS</p>
                       </div>
                       <div className={styles.cardMax__moreStats_subTitle}>
-                        <p>Strategy</p><div className={styles.moreStats_items}>
-                        {moreStats2023.strategy.map((strategy, i) => (
-                          <div className={styles.moreStats_item} key={i}>
-                            <div>{strategy.title}</div>
-                            <div>{strategy.description}</div>
-                          </div>
-                        ))}</div>
+                        <p>Strategy</p>
+                        <div className={styles.moreStats_items}>
+                          {moreStats2023.strategy.map((strategy, i) => (
+                            <div className={styles.moreStats_item} key={i}>
+                              <div>{strategy.title}</div>
+                              <div>{strategy.description}</div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                       <div className={styles.cardMax__moreStats_subTitle}>
-                        <p>Trades</p><div className={styles.moreStats_items}>
-                        {moreStats2021.trades.map((strategy, i) => (
-                          <div className={styles.moreStats_item} key={i}>
-                            <div>{strategy.title}</div>
-                            <div>{strategy.description}</div>
-                          </div>
-                        ))}</div>
+                        <p>Trades</p>
+                        <div className={styles.moreStats_items}>
+                          {moreStats2021.trades.map((strategy, i) => (
+                            <div className={styles.moreStats_item} key={i}>
+                              <div>{strategy.title}</div>
+                              <div>{strategy.description}</div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   )}
@@ -1535,22 +1558,26 @@ export const ThirdSlider = () => {
                         <p>STATS</p>
                       </div>
                       <div className={styles.cardMax__moreStats_subTitle}>
-                        <p>Strategy</p><div className={styles.moreStats_items}>
-                        {moreStats2024.strategy.map((strategy, i) => (
-                          <div className={styles.moreStats_item} key={i}>
-                            <div>{strategy.title}</div>
-                            <div>{strategy.description}</div>
-                          </div>
-                        ))}</div>
+                        <p>Strategy</p>
+                        <div className={styles.moreStats_items}>
+                          {moreStats2024.strategy.map((strategy, i) => (
+                            <div className={styles.moreStats_item} key={i}>
+                              <div>{strategy.title}</div>
+                              <div>{strategy.description}</div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                       <div className={styles.cardMax__moreStats_subTitle}>
-                        <p>Trades</p><div className={styles.moreStats_items}>
-                        {moreStats2021.trades.map((strategy, i) => (
-                          <div className={styles.moreStats_item} key={i}>
-                            <div>{strategy.title}</div>
-                            <div>{strategy.description}</div>
-                          </div>
-                        ))}</div>
+                        <p>Trades</p>
+                        <div className={styles.moreStats_items}>
+                          {moreStats2021.trades.map((strategy, i) => (
+                            <div className={styles.moreStats_item} key={i}>
+                              <div>{strategy.title}</div>
+                              <div>{strategy.description}</div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   )}

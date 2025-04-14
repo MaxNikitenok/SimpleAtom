@@ -225,12 +225,20 @@
   margin-bottom: 35px;
 }
 
+.cardMax__table_container {
+  overflow-x: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  scroll-behavior: smooth;
+}
+
 .cardMax__table {
   display: flex;
   flex-direction: column;
   width: 1200px;
   margin: 0 auto 20px;
   gap: 8px;
+  overflow-x: scroll;
 }
 
 .table__year {
@@ -353,44 +361,6 @@
 
 .medium__graph_wrapper img {
   width: 716px;
-}
-
-/* .cardMax__graphs_wrapper {
-  max-width: 1800px;
-  position: relative;
-  height: 370px;
-  margin-bottom: 30px;
-  overflow-x: auto;
-  scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
-} */
-
-/* .cardMax__graphs {
-  width: 3100px;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 500px;
-} */
-
-/* .cardMax__graphs img {
-  width: 720px;
-  height: 304px;
-} */
-
-.graph2021 {
-  /* left: 540px; */
-}
-
-.graph2022 {
-  /* left: -252px; */
-}
-
-.graph2023 {
-  /* left: -1044px; */
-}
-
-.graph2024 {
-  /* left: -1836px; */
 }
 
 .cardMax__graphButton {
@@ -531,22 +501,6 @@
   /* display: flex; */
 }
 
-.cardMax__moreStats_title {
-  border-bottom: 0.976px solid var(--Menu-select, #8C8A8A);
-
-  color: var(--Text-Main-text, #85868B);
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 200%; /* 36px */
-}
-
-.cardMax__moreStats_subTitle {
-  color: var(--Text-Main-text, #85868B);
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 250%; /* 36px */
-}
-
 .moreStats_item div:first-child {
   color: var(--Text-Main-text, #85868b);
   text-align: center;
@@ -564,6 +518,22 @@
   font-weight: 300;
   line-height: 135%; /* 24.3px */
   letter-spacing: -0.36px;
+}
+
+.cardMax__moreStats_title {
+  border-bottom: 0.976px solid var(--Menu-select, #8C8A8A);
+
+  color: var(--Text-Main-text, #85868B);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 200%; /* 36px */
+}
+
+.cardMax__moreStats_subTitle {
+  color: var(--Text-Main-text, #85868B);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 250%; /* 36px */
 }
 
 @media screen and (max-width: 1300px) {
@@ -937,37 +907,66 @@
   .cardMax__stats_column span {
     color: var(--Text-Main-text, #85868b);
     text-align: center;
-
-    /* Подписи на графики mobile */
     font-family: Roboto;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 0%; /* 0px */
+    line-height: 0%;
   }
   .cardMax__stats_column p {
     color: var(--Text-Main-text, #85868b);
-
-    /* Annotation */
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 100%; /* 16px */
+    line-height: 100%;
   }
 
   .cardMax__stats_button {
     color: #06c;
     text-align: center;
-
-    /* Annotation */
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 100%; /* 16px */
+    line-height: 100%;
     margin-top: 50px;
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .cardMax__moreStats {
+    max-width: 100%;
+    /* margin: 40px auto 0; */
+  }
+  
+  .moreStats_items {
+    width: 100%;
+  }
+  
+  .moreStats_item {
+    width: 200px;
+    text-wrap: nowrap;
+    margin-bottom: 20px;
+  }
+  
+  .moreStats_item div:first-child {
+    font-size: 12px;
+  }
+  
+  .moreStats_item div:last-child {
+    font-size: 12px;
+    font-weight: 400;
+  }
+  
+  .cardMax__moreStats_title {
+    font-size: 18px;
+  }
+  
+  .cardMax__moreStats_subTitle {
+    font-size: 16px;
+    font-weight: 400;
   }
 }
 
