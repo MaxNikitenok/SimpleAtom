@@ -1,4 +1,6 @@
+import React from 'react';
 import { useState, useEffect, useRef } from 'react';
+import { useInView } from 'react-intersection-observer';
 import styles from './ThirdSlider.module.css';
 import cn from 'classnames';
 import graph_ultra from '../../assets/graph_ultra.png';
@@ -17,10 +19,6 @@ import graph_medium_2023_more from '../../assets/graph_medium_2023_more.png';
 import graph_medium_2024_color from '../../assets/graph_medium_2024_color.png';
 import graph_medium_2024_bw from '../../assets/graph_medium_2024_bw.png';
 import graph_medium_2024_more from '../../assets/graph_medium_2024_more.png';
-import stats2021 from '../../assets/stats2021.png';
-import stats2022 from '../../assets/stats2022.png';
-import stats2023 from '../../assets/stats2023.png';
-import stats2024 from '../../assets/stats2024.png';
 
 export const ThirdSlider = () => {
   const [strategy, setStrategy] = useState(null);
@@ -29,13 +27,13 @@ export const ThirdSlider = () => {
   const [showMoreStats, setShowMoreStats] = useState(false);
   const graphsTrackRef = useRef(null);
   const graphsRef = useRef(null);
+  const tabRef = useRef(null);
 
   useEffect(() => {
     setStrategy('conservative');
     setYear('2021');
   }, []);
 
-  
   const handleWheel = (e) => {
     if (e.deltaY > 0) {
       e.currentTarget.scrollLeft += e.currentTarget.clientWidth;
@@ -43,6 +41,25 @@ export const ThirdSlider = () => {
       e.currentTarget.scrollLeft -= e.currentTarget.clientWidth;
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      // let translateValue = Math.min(0, scrollTop / 3); 
+      // setStyle({
+      //   transform: `translateY(${translateValue}px)`
+      // });
+      // console.log(scrollTop)
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll); 
+  }, []);
+
+  // const { ref: tablesRef, inView: tablesInView } = useInView({
+  //   threshold: 1,
+  //   rootMargin: '0% 0% -35% 0%',
+  // });
 
   const moreStats2021 = {
     strategy: [
@@ -414,9 +431,16 @@ export const ThirdSlider = () => {
                 Disclaimer: Past perfomance is mot anindicator of future
                 perfomance. Please refer to the disclaimer statement page.
               </div>
-              <div className={styles.cardMax__table_container} onWheel={(e)=>handleWheel(e)}>
+              <div
+                // ref={tablesRef}
+                className={cn(
+                  styles.cardMax__table_container,
+                  // tablesInView ? styles.view_anim : ''
+                )}
+                onWheel={(e) => handleWheel(e)}
+              >
                 <div
-                  className={cn(styles.cardMax__table, styles.table__text_text)}
+                  className={cn(styles.table__text_text, styles.cardMax__table, tablesInView ? styles.view_anim : '')}
                 >
                   <div
                     className={cn(styles.table__year, styles.table__text_title)}
@@ -619,7 +643,11 @@ export const ThirdSlider = () => {
                 Disclaimer: Past perfomance is mot anindicator of future
                 perfomance. Please refer to the disclaimer statement page.
               </div>
-              <div className={styles.cardMax__table_container} onWheel={(e)=>handleWheel(e)}>
+              <div
+                // ref={tabRef}
+                className={styles.cardMax__table_container}
+                onWheel={(e) => handleWheel(e)}
+              >
                 <div
                   className={cn(styles.cardMax__table, styles.table__text_text)}
                 >
@@ -825,7 +853,11 @@ export const ThirdSlider = () => {
                 Disclaimer: Past perfomance is mot anindicator of future
                 perfomance. Please refer to the disclaimer statement page.
               </div>
-              <div className={styles.cardMax__table_container} onWheel={(e)=>handleWheel(e)}>
+              <div
+                // ref={tablesRef}
+                className={styles.cardMax__table_container}
+                onWheel={(e) => handleWheel(e)}
+              >
                 <div
                   className={cn(styles.cardMax__table, styles.table__text_text)}
                 >

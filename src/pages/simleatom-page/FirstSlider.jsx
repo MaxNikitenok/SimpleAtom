@@ -1,12 +1,39 @@
 import styles from './FirstSlider.module.css';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 export const FirstSlider = () => {
   const itemsRef = useRef(null);
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+
+  const { ref: firstCardRef, inView: firstCardInView } = useInView({
+      threshold: 0.7,
+      rootMargin: '500px 0px 0px 0px',
+    }),
+    { ref: secondCardRef, inView: secondCardInView } = useInView({
+      threshold: 0.7,
+      rootMargin: '500px 0px 0px 0px',
+    }),
+    { ref: thirdCardRef, inView: thirdCardInView } = useInView({
+      threshold: 0.7,
+      rootMargin: '500px 0px 0px 0px',
+    }),
+    { ref: fourCardRef, inView: fourCardInView } = useInView({
+      threshold: 0.7,
+      rootMargin: '500px 0px 0px 0px',
+    });
+
+  const [activeDot, setActiveDot] = useState(null);
+
+  useEffect(() => {
+    if (firstCardInView) setActiveDot('firstCardInView');
+    if (secondCardInView) setActiveDot('secondCardInView');
+    if (thirdCardInView) setActiveDot('thirdCardInView');
+    if (fourCardInView) setActiveDot('fourCardInView');
+  }, [firstCardInView, secondCardInView, thirdCardInView, fourCardInView]);
 
   const handleMouseDown = (e) => {
     console.log(1);
@@ -53,7 +80,7 @@ export const FirstSlider = () => {
         onMouseMove={handleMouseMove}
         onWheel={handleWheel}
       >
-        <div className={styles.card}>
+        <div className={styles.card} ref={firstCardRef}>
           <div className={styles.card__span}>
             <span>Over</span>
           </div>
@@ -73,7 +100,7 @@ export const FirstSlider = () => {
             </div>
           </div>
         </div>
-        <div className={styles.card}>
+        <div className={styles.card} ref={secondCardRef}>
           <div className={styles.card__span}>
             <span>Over</span>
           </div>
@@ -94,14 +121,7 @@ export const FirstSlider = () => {
             </div>
           </div>
         </div>
-        <div
-          className={styles.card}
-          // onClick={() => {
-          //   navigate('/aboutUs');
-          //   window.scrollTo(0, 0);
-          //   setTimeout(scrollToPartnersRef, 1000);
-          // }}
-        >
+        <div className={styles.card} ref={thirdCardRef}>
           <div className={styles.card__span}>
             <span>Over</span>
           </div>
@@ -118,7 +138,7 @@ export const FirstSlider = () => {
             </div>
           </div>
         </div>
-        <div className={styles.card}>
+        <div className={styles.card} ref={fourCardRef}>
           <div className={styles.card__span}>
             <span>Over</span>
           </div>
@@ -142,10 +162,34 @@ export const FirstSlider = () => {
       </div>
       <div className={styles.dots__container}>
         <div className={styles.dots__wrapper}>
-          <div className={styles.dots__dot}></div>
-          <div className={styles.dots__activeDot}></div>
-          <div className={styles.dots__dot}></div>
-          <div className={styles.dots__dot}></div>
+          <div
+            className={
+              activeDot === 'firstCardInView'
+                ? styles.dots__activeDot
+                : styles.dots__dot
+            }
+          ></div>
+          <div
+            className={
+              activeDot === 'secondCardInView'
+                ? styles.dots__activeDot
+                : styles.dots__dot
+            }
+          ></div>
+          <div
+            className={
+              activeDot === 'thirdCardInView'
+                ? styles.dots__activeDot
+                : styles.dots__dot
+            }
+          ></div>
+          <div
+            className={
+              activeDot === 'fourCardInView'
+                ? styles.dots__activeDot
+                : styles.dots__dot
+            }
+          ></div>
         </div>
       </div>
     </>

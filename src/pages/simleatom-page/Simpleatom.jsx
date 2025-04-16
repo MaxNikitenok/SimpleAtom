@@ -1,22 +1,15 @@
 import { useInView } from 'react-intersection-observer';
-import { createRef, useState } from 'react';
-
 import styles from './Simpleatom.module.css';
-// import logo from '../../assets/Logo-2.png';
 import logo_black from '../../assets/logo_black.jpg';
 import logo_white from '../../assets/logo_white.jpg';
 import video_logo_black from '../../assets/video_logo_black.mp4';
 import video_logo_white from '../../assets/video_logo_white.mp4';
-import QR1 from '../../assets/QR_Atom_1.png';
-import QR2 from '../../assets/QR_Atom_2.png';
 import iphone_img from '../../assets/iphone_img.png';
-import screenshot from '../../assets/screenshot.png';
 import mac_img from '../../assets/mac_img.png';
 import video_on_iphone from '../../assets/video_on_iphone.mp4';
 import video_on_mac from '../../assets/video_on_mac.mp4';
 import cn from 'classnames';
 import { useNavigate, useOutletContext } from 'react-router-dom';
-import { partnersRef } from '../about-us-page/AboutUs';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { SecondSlider } from './SecondSlider';
@@ -26,10 +19,6 @@ import { FirstSlider } from './FirstSlider';
 export const Simpleatom = () => {
   const { theme } = useOutletContext();
   const isDarkTheme = theme !== 'light';
-
-  // const [isConservative, setConservative] = useState(true);
-
-  // const { setShowConversationalModal } = useOutletContext();
 
   const navigate = useNavigate(),
     { ref: sectionOneRef, inView: sectionOneInView } = useInView({
@@ -123,15 +112,8 @@ export const Simpleatom = () => {
     { ref: ref17, inView: ref17InView } = useInView({
       threshold: 1,
       rootMargin: '1200px 0px -100px 0px',
-    }),
-    // conservativeRef = createRef(),
-    scrollToPartnersRef = () => {
-      window.scrollTo({
-        top: partnersRef.current.offsetTop,
-        left: 100,
-        behavior: 'smooth',
-      });
-    };
+    })
+
 
   return (
     <main className={styles.simpleatom}>

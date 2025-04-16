@@ -4,7 +4,8 @@ import Trading_Frequency from '../../assets/Trading_Frequency.mp4';
 import Safety from '../../assets/Safety.mp4';
 import Currency from '../../assets/currency.mov';
 import Trading_pair from '../../assets/trading_pair.mov';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 export const SecondSlider = () => {
   const itemsRef = useRef(null);
@@ -12,25 +13,47 @@ export const SecondSlider = () => {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
+  const { ref: firstCardRef, inView: firstCardInView } = useInView({
+      threshold: 0.7,
+      rootMargin: '500px 0px 0px 0px',
+    }),
+    { ref: secondCardRef, inView: secondCardInView } = useInView({
+      threshold: 0.7,
+      rootMargin: '500px 0px 0px 0px',
+    }),
+    { ref: thirdCardRef, inView: thirdCardInView } = useInView({
+      threshold: 0.7,
+      rootMargin: '500px 0px 0px 0px',
+    }),
+    { ref: fourCardRef, inView: fourCardInView } = useInView({
+      threshold: 0.7,
+      rootMargin: '500px 0px 0px 0px',
+    });
+
+  const [activeDot, setActiveDot] = useState(null);
+
+  useEffect(() => {
+    if (firstCardInView) setActiveDot('firstCardInView');
+    if (secondCardInView) setActiveDot('secondCardInView');
+    if (thirdCardInView) setActiveDot('thirdCardInView');
+    if (fourCardInView) setActiveDot('fourCardInView');
+  }, [firstCardInView, secondCardInView, thirdCardInView, fourCardInView]);
+
   const handleMouseDown = (e) => {
-    console.log(1);
     setIsMouseDown(true);
     setStartX(e.pageX - itemsRef.current.offsetLeft);
     setScrollLeft(itemsRef.current.scrollLeft);
   };
 
   const handleMouseLeave = () => {
-    console.log(2);
     setIsMouseDown(false);
   };
 
   const handleMouseUp = () => {
-    console.log(3);
     setIsMouseDown(false);
   };
 
   const handleMouseMove = (e) => {
-    console.log(4);
     if (!isMouseDown) return;
     e.preventDefault();
     const x = e.pageX - itemsRef.current.offsetLeft;
@@ -56,7 +79,7 @@ export const SecondSlider = () => {
         onMouseMove={handleMouseMove}
         onWheel={handleWheel}
       >
-        <div className={styles.card}>
+        <div className={styles.card} ref={firstCardRef}>
           <div className={styles.card__content}>
             <div className={styles.content__title}>Trading Frequency</div>
             <div className={styles.content__subTitle}>
@@ -75,7 +98,7 @@ export const SecondSlider = () => {
             </div>
           </div>
         </div>
-        <div className={styles.card}>
+        <div className={styles.card} ref={secondCardRef}>
           <div className={styles.card__content}>
             <div className={styles.content__title}>Safety</div>
             <div className={styles.content__subTitle}>
@@ -98,7 +121,7 @@ export const SecondSlider = () => {
             </div>
           </div>
         </div>
-        <div className={styles.card}>
+        <div className={styles.card} ref={thirdCardRef}>
           <div className={styles.card__content}>
             <div className={styles.content__title}>Trading Pair</div>
             <div className={styles.content__subTitle}>
@@ -117,7 +140,7 @@ export const SecondSlider = () => {
             </div>
           </div>
         </div>
-        <div className={styles.card}>
+        <div className={styles.card} ref={fourCardRef}>
           <div className={styles.card__content}>
             <div className={styles.content__title}>Currency</div>
             <div className={styles.content__subTitle}>
@@ -139,10 +162,34 @@ export const SecondSlider = () => {
       </div>
       <div className={styles.dots__container}>
         <div className={styles.dots__wrapper}>
-          <div className={styles.dots__dot}></div>
-          <div className={styles.dots__activeDot}></div>
-          <div className={styles.dots__dot}></div>
-          <div className={styles.dots__dot}></div>
+          <div
+            className={
+              activeDot === 'firstCardInView'
+                ? styles.dots__activeDot
+                : styles.dots__dot
+            }
+          ></div>
+          <div
+            className={
+              activeDot === 'secondCardInView'
+                ? styles.dots__activeDot
+                : styles.dots__dot
+            }
+          ></div>
+          <div
+            className={
+              activeDot === 'thirdCardInView'
+                ? styles.dots__activeDot
+                : styles.dots__dot
+            }
+          ></div>
+          <div
+            className={
+              activeDot === 'fourCardInView'
+                ? styles.dots__activeDot
+                : styles.dots__dot
+            }
+          ></div>
         </div>
       </div>
     </>

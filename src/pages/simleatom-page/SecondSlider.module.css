@@ -137,6 +137,7 @@
   height: 8px;
   background-color: #cfced1;
   border-radius: 8px;
+  /* transition: all 0.1s cubic-bezier(0, 0, 0.5, 1); */
 }
 
 .dots__activeDot {
@@ -148,6 +149,7 @@
 
 @media screen and (max-width: 576px) {
   .secondSlider_container {
+    height: 360px;
     padding: 0 30px;
   }
 

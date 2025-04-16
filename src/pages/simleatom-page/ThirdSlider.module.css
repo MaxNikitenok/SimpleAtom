@@ -239,6 +239,10 @@
   margin: 0 auto 20px;
   gap: 8px;
   overflow-x: scroll;
+  
+  
+    transform: translateX(0px);
+    transition: all 2s cubic-bezier(0, 0, 0.5, 1);
 }
 
 .table__year {
@@ -807,23 +811,6 @@
     height: 108px;
   }
 
-  .graph2021 {
-    /* left: 0%; */
-    /* transform: translate(-50vw, 0); */
-  }
-
-  .graph2022 {
-    /* transform: translate(-55vw, 0); */
-  }
-
-  .graph2023 {
-    /* transform: translate(-20vw, 0); */
-  }
-
-  .graph2024 {
-    /* transform: translate(15vw, 0); */
-  }
-
   .cardMax__graph_wrapper {
     text-align: end;
   }
@@ -982,5 +969,10 @@
 
   .medium__graph_wrapper img {
     width: 294px;
+  }
+
+  .view_anim {
+    transform: translateX(calc(-690px + 100vw));  /* -(table+margin)+100vw */
+    opacity: 1;
   }
 }
